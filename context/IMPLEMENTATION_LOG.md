@@ -356,7 +356,7 @@ Updated `app.py`:
   - Constructs an initial `AgentState` containing raw fields and empty
     structured fields.
   - Calls `run_supervisor(initial_state, config)` inside an `st.spinner`.
-- `\_render_results(...)`:
+- `_render_results(...)`:
   - Uses `state["itinerary"]` and `state["travel_guide"]` when available.
   - Uses `create_map(state["places_list"], state.get("city_info"))` to build
     a rich Folium map.
@@ -372,7 +372,7 @@ Updated `app.py`:
     - The models in `src/agents/models.py`.
     - The tools layer (`geo_utils`, `places_api`, `map_generator`).
     - The updated `AgentState` schema.
-    - Revised Mermaid diagram for the new orchestration flow.
+    - ASCII agent flow diagram and updated text.
 
 - `context/IMPLEMENTATION_LOG.md` (this file):
   - Extended with this **Prompt 2 – Agents and Integration** section to
@@ -380,22 +380,204 @@ Updated `app.py`:
 
 ---
 
-## Next Steps (Prompt 3 – Deployment & Polishing)
+## Prompt 3 – Deployment, Documentation, and Polishing
 
-Planned work:
+**Goal:** Make the project easy to run locally, easy to deploy on Streamlit
+Community Cloud, and ready to showcase as a portfolio piece.
 
-1. Prepare deployment for Streamlit Community Cloud:
-   - Verify environment configuration and secrets management.
-   - Confirm all dependencies are compatible with the hosted environment.
-2. Add user-facing documentation:
-   - README updates with screenshots, usage instructions, and architecture
-     summaries.
-3. Optionally fine-tune:
-   - Prompt wording and model parameters.
-   - Additional fallbacks for lesser-known cities.
-   - More detailed category handling for places and map styling.
+### 1. Deployment Configuration
 
-At this stage the application provides a complete end-to-end experience:
-user inputs are turned into a structured itinerary, curated places,
-interactive map, and readable travel guide, all orchestrated by LangGraph
-and powered by Groq plus external place APIs.
+- Updated `.streamlit/config.toml`:
+  - Applied a cohesive theme:
+
+    ```toml
+    [theme]
+    primaryColor = "#2180a0"
+    backgroundColor = "#fdfcf9"
+    secondaryBackgroundColor = "#ffffff"
+    textColor = "#1f2121"
+    font = "sans serif"
+
+    [client]
+    showErrorDetails = false
+
+    [logger]
+    level = "info"
+
+    [server]
+    maxUploadSize = 200
+    enableXsrfProtection = true
+    ```
+
+- Confirmed that:
+  - `.env` is ignored by `.gitignore`.
+  - `.streamlit/secrets.toml` is ignored (local secrets only).
+  - No secrets are stored in the repository.
+
+### 2. Environment and Config Templates
+
+- Verified `requirements.txt` includes all runtime dependencies:
+  - `streamlit`, `langgraph`, `langchain`, `langchain-groq`, `folium`,
+    `streamlit-folium`, `requests`, `python-dotenv`, `pydantic`,
+    `typing-extensions`.
+
+- Updated/validated `.env.example`:
+  - Documents:
+    - `GROQ_API_KEY` (required).
+    - `OPENTRIPMAP_API_KEY` (optional).
+    - `GOOGLE_PLACES_API_KEY` (optional).
+    - `APP_ENV`, `GROQ_DEFAULT_MODEL`, `APP_DEBUG`.
+
+### 3. Local Setup Documentation
+
+- Added `context/LOCAL_SETUP.md`:
+  - Prerequisites (Python, Git, Groq key, optional Google Places/OpenTripMap).
+  - Linux/macOS setup steps:
+    - Clone repo, create venv, install dependencies, configure `.env`, run app.
+  - Windows (PowerShell) setup steps:
+    - Equivalent commands with `python -m venv venv` and `.\venv\Scripts\Activate.ps1`.
+  - Summary of manual commands.
+  - Troubleshooting (ports, missing modules, API keys, cache issues).
+  - Guidance for testing and extending the app.
+
+- Added a simple `Makefile` (optional convenience) for:
+  - `make install`, `make run`, `make test`, `make clean` (Linux/macOS/WSL).
+
+### 4. Deployment Documentation
+
+- Added `context/DEPLOYMENT_GUIDE.md`:
+  - Deployment overview and zero-cost stack.
+  - Prerequisites (GitHub account, keys, code pushed).
+  - Step-by-step Streamlit Cloud deployment:
+    - Create account, connect GitHub, select repo/branch/app, set runtime,
+      configure secrets, deploy.
+  - Managing secrets (adding/updating Groq and Places keys in Streamlit).
+  - Updating after deployment (automatic rebuild on `git push`).
+  - Monitoring & debugging:
+    - Using Streamlit app logs.
+    - Interpreting API error messages.
+  - Scaling & optimization strategies:
+    - Caching, session management, resource tuning.
+  - Cost analysis of all components.
+  - Troubleshooting common deployment issues.
+
+### 5. Context Documentation Enhancements
+
+- Updated `context/PROJECT_GOAL.md`:
+  - Emphasised what the app does at a high level.
+  - Clarified technical approach (agents, APIs, free stack).
+  - Included clearly defined success metrics and portfolio checklist.
+
+- Updated `context/ARCHITECTURE.md`:
+  - Added ASCII agent flow diagram.
+  - Documented:
+    - Agent responsibilities.
+    - Pydantic data models.
+    - API integration details.
+    - Error handling strategy.
+    - Performance considerations.
+    - Deployment architecture.
+
+- Extended this `IMPLEMENTATION_LOG.md` with a full Prompt 3 summary.
+
+### 6. README and Repository Hygiene
+
+- Updated `README.md` (project root) to provide:
+  - Project overview and key features.
+  - Quick start instructions.
+  - Links to:
+    - `context/LOCAL_SETUP.md` for detailed local setup.
+    - `context/DEPLOYMENT_GUIDE.md` for deployment steps.
+  - High-level architecture summary.
+  - Notes on requirements and configuration.
+
+- Ensured `.gitignore` covers:
+  - `.env`, virtual environments, caches (`__pycache__`, `.pytest_cache`),
+    `logs/`, `.streamlit/secrets.toml`.
+
+### 7. Code Review and Minor Optimisations
+
+- Ran `python -m compileall .` to verify syntax across all modules.
+- Removed minor unused imports (e.g. `json` in `places_finder.py`).
+- Confirmed that:
+  - API keys are loaded only from environment variables / Streamlit secrets.
+  - No secrets or tokens are hardcoded.
+  - Each external API call has reasonable error handling and fallbacks.
+  - Logging is consistent across tools and agents.
+
+---
+
+## Changes from the Original Plan
+
+- The “5 agents” concept was implemented as:
+  - 4 concrete agents:
+    - InputProcessor, PlacesFinder, ItineraryPlanner, ContentFormatter.
+  - 1 LangGraph supervisor (orchestrator) acting as the fifth coordinating
+    component rather than a separate LLM agent.
+- The map generation step is implemented as a tool (`map_generator.py`) rather
+  than a separate agent node, to keep the agent responsibilities focused on
+  reasoning and text generation.
+- The system currently focuses on robust, deterministic behaviour first,
+  with Groq calls enhancing results rather than being a single point of failure.
+
+These deviations keep the architecture simpler and more robust while still
+fulfilling the original design intent.
+
+---
+
+## Groq API Usage
+
+- Endpoint: `https://api.groq.com/openai/v1/chat/completions`.
+- Used in:
+  - `InputProcessorAgent`:
+    - Light sanity-check of parsed preferences (advisory).
+  - `ItineraryPlannerAgent`:
+    - Short narrative explaining trip pacing.
+  - `PlacesFinderAgent`:
+    - Tool/function-calling to decide which logical tools to execute.
+  - `ContentFormatterAgent`:
+    - Markdown travel guide generation.
+
+- All calls:
+  - Use `config.groq_default_model` (e.g. `llama3-8b-8192`).
+  - Set temperature conservatively to keep output focused.
+  - Use modest `max_tokens` to control cost and latency.
+  - Handle non-200 responses and exceptions by logging and falling back to
+    deterministic behaviours.
+
+---
+
+## Context Management
+
+- Cosine AI / model context is kept small and explicit:
+  - Agents send only the structured data they need (Pydantic models converted
+    to JSON-like dicts).
+  - Prompts in `src/utils/prompts.py` clearly describe each agent’s role and
+    expected outputs.
+- This approach:
+  - Reduces prompt size.
+  - Makes prompts easier to maintain.
+  - Keeps reasoning steps transparent and debuggable.
+
+---
+
+## Next Steps (Future Enhancements)
+
+Potential future improvements:
+
+- Add caching decorators for:
+  - Geocoding results.
+  - Places API lookups for popular cities.
+- Add user controls for:
+  - Pace (relaxed vs. intense).
+  - Time-of-day preferences.
+- Extend Pydantic models for:
+  - Per-place opening hours and ticketing info (when available).
+- Introduce:
+  - Basic test suite (e.g. unit tests for tools and models).
+  - Optional export formats (e.g. PDF, Markdown download).
+- Consider:
+  - Additional places APIs (e.g. Yelp, Foursquare) and mapping providers.
+
+For now, the project is in a stable, deployable state, suitable as a
+portfolio showcase and a base for further experimentation.

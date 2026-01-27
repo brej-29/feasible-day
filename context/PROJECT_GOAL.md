@@ -1,123 +1,143 @@
-# City Travel Microguide – Project Goal
+# Project Goal – City Travel Microguide Generator
 
-## Vision
+## What This Project Does
 
-Create a **zero-cost, AI-powered city microguide generator** that produces:
+The **City Travel Microguide Generator** is a zero-cost, AI-powered travel
+planner that:
 
-- A **day-by-day itinerary** personalized to the traveler.
-- An **interactive map** with 50+ curated markers per city.
-- A concise, **actionable travel guide** that is easy to scan on mobile.
-- A **delightful Streamlit experience** that runs entirely on the free tier.
+- Takes **user input**:
+  - City
+  - Number of days
+  - Transportation preference
+  - Interests (food, art, shopping, outdoors, history, culture)
+  - Budget level (budget, moderate, luxury)
+- Generates a **detailed travel itinerary**:
+  - Day-by-day plan with morning/afternoon/evening activities.
+- Creates an **interactive map**:
+  - Folium map embedded in Streamlit.
+  - Target: **50+ curated markers** per city whenever possible.
+- Provides **restaurant recommendations**:
+  - Uses Google Places (when available) and fallbacks.
+- Lists **attractions by interest**:
+  - Landmarks, museums, cultural venues, shopping areas, etc.
+- Includes **logistics and tips**:
+  - Transportation, pacing, local customs (at a high level).
 
-The app should feel like having a **local expert travel planner** who knows:
-your interests, your pace, and your budget — and can turn that into a clear,
-realistic plan for any city in the world.
+The app is designed to feel like a **local expert travel planner** that turns
+your preferences into a realistic, easy-to-follow microguide for any city.
 
 ---
 
-## Core Objectives
+## Technical Approach
 
-1. **Personalized Itineraries**
-   - Input: city, number of days, budget, transportation, interests, and advanced options.
-   - Output: structured, daily plans that make geographic and thematic sense.
-   - Respect constraints such as:
-     - Pace (not too rushed, not too slow).
-     - Budget (budget / moderate / luxury).
-     - Transportation (walking / metro / car / mixed).
+- **Multi-agent system**:
+  - 5 roles (4 concrete agents + supervisor) coordinated with **LangGraph**.
+  - Agents:
+    1. Input Processor – normalizes and validates user input.
+    2. Places Finder – discovers attractions, restaurants, and shopping areas.
+    3. Itinerary Planner – schedules days and time slots.
+    4. Content Formatter – writes the travel guide.
+    5. Supervisor – orchestrates the workflow via LangGraph.
 
-2. **Rich Place Discovery**
-   - Use **OpenTripMap** and **Google Places** to discover:
-     - Landmarks, museums, viewpoints, cultural venues.
-     - Food spots, cafes, night-life, markets, and local gems.
-   - Normalize and deduplicate results across APIs.
-   - Annotate each place with:
-     - Category, interest tags, price level, rough duration, and neighborhood.
+- **LLM integration**:
+  - **Groq API** (free tier) used for:
+    - Input sanity-checking.
+    - Itinerary pacing notes.
+    - Markdown travel guide generation.
+    - Tool selection for places discovery.
 
-3. **Interactive Mapping**
-   - Generate a **Folium-based interactive map** embedded in Streamlit.
-   - Display **50+ curated markers** per city whenever possible.
-   - Support:
-     - Category-based styling (e.g., colors for food/art/history).
-     - Logical default zoom and bounds.
-     - Tooltips/popups for quick context.
+- **Places APIs**:
+  - **OpenTripMap**:
+    - Attractions and shopping areas.
+  - **Google Places API**:
+    - Restaurants and detailed place info (optional).
+  - **Nominatim (OpenStreetMap)**:
+    - Geocoding: city name → latitude/longitude.
 
-4. **Readable Travel Guide**
-   - Transform structured itineraries into a **human-friendly travel guide**.
-   - Provide:
-     - Day summaries.
-     - Brief descriptions per stop.
-     - Travel tips, etiquette, and local insights.
-   - Optimize for:
-     - Mobile reading.
-     - Quick skimming and bookmarking.
+- **Frontend and mapping**:
+  - **Streamlit** for the UI (sidebar inputs + main results).
+  - **Folium** + `streamlit-folium` for interactive maps.
+  - Colour-coded markers for different place types.
 
-5. **Robust Multi-Agent Orchestration**
-   - Use **LangGraph** to orchestrate 5 specialized agents:
-     1. City Context Analyst
-     2. Places Researcher
-     3. Itinerary Designer
-     4. Map Designer
-     5. Travel Guide Writer
-   - Ensure the pipeline can:
-     - Handle partial failures gracefully.
-     - Reuse context across agents.
-     - Remain extendable for new cities, interests, or tools.
+- **Architecture highlights**:
+  - Clear separation between:
+    - UI (`app.py`)
+    - Agents (`src/agents/`)
+    - Tools (`src/tools/`)
+    - Utils (`src/utils/`)
+  - Typed models (Pydantic) for preferences, itinerary, and places.
+  - Structured logging and config management.
 
-6. **Zero-Cost Operation**
-   - Run entirely on **Streamlit Community Cloud (free tier)**.
-   - Use **Groq’s free tier** for all LLM calls.
-   - Design all integrations to:
-     - Minimize API calls.
-     - Cache reusable results where possible.
-     - Fail gracefully when optional APIs are unavailable.
+- **Cost model**:
+  - Streamlit Community Cloud: **free**.
+  - Groq free tier.
+  - OpenTripMap and Nominatim: free.
+  - Google Places: free tier sufficient for demos.
+  - Overall goal: **100% free stack** for normal portfolio/demo usage.
 
 ---
 
 ## Success Metrics
 
-The project is successful when:
+The project is considered successful when:
 
-1. **Functional Criteria**
-   - Users can open the Streamlit app and:
-     - Enter their trip details.
-     - Generate a multi-day itinerary for any major city.
-     - See an embedded interactive map.
-     - Read a concise travel guide.
-   - All core functionality works on free-tier infrastructure.
+- **Functionality**
+  - ✓ User can input city, days, transportation, interests, and budget.
+  - ✓ System generates a full itinerary in **under 30 seconds** for typical cities.
+  - ✓ Interactive map renders with **50+ markers** for major cities where APIs allow.
+  - ✓ Travel guide includes a clear **day-by-day breakdown**.
+  - ✓ Works for a wide range of cities (not just hardcoded ones).
 
-2. **User Experience**
-   - UI is **clean, professional, and responsive**.
-   - Input validation is clear and non-frustrating.
-   - Loading states and error messages are **communicative and calm**.
-   - Even when APIs fail, users still receive a partial but coherent result.
+- **User Experience**
+  - ✓ UI is clean, responsive, and mobile-friendly.
+  - ✓ Input validation is clear and prevents obvious mistakes.
+  - ✓ Loading indicators are present and informative.
+  - ✓ Errors and rate-limit issues are surfaced as friendly messages, not crashes.
 
-3. **Technical Quality**
-   - Code is:
-     - Well-structured (clear modules, separation of concerns).
-     - Type-hinted and documented.
-     - Ready for continuous extension (new agents, tools, and prompts).
-   - The LangGraph supervisor and agents are easy to reason about and debug.
+- **Robustness & Error Handling**
+  - ✓ Optional APIs (Google Places, OpenTripMap) can fail without breaking the app.
+  - ✓ Fallback data is used where possible.
+  - ✓ All major steps log errors and warnings appropriately.
 
-4. **Showcase Value**
-   - The project serves as a **public portfolio piece** showing:
-     - Practical use of multi-agent orchestration with LangGraph.
-     - Integration of external travel/places APIs.
-     - A polished Streamlit front-end.
-     - Sensible engineering practices (logging, config, validation, error handling).
+- **Technical Quality**
+  - ✓ Code is modular, type-hinted, and documented.
+  - ✓ Multi-agent architecture is easy to extend (new tools, new agents).
+  - ✓ No secrets are committed to the repository.
+  - ✓ Ready for hosting on Streamlit Cloud.
+
+- **Portfolio Value**
+  - ✓ Demonstrates practical multi-agent AI orchestration (LangGraph).
+  - ✓ Shows integration with real external APIs (Groq, OpenTripMap, Google Places).
+  - ✓ Includes full deployment and setup docs.
+  - ✓ Is simple for recruiters/teammates to run and test.
 
 ---
 
 ## Non-Goals (for Version 1)
 
-To keep scope realistic for the initial release:
+To keep the scope focused and deployable:
 
-- No real-time booking of flights, hotels, or activities.
-- No user authentication or account system.
-- No persistence of itineraries beyond the current session.
-- No offline capabilities or PDF export (these are potential later features).
+- No real-time booking (flights, hotels, restaurants).
+- No user authentication, profiles, or saved itineraries.
+- No persistent storage beyond the current session.
+- No PDF export or offline mode (can be added later).
+- No complex trip constraints (multi-city routing, flights, etc.).
 
-The focus for the foundational phase is a **robust skeleton** that is:
+---
 
-- Easy to extend with new agents, tools, and prompts.
-- Stable enough for public demo and live use.
-- Pleasant to interact with even when underlying AI calls are still evolving.
+## Portfolio Showcase Checklist
+
+This project is intended to be a strong portfolio piece, demonstrating:
+
+- ✓ **Multi-agent AI system** using LangGraph.
+- ✓ **Groq API integration** with function calling.
+- ✓ **External API usage**:
+  - OpenTripMap, Google Places, Nominatim.
+- ✓ **Rich UI and visualization**:
+  - Streamlit interface, Folium maps, interactive elements.
+- ✓ **Robust engineering**:
+  - Config management, logging, error handling, fallbacks.
+- ✓ **Cloud deployment**:
+  - Streamlit Community Cloud guide and zero-cost operation.
+- ✓ **Complete documentation**:
+  - Local setup, deployment, architecture, and implementation log.
