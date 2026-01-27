@@ -4,6 +4,10 @@ from typing import Any, Dict, List, Optional, TypedDict
 
 from langgraph.graph import END, StateGraph
 
+from src.agents.content_formatter import ContentFormatterAgent
+from src.agents.input_processor import InputProcessorAgent
+from src.agents.itinerary_planner import ItineraryPlannerAgent
+from src.agents.places_finder import PlacesFinderAgent
 from src.utils.config import AppConfig
 from src.utils.logger import get_logger
 
@@ -11,9 +15,6 @@ from src.utils.logger import get_logger
 class AgentState(TypedDict, total=False):
     """
     Shared state passed between agents in the LangGraph workflow.
-
-    This format is intentionally broad enough to support all five agents
-    that will be implemented in Prompt 2.
 
     Keys
     ----
@@ -29,15 +30,29 @@ class AgentState(TypedDict, total=False):
         Budget level, such as "budget", "moderate", "luxury".
     advanced_preferences:
         Arbitrary advanced options collected from the UI.
+
+    preferences:
+        Normalised preferences derived from the fields above.
+    city_info:
+        Geocoded information about the city (latitude, longitude, bounding box).
+
+    places_list:
+        Structured list of places grouped by category.
     places:
-        List of places of interest discovered by research agents.
-        The exact schema will be defined in Prompt 2.
+        Flattened list of places for convenience.
+
+    itinerary_plan:
+        Detailed itinerary as produced by the itinerary planner.
     itinerary:
-        Structured itinerary data, typically a list of day entries.
+        Simplified list of day summaries for UI display.
+
     travel_guide:
         Narrative travel guide text.
+
     map_data:
-        Data structure to support map rendering (e.g. markers, bounds).
+        Optional structure for map rendering (the app currently generates
+        the Folium map directly rather than storing it here).
+
     errors:
         A list of errors or warnings produced by agents.
     """
@@ -49,8 +64,15 @@ class AgentState(TypedDict, total=False):
     budget: str
     advanced_preferences: Dict[str, Any]
 
+    preferences: Dict[str, Any]
+    city_info: Dict[str, Any]
+
+    places_list: Dict[str, Any]
     places: List[Dict[str, Any]]
+
+    itinerary_plan: Dict[str, Any]
     itinerary: List[Dict[str, Any]]
+
     travel_guide: str
     map_data: Dict[str, Any]
     errors: List[str]
@@ -60,16 +82,22 @@ def _build_graph(config: AppConfig) -> Any:
     """
     Build the LangGraph StateGraph for the microguide workflow.
 
-    At this foundation stage the graph is intentionally minimal and does not
-    perform any LLM or external API calls. It simply passes the state through
-    unchanged. In Prompt 2, this function will be extended to wire in the five
-    specialist agents.
+    The graph orchestrates three concrete agents in sequence after a simple
+    entry node:
+
+    1. InputProcessorAgent
+       - Normalizes user preferences and resolves the city via geocoding.
+    2. PlacesFinderAgent
+       - Discovers attractions, restaurants, and shopping areas.
+    3. ItineraryPlannerAgent
+       - Builds a structured day-by-day itinerary.
+    4. ContentFormatterAgent
+       - Produces the final travel guide in Markdown.
 
     Parameters
     ----------
     config:
-        Application configuration. Currently unused but accepted to ensure
-        forwards compatibility when agents are introduced.
+        Application configuration.
 
     Returns
     -------
@@ -79,30 +107,48 @@ def _build_graph(config: AppConfig) -> Any:
     logger = get_logger("graph.supervisor")
     graph: StateGraph = StateGraph(AgentState)
 
+    input_agent = InputProcessorAgent(config)
+    places_agent = PlacesFinderAgent(config)
+    itinerary_agent = ItineraryPlannerAgent(config)
+    formatter_agent = ContentFormatterAgent(config)
+
     def entry_node(state: AgentState) -> AgentState:
         """
         Initial node for the LangGraph workflow.
 
-        For now, it simply ensures that the `errors` list exists and logs that
-        the full agent pipeline has not yet been implemented.
+        Ensures that the ``errors`` list exists and logs the start of the
+        orchestration pipeline.
         """
         updated_state: AgentState = dict(state)
         errors: List[str] = list(updated_state.get("errors", []))
-        info_message = (
-            "LangGraph supervisor pipeline is in foundation mode. "
-            "No agents have been executed yet; this will be extended in Prompt 2."
-        )
-        logger.info(info_message)
-        errors.append(
-            "Detailed itinerary generation will be enabled once agents are "
-            "implemented in the next development phase."
-        )
+        logger.info("Starting microguide generation pipeline.")
         updated_state["errors"] = errors
         return updated_state
 
+    def input_node(state: AgentState) -> AgentState:
+        return input_agent.run(state)  # type: ignore[return-value]
+
+    def places_node(state: AgentState) -> AgentState:
+        return places_agent.run(state)  # type: ignore[return-value]
+
+    def itinerary_node(state: AgentState) -> AgentState:
+        return itinerary_agent.run(state)  # type: ignore[return-value]
+
+    def formatter_node(state: AgentState) -> AgentState:
+        return formatter_agent.run(state)  # type: ignore[return-value]
+
     graph.add_node("entry", entry_node)
+    graph.add_node("input_processor", input_node)
+    graph.add_node("places_finder", places_node)
+    graph.add_node("itinerary_planner", itinerary_node)
+    graph.add_node("content_formatter", formatter_node)
+
     graph.set_entry_point("entry")
-    graph.add_edge("entry", END)
+    graph.add_edge("entry", "input_processor")
+    graph.add_edge("input_processor", "places_finder")
+    graph.add_edge("places_finder", "itinerary_planner")
+    graph.add_edge("itinerary_planner", "content_formatter")
+    graph.add_edge("content_formatter", END)
 
     app = graph.compile()
     return app
@@ -123,7 +169,7 @@ def run_supervisor(initial_state: Optional[AgentState], config: AppConfig) -> Ag
     Returns
     -------
     AgentState
-        The final state after the (currently minimal) graph has been executed.
+        The final state after the graph has been executed.
     """
     if initial_state is None:
         initial_state = AgentState(
@@ -133,7 +179,11 @@ def run_supervisor(initial_state: Optional[AgentState], config: AppConfig) -> Ag
             interests=[],
             budget="",
             advanced_preferences={},
+            preferences={},
+            city_info={},
+            places_list={},
             places=[],
+            itinerary_plan={},
             itinerary=[],
             travel_guide="",
             map_data={},

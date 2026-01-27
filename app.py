@@ -2,11 +2,11 @@ from __future__ import annotations
 
 from typing import Any, Optional
 
-import folium
 import streamlit as st
 from streamlit_folium import st_folium
 
 from src.agents.supervisor import AgentState, run_supervisor
+from src.tools.map_generator import create_map
 from src.constants.categories import (
     BUDGET_LEVELS,
     INTEREST_LABELS,
@@ -206,25 +206,7 @@ def _create_placeholder_guide(preferences: UserPreferences) -> str:
     return "\n".join(guide_lines)
 
 
-def _create_placeholder_map(city: str) -> folium.Map:
-    """
-    Create a basic Folium map to act as a visual placeholder.
 
-    The map is centered on a generic global view with a single marker
-    annotated with the city name. This will be replaced by a rich,
-    city-specific map once agents and tools are implemented.
-    """
-    base_map = folium.Map(location=[20.0, 0.0], zoom_start=2)
-    folium.Marker(
-        location=[20.0, 0.0],
-        tooltip=city or "City",
-        popup=(
-            f"Preview map for {city or 'your selected city'}. "
-            "A detailed, city-specific map with 50+ markers will be generated "
-            "in the next development phase."
-        ),
-    ).add_to(base_map)
-    return base_map
 
 
 def _render_results(
@@ -239,11 +221,11 @@ def _render_results(
     preferences:
         Validated user preferences.
     state:
-        Final agent state returned by the LangGraph supervisor. For Prompt 1
-        this state is minimal and primarily used to pass errors or metadata.
+        Final agent state returned by the LangGraph supervisor.
     """
     itinerary: list[dict[str, Any]]
     travel_guide: str
+    map_object = None
 
     if state and state.get("itinerary"):
         itinerary = state["itinerary"]
@@ -254,6 +236,15 @@ def _render_results(
         travel_guide = state["travel_guide"]
     else:
         travel_guide = _create_placeholder_guide(preferences)
+
+    # Attempt to build a rich Folium map using the discovered places.
+    if state and state.get("places_list"):
+        try:
+            city_info = state.get("city_info") if isinstance(state.get("city_info"), dict) else None
+            map_object = create_map(state["places_list"], city_info)
+        except Exception as exc:  # noqa: BLE001
+            logger.warning("Map generation failed: %s", exc)
+            map_object = None
 
     st.markdown("## Your city microguide")
 
@@ -272,8 +263,13 @@ def _render_results(
 
     with col_map:
         st.markdown("### Interactive map")
-        map_object = _create_placeholder_map(preferences.city)
-        st_folium(map_object, width=700, height=500)
+        if map_object is not None:
+            st_folium(map_object, width=700, height=500)
+        else:
+            st.info(
+                "Map data is not available yet. This may happen if external "
+                "places APIs are temporarily unavailable."
+            )
 
     with col_guide:
         st.markdown("### Travel guide")
@@ -343,7 +339,7 @@ def main() -> None:
 
     config = config_result.config
 
-    with st.spinner("Generating your city microguide (foundation mode)..."):
+    with st.spinner("Generating your city microguide..."):
         try:
             initial_state: AgentState = AgentState(
                 city=preferences.city,
@@ -352,7 +348,11 @@ def main() -> None:
                 interests=preferences.interests,
                 budget=preferences.budget,
                 advanced_preferences={"notes": preferences.advanced_notes} if preferences.advanced_notes else {},
+                preferences={},
+                city_info={},
+                places_list={},
                 places=[],
+                itinerary_plan={},
                 itinerary=[],
                 travel_guide="",
                 map_data={},

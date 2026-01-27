@@ -4,8 +4,8 @@
 
 The City Travel Microguide application is a **Streamlit front-end** backed by a
 **LangGraph-based multi-agent orchestration layer**. It integrates with
-external APIs (Groq, OpenTripMap, Google Places) to generate a personalized
-city guide consisting of:
+external APIs (Groq, OpenTripMap, Google Places, OpenStreetMap/Nominatim) to
+generate a personalized city guide consisting of:
 
 - A day-by-day itinerary.
 - A set of curated places with metadata.
@@ -27,30 +27,39 @@ This document describes the **high-level architecture**, **agent roles**, and
 
 - **LangGraph Supervisor (`src/agents/supervisor.py`)**
   - Owns the shared `AgentState` typed dictionary.
-  - Defines the graph of five agents (to be implemented in Prompt 2).
+  - Defines the graph of four concrete agents plus the supervising workflow.
   - Compiles and runs the graph to produce a final state.
 
 - **Agents (`src/agents/`)**
-  - `BaseAgent` class defines the contract for all agents.
-  - Five specialized agents (to be added):
-    1. City Context Analyst
-    2. Places Researcher
-    3. Itinerary Designer
-    4. Map Designer
-    5. Travel Guide Writer
+  - `BaseAgent` class (in `base_agent.py`) defines the contract for all agents.
+  - Four specialised agents:
+    1. `InputProcessorAgent` (`input_processor.py`)
+    2. `PlacesFinderAgent` (`places_finder.py`)
+    3. `ItineraryPlannerAgent` (`itinerary_planner.py`)
+    4. `ContentFormatterAgent` (`content_formatter.py`)
+
+- **Models (`src/agents/models.py`)**
+  - Pydantic models used across agents:
+    - `InputPreferences`
+    - `TimeSlot`, `Day`, `ItineraryPlan`
+    - `Place`, `PlacesList`
 
 - **Tools (`src/tools/`)**
-  - Encapsulate all external API calls and utility routines, e.g.:
-    - OpenTripMap place search.
-    - Google Places text/nearby search.
-    - Any supporting geocoding logic.
-  - Keep agents focused on reasoning while tools handle IO.
+  - `geo_utils.py`
+    - Geocoding via Nominatim (`geocode_city`) with hardcoded fallbacks.
+    - City bounding box calculation (`get_city_bounds`).
+  - `places_api.py`
+    - OpenTripMap search for attractions and shopping.
+    - Google Places search for restaurants.
+    - Hardcoded fallback places for major cities.
+  - `map_generator.py`
+    - Folium map generation with colour-coded markers from `PlacesList`.
 
 - **Utilities (`src/utils/`)**
   - `config.py`: Environment-driven configuration and Pydantic validation.
-  - `logger.py`: Centralized logging configuration (console + file).
+  - `logger.py`: Centralised logging configuration (console + file).
   - `validators.py`: Input validation and normalization for UI fields.
-  - `prompts.py`: System prompts for each agent.
+  - `prompts.py`: System prompts for each agent and orchestration task.
 
 - **Constants (`src/constants/`)**
   - `categories.py`: Shared interest and place categories.
@@ -68,88 +77,136 @@ between agents in the LangGraph workflow.
 
 Key fields:
 
-- `city: str`
-- `days: int`
-- `transportation: str`
-- `interests: list[str]`
-- `budget: str`
-- `advanced_preferences: dict[str, Any]`
-- `places: list[dict[str, Any]]`
-- `itinerary: list[dict[str, Any]]`
-- `travel_guide: str`
-- `map_data: dict[str, Any]`
-- `errors: list[str]`
+- Raw inputs (from UI):
+  - `city: str`
+  - `days: int`
+  - `transportation: str`
+  - `interests: list[str]`
+  - `budget: str`
+  - `advanced_preferences: dict[str, Any]`
+
+- Derived structured data:
+  - `preferences: dict[str, Any]` — serialised `InputPreferences`.
+  - `city_info: dict[str, Any]` — result of `geocode_city`.
+  - `places_list: dict[str, Any]` — serialised `PlacesList`.
+  - `places: list[dict[str, Any]]` — flattened list of all places.
+  - `itinerary_plan: dict[str, Any]` — serialised `ItineraryPlan`.
+  - `itinerary: list[dict[str, Any]]` — simplified day summaries for UI.
+
+- Final outputs:
+  - `travel_guide: str` — Markdown travel guide.
+  - `map_data: dict[str, Any]` — reserved for future map metadata.
+
+- Diagnostics:
+  - `errors: list[str]` — non-fatal issues encountered during processing.
 
 This state is:
 
-- **Initialized** from the validated user preferences in `app.py`.
+- **Initialised** from the validated user preferences in `app.py`.
 - **Augmented** step-by-step by each agent.
-- **Consumed** by the UI to render the final outputs.
+- **Consumed** by the UI to render the final outputs and map.
 
 ---
 
-## Planned Agent Responsibilities
+## Agent Responsibilities
 
-The five-agent design keeps each component focused and testable.
+The design uses four concrete agents plus the LangGraph supervisor as the
+coordinating “fifth agent”.
 
-### 1. City Context Analyst
-
-- Input:
-  - Raw user preferences (`city`, `days`, `transportation`, `interests`, `budget`, `advanced_preferences`).
-- Responsibilities:
-  - Interpret travel style and constraints.
-  - Identify neighborhoods/zones relevant to the user.
-  - Infer missing details (e.g., pace, time of day preferences).
-- Output:
-  - Enriched metadata on the city and user profile.
-  - Guidance for downstream agents via structured notes in `AgentState`.
-
-### 2. Places Researcher
+### 1. InputProcessorAgent (`input_processor.py`)
 
 - Input:
-  - Enriched user profile and city context from the analyst.
+  - Raw fields from `AgentState` (`city`, `days`, `transportation`, `interests`, `budget`, `advanced_preferences`).
 - Responsibilities:
-  - Call tools that wrap:
-    - OpenTripMap for broad coverage of POIs.
-    - Google Places for richer details and coverage.
-  - Filter and rank places based on interests, budget, and location.
-  - Deduplicate overlapping results across APIs.
+  - Construct and validate an `InputPreferences` model.
+  - Geocode the city via `geocode_city` (Nominatim + hardcoded fallbacks).
+  - Optionally call Groq with a lightweight prompt to sanity-check the inputs.
 - Output:
-  - Curated list of candidate places stored in `state["places"]`.
-  - Category tags, neighborhoods, and basic metadata.
+  - `state["preferences"]` — serialised `InputPreferences`.
+  - `state["city_info"]` — geocoding result.
+  - Appends advisory messages to `state["errors"]` when appropriate.
 
-### 3. Itinerary Designer
+### 2. PlacesFinderAgent (`places_finder.py`)
 
 - Input:
-  - Candidate places and user constraints.
+  - Normalised `preferences` and `city_info`.
 - Responsibilities:
-  - Group places into a **day-by-day** structure.
-  - Ensure geographic coherence and realistic travel times.
-  - Balance must-see highlights with local/hidden gems.
-  - Annotate each day with a short summary.
+  - Decide, using Groq tool/function-calling, which logical tools to execute:
+    - `search_attractions` → OpenTripMap (via `search_attractions_opentripmap`).
+    - `search_restaurants` → Google Places (via `search_restaurants_google_places`).
+    - `search_shopping` → OpenTripMap (via `search_shopping_areas`).
+  - Perform the corresponding API calls using `src/tools/places_api.py`.
+  - Apply hardcoded fallbacks when APIs are unavailable or return no data.
+  - Ensure a reasonably rich set of places (aiming for 30+).
 - Output:
-  - Structured itinerary stored in `state["itinerary"]`.
+  - `state["places_list"]` — serialised `PlacesList`.
+  - `state["places"]` — flattened list of all places for convenience.
+  - Non-fatal issues (e.g., fallback usage) appended to `state["errors"]`.
 
-### 4. Map Designer
+### 3. ItineraryPlannerAgent (`itinerary_planner.py`)
 
 - Input:
-  - Itinerary and places.
+  - Normalised `preferences`.
 - Responsibilities:
-  - Transform places and itinerary into a **map-friendly structure**.
-  - Assign marker coordinates, labels, and categories.
-  - Propose initial zoom/bounds and optional clustering.
+  - Build a deterministic baseline itinerary of `ItineraryPlan`:
+    - One `Day` per trip day.
+    - Each day with `TimeSlot`s for morning, afternoon, and evening.
+  - Optionally use Groq (text-only call) to generate high-level itinerary notes
+    describing pacing and structure.
 - Output:
-  - Map data stored in `state["map_data"]` ready for Folium rendering.
+  - `state["itinerary_plan"]` — serialised `ItineraryPlan`.
+  - `state["itinerary"]` — simplified list of days for display in Streamlit.
 
-### 5. Travel Guide Writer
+### 4. ContentFormatterAgent (`content_formatter.py`)
 
 - Input:
-  - Final itinerary and enriched place information.
+  - `preferences`, `itinerary_plan`, `places_list`, and optional `city_info`.
 - Responsibilities:
-  - Produce a human-readable, inspiring travel guide.
-  - Provide practical tips, ordering hints, and brief context for each stop.
+  - Call Groq with a detailed prompt to generate a Markdown travel guide.
+  - If the call fails, fall back to a template-based Markdown generator.
+  - Keep the guide concise, structured, and mobile-friendly.
 - Output:
-  - Narrative guide stored in `state["travel_guide"]`.
+  - `state["travel_guide"]` — Markdown travel guide string.
+  - Adds explanatory error when the fallback template is used.
+
+---
+
+## Tools Layer
+
+### Geocoding (`src/tools/geo_utils.py`)
+
+- `geocode_city(city: str) -> dict | None`
+  - Uses OpenStreetMap Nominatim to resolve city names to coordinates.
+  - Respects polite rate limiting (1 req/second).
+  - Falls back to a small set of hardcoded city coordinates when necessary.
+- `get_city_bounds(city_info: dict) -> dict`
+  - Converts Nominatim bounding boxes into a canonical `{north, south, east, west}` format.
+
+### Places APIs (`src/tools/places_api.py`)
+
+- `search_attractions_opentripmap(config, city, lat, lon, limit=40) -> list[Place]`
+  - Uses OpenTripMap to find attractions and landmarks near the city centre.
+- `search_shopping_areas(config, city, city_info, limit=20) -> list[Place]`
+  - Uses OpenTripMap to find markets, shopping malls, and commercial streets.
+- `search_restaurants_google_places(config, city, lat, lon, limit=30) -> list[Place]`
+  - Uses Google Places to find nearby restaurants when an API key is configured.
+- `fallback_places_for_city(city) -> list[Place]`
+  - Provides a small curated list of landmarks for major cities when APIs fail.
+
+### Map Generation (`src/tools/map_generator.py`)
+
+- `create_map(places_data: dict, city_info: dict | None) -> folium.Map`
+  - Parses a `PlacesList` dict and produces a Folium map.
+  - Determines the map centre from `city_info` or the average of place coordinates.
+  - Uses colour-coded circle markers:
+    - Attraction: `#0066cc` (blue)
+    - Restaurant: `#cc0000` (red)
+    - Shopping: `#00cc00` (green)
+    - Hotel: `#ffcc00` (yellow)
+    - Other: grey
+  - Popups show name, type, optional rating, and address.
+
+The Streamlit app embeds this map using `streamlit-folium`.
 
 ---
 
@@ -165,28 +222,24 @@ flowchart TD
 
     C --> D[LangGraph Supervisor]
 
-    D --> E[City Context Analyst]
-    E --> F[Places Researcher]
-    F --> G[Itinerary Designer]
-    G --> H[Map Designer]
-    H --> I[Travel Guide Writer]
-    I --> J[Final AgentState]
+    D --> E[InputProcessorAgent]
+    E --> F[PlacesFinderAgent]
+    F --> G[ItineraryPlannerAgent]
+    G --> H[ContentFormatterAgent]
+    H --> I[Final AgentState]
 
-    J --> K[Render Itinerary]
-    J --> L[Render Map]
-    J --> M[Render Travel Guide]
+    I --> J[Render Itinerary]
+    I --> K[Render Map via map_generator]
+    I --> L[Render Travel Guide]
 ```
 
-The **LangGraph supervisor** will, in Prompt 2:
+The LangGraph supervisor:
 
-- Instantiate nodes for each agent.
-- Define edges for the primary flow.
-- Optionally introduce:
-  - Error-handling branches.
-  - Short-circuit paths when an upstream failure occurs.
-
-For Prompt 1, the graph is intentionally minimal and simply passes the state
-through while recording a message that agents are not yet active.
+- Instantiates all agents with shared `AppConfig`.
+- Defines a sequential flow:
+  - `entry -> input_processor -> places_finder -> itinerary_planner -> content_formatter -> END`.
+- Ensures that `errors` are accumulated in `AgentState` rather than raising
+  unhandled exceptions.
 
 ---
 
@@ -202,9 +255,10 @@ Error handling is layered:
    - Validates presence and basic correctness of environment variables.
    - Exposes a non-crashing `try_load_config` helper for the UI.
 
-3. **Agent/Tool Failures (agent layer, Prompt 2)**
-   - Exceptions are caught and recorded into `state["errors"]`.
-   - Downstream agents can choose to continue with partial data.
+3. **Agent/Tool Failures (agent layer)**
+   - Each agent catches its own errors and appends messages to `state["errors"]`.
+   - External API and Groq failures are logged and converted into fallbacks
+     (hardcoded data, template-based guides, or partial results).
    - The UI can display warnings while still rendering best-effort results.
 
 4. **Logging**
@@ -220,11 +274,13 @@ Error handling is layered:
 - **Frontend**: Streamlit app served from `app.py`.
 - **Backend**: In-process Python code (no separate microservices).
 - **External Services**:
-  - Groq API for all LLM calls.
+  - Groq API for all LLM calls (input processor, itinerary notes, content formatter, places decider).
   - OpenTripMap and Google Places for place data.
+  - OpenStreetMap/Nominatim for geocoding.
 - **Configuration**:
   - `.env` in local development.
   - Streamlit secrets or environment variables in production.
 
-This simple deployment model keeps infrastructure overhead minimal while still
-demonstrating a powerful, multi-agent AI application.
+This architecture keeps infrastructure overhead minimal while still
+demonstrating a powerful, multi-agent AI application with external API
+integration and rich map-based output.
