@@ -1,0 +1,18 @@
+[server]
+headless = true
+runOnSave = true
+enableCORS = false
+
+[client]
+toolbarMode = "auto"
+
+[theme]
+base = "light"
+primaryColor = "#1E88E5"
+backgroundColor = "#F9FAFB"
+secondaryBackgroundColor = "#FFFFFF"
+textColor = "#111827"
+font = "sans serif"
+
+[logger]
+level = "info"
