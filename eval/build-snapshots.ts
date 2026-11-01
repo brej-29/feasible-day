@@ -4,7 +4,7 @@
  * Public Overpass servers are busy: queries are small, sequential, with backoff.
  */
 import { mkdirSync, writeFileSync, existsSync } from "node:fs";
-import { CITIES } from "./cities";
+import { CITIES } from "../src/core/cities";
 
 const RADIUS_M = 3500;
 const MIRRORS = [
