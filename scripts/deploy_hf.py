@@ -22,7 +22,7 @@ colorFrom: yellow
 colorTo: gray
 sdk: static
 pinned: false
-short_description: Walking day plans checked against opening hours and walking time
+short_description: Walking day plans checked against opening hours
 ---
 """
 (dist / "README.md").write_text(card, encoding="utf-8")

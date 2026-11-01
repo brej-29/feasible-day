@@ -1,4 +1,5 @@
 import * as maplibregl from "maplibre-gl";
+import workerUrl from "maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { useEffect, useRef } from "react";
 
@@ -8,6 +9,9 @@ export interface Pin {
   label: string;
   state: "open" | "unknown" | "closed";
 }
+
+// Vite bundles the worker with its shared chunk into one asset; maplibre 6 would otherwise look for loose files next to the main bundle
+maplibregl.setWorkerUrl(workerUrl);
 
 // OpenFreeMap: free vector tiles, no API key. Style URL is config so a swap does not touch code.
 const STYLE = import.meta.env.VITE_MAP_STYLE ?? "https://tiles.openfreemap.org/styles/positron";
