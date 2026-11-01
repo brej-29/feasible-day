@@ -1,18 +1,28 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { CITIES } from "../core/cities";
+import { CITIES, type City } from "../core/cities";
 import type { Evidence } from "../core/evidence";
 import { planTrip } from "../core/planner";
 import type { Profile, Snapshot } from "../core/types";
-import { addDays, CITY_SLUGS, labelDate, loadEvidence, loadSnapshot, parseDate, tomorrow } from "./data";
+import { addDays, CITY_SLUGS, labelDate, loadEvidence, loadNotices, loadSnapshot, parseDate, tomorrow } from "./data";
 import { EvidenceView } from "./EvidenceView";
 import { Diamond } from "./Icons";
 import { MapView, type Pin } from "./MapView";
 import { MethodView } from "./MethodView";
+import { Notices } from "./Notices";
+import { RequestView } from "./RequestView";
+import type { NoticeFile } from "../core/notices";
 import { DaySummary, reportFor, Rulebook, Timeline } from "./PlanView";
 
-type View = "plan" | "map" | "evidence" | "method";
+type View = "plan" | "map" | "evidence" | "method" | "request";
 const PROFILES: Profile[] = ["culture", "nature", "food", "mixed"];
-const TABS: [View, string][] = [["plan", "Plan"], ["map", "Map"], ["evidence", "Evidence"], ["method", "Method"]];
+const TABS: [View, string][] = [["plan", "Plan"], ["map", "Map"], ["evidence", "Evidence"], ["method", "Method"], ["request", "Request a city"]];
+
+const GROUPS = Object.entries(
+  CITIES.filter((c) => CITY_SLUGS.includes(c.slug)).reduce<Record<string, City[]>>((acc, c) => {
+    (acc[c.region ? `${c.country}, ${c.region}` : c.country] ??= []).push(c);
+    return acc;
+  }, {}),
+);
 
 function validDate(s?: string): s is string {
   return !!s && /^\d{4}-\d{2}-\d{2}$/.test(s) && addDays(s, 0) === s;
@@ -41,11 +51,12 @@ export function App() {
   const [err, setErr] = useState<string | null>(null);
   const [ev, setEv] = useState<Evidence | null>(null);
   const [evErr, setEvErr] = useState<string | null>(null);
+  const [notices, setNotices] = useState<NoticeFile | null>(null);
 
   useEffect(() => {
     const onHash = () => {
       const h = fromHash();
-      setSlug(h.slug); setProfile(h.profile); setDate(h.date); setDays(h.days);
+      setSlug(h.slug); setProfile(h.profile); setDate(h.date); setDays(h.days); setView((v) => (v === "map" ? v : "plan"));
     };
     window.addEventListener("hashchange", onHash);
     return () => window.removeEventListener("hashchange", onHash);
@@ -66,6 +77,8 @@ export function App() {
   useEffect(() => {
     if (view === "evidence" && !ev && !evErr) loadEvidence().then(setEv).catch((e: Error) => setEvErr(e.message));
   }, [view, ev, evErr]);
+
+  useEffect(() => { loadNotices().then(setNotices); }, []);
 
   const dates = useMemo(() => Array.from({ length: days }, (_, i) => addDays(date, i)), [date, days]);
   const plans = useMemo(() => (snap ? planTrip(snap, profile, dates.map(parseDate)) : []), [snap, profile, dates]);
@@ -101,7 +114,9 @@ export function App() {
       <section className="controls" aria-label="Plan settings">
         <label>City
           <select value={slug} onChange={(e) => setSlug(e.target.value)}>
-            {CITIES.filter((c) => CITY_SLUGS.includes(c.slug)).map((c) => <option key={c.slug} value={c.slug}>{c.name}</option>)}
+            {GROUPS.map(([g, list]) => (
+              <optgroup key={g} label={g}>{list.map((c) => <option key={c.slug} value={c.slug}>{c.name}</option>)}</optgroup>
+            ))}
           </select>
         </label>
         <fieldset>
@@ -154,6 +169,8 @@ export function App() {
                   <h1 className="h-day">
                     {city?.name}, {labelDate(dates[Math.min(dayIx, dates.length - 1)])}
                   </h1>
+                  {city?.ext && <p className="state">Added city: walking times are straight-line estimates and ran too short on some routed re-checks (see Evidence). Opening hours are often missing in OpenStreetMap here.</p>}
+                  {notices && <Notices items={notices.cities[slug] ?? []} checked={notices.checked?.[slug] ?? notices.generatedAt.slice(0, 10)} />}
                   {sparse ? (
                     <p className="state">
                       Only {plan.stops.length} place{plan.stops.length === 1 ? "" : "s"} could be scheduled here that day. The map data for {city?.name} is thin or most venues are closed.
@@ -182,6 +199,7 @@ export function App() {
           </div>
         )}
         {view === "method" && <div className="pane wide"><MethodView /></div>}
+        {view === "request" && <div className="pane wide"><RequestView /></div>}
       </main>
 
       <footer className="foot">

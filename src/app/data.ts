@@ -1,4 +1,5 @@
 import type { Evidence } from "../core/evidence";
+import { cleanNotice, type NoticeFile } from "../core/notices";
 import type { DayDate, Snapshot } from "../core/types";
 
 const modules = import.meta.glob("../../data/snapshots/*.json", { import: "default" }) as Record<string, () => Promise<Snapshot>>;
@@ -15,6 +16,21 @@ export async function loadEvidence(): Promise<Evidence> {
   const res = await fetch(`${import.meta.env.BASE_URL}evidence.json`);
   if (!res.ok) throw new Error(`evidence.json: HTTP ${res.status}`);
   return res.json();
+}
+
+/** Optional: absent until the first monthly run, and a bad file must never break the app. */
+export async function loadNotices(): Promise<NoticeFile | null> {
+  try {
+    const res = await fetch(`${import.meta.env.BASE_URL}notices.json`);
+    if (!res.ok) return null;
+    const j = (await res.json()) as NoticeFile;
+    const cities = Object.fromEntries(
+      Object.entries(j.cities ?? {}).map(([k, v]) => [k, (v ?? []).map(cleanNotice).filter((n) => n !== null)]),
+    );
+    return { generatedAt: String(j.generatedAt ?? ""), cities, checked: j.checked ?? {} };
+  } catch {
+    return null;
+  }
 }
 
 export const pad = (n: number) => String(n).padStart(2, "0");
