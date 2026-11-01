@@ -132,6 +132,7 @@ async function main() {
       scenarios: ids.length,
       feasibleDay: { k, n: rs.length, rate: k / rs.length, wilson95: wilson(k, rs.length), clusterBootstrap95: bootstrapCI(feasPer) },
       scheduleFeasibleGivenGrounding: mean(rs.map((r) => (r.r.scheduleFeasible ? 1 : 0))),
+      scheduleFeasibleGivenGroundingWilson95: wilson(rs.filter((r) => r.r.scheduleFeasible).length, rs.length),
       failureShare: {
         notParsed: mean(rs.map((r) => (r.parsed ? 0 : 1))),
         fewerThan4Stops: mean(rs.map((r) => (r.n < 4 ? 1 : 0))),
@@ -187,10 +188,12 @@ async function main() {
   });
 
   const hyp = (() => {
+    const lenient = (s: string) => (summary[s] as { scheduleFeasibleGivenGroundingWilson95: number[] } | undefined)?.scheduleFeasibleGivenGroundingWilson95[1];
     const g = (s: string) => summary[s] as { feasibleDay: { wilson95: number[]; rate: number }; meanStops: number; profileMatch: number; detourRatio: number } | undefined;
     const p = g("planner"), a = g("llm-70b"), b = g("llm-8b");
     return {
       H1_llmMostlyInfeasible: a && b ? a.feasibleDay.wilson95[1] < 0.5 && b.feasibleDay.wilson95[1] < 0.5 : null,
+      H1b_llmMostlyInfeasibleEvenIgnoringUnmatchedStops: lenient("llm-70b") !== undefined && lenient("llm-8b") !== undefined ? lenient("llm-70b")! < 0.5 && lenient("llm-8b")! < 0.5 : null,
       H2_plannerFeasible: p ? p.feasibleDay.rate >= 0.95 && p.feasibleDay.wilson95[0] >= 0.9 : null,
       H3_notByDoingLess: p ? p.meanStops >= 6 && p.profileMatch >= 0.8 && p.detourRatio <= 1.15 : null,
       H4_ablations: {

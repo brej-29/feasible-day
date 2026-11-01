@@ -20,13 +20,13 @@ const pct = (x: number | null | undefined, d = 0) => (x == null || Number.isNaN(
 function RateChart({ summary }: { summary: Record<string, SystemSummary> }) {
   return (
     <figure className="ratechart">
-      <figcaption>Share of test days that pass every rule, with 95% interval</figcaption>
+      <figcaption>Share of test days that pass every rule, with 95% interval. Small print: the share if stops that could not be matched to a place are ignored</figcaption>
       <ul>
         {ORDER.filter((k) => summary[k]).map((k) => {
           const s = summary[k].feasibleDay;
           return (
             <li key={k} className={k === "planner" ? "is-ours" : ""}>
-              <span className="rc-name">{NAMES[k]}</span>
+              <span className="rc-name">{NAMES[k]}<small>{pct(summary[k].scheduleFeasibleGivenGrounding)} ignoring unmatched stops</small></span>
               <span className="rc-track" role="img" aria-label={`${NAMES[k]}: ${pct(s.rate, 1)}, interval ${pct(s.wilson95[0])} to ${pct(s.wilson95[1])}`}>
                 <span className="rc-bar" style={{ width: `${s.rate * 100}%` }} />
                 <span className="rc-whisker" style={{ left: `${s.wilson95[0] * 100}%`, width: `${(s.wilson95[1] - s.wilson95[0]) * 100}%` }} />
@@ -201,6 +201,7 @@ export function EvidenceView({ ev }: { ev: Evidence }) {
           <thead><tr><th scope="col">Hypothesis</th><th scope="col">Result</th></tr></thead>
           <tbody>
             <tr><th scope="row">H1 LLM-only plans are mostly infeasible</th><td>{mark(hyp.H1_llmMostlyInfeasible)}</td></tr>
+            <tr><th scope="row">H1 also holds when unmatched stops are ignored</th><td>{mark(hyp.H1b_llmMostlyInfeasibleEvenIgnoringUnmatchedStops)}</td></tr>
             <tr><th scope="row">H2 The planner produces feasible days (95% or more)</th><td>{mark(hyp.H2_plannerFeasible)}</td></tr>
             <tr><th scope="row">H3 It does not win by doing less</th><td>{mark(hyp.H3_notByDoingLess)}</td></tr>
           </tbody>

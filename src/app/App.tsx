@@ -93,6 +93,7 @@ export function App() {
         </nav>
       </header>
 
+      {(view === "plan" || view === "map") && (
       <section className="controls" aria-label="Plan settings">
         <label>City
           <select value={slug} onChange={(e) => setSlug(e.target.value)}>
@@ -123,6 +124,7 @@ export function App() {
           </div>
         </fieldset>
       </section>
+      )}
 
       <main className="stage">
         {(view === "plan" || view === "map") && (

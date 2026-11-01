@@ -34,6 +34,7 @@ export interface SystemSummary {
   scenarios: number;
   feasibleDay: { k: number; n: number; rate: number; wilson95: [number, number]; clusterBootstrap95: [number, number] };
   scheduleFeasibleGivenGrounding: number;
+  scheduleFeasibleGivenGroundingWilson95: [number, number];
   failureShare: Record<string, number>;
   stopLevel: {
     stops: number;

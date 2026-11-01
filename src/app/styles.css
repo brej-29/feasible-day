@@ -41,7 +41,8 @@ h1, h2, h3 { font-family: var(--cond); font-weight: 700; margin: 0; letter-spaci
 * { scrollbar-width: thin; scrollbar-color: var(--ink-2) transparent; }
 
 /* ---------- shell ---------- */
-.app { display: grid; grid-template-rows: auto auto minmax(0, 1fr) auto; height: 100dvh; }
+.app { display: flex; flex-direction: column; height: 100dvh; }
+.stage { flex: 1 1 0; }
 .top {
   display: flex; align-items: center; justify-content: space-between; gap: 16px;
   padding: 0 var(--pad); height: 52px; background: var(--ink); color: #fff;
@@ -186,6 +187,7 @@ h1, h2, h3 { font-family: var(--cond); font-weight: 700; margin: 0; letter-spaci
 .ratechart ul, .covlist { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
 .ratechart li, .covlist li { display: grid; grid-template-columns: 170px 1fr 96px; align-items: center; gap: 12px; }
 .rc-name { font-weight: 600; }
+.rc-name small { display: block; font: 400 12px var(--font); color: var(--ink-2); }
 .rc-track { position: relative; height: 22px; background: var(--paper); border: 2px solid var(--ink); border-radius: 2px; }
 .rc-bar { position: absolute; inset: 0 auto 0 0; background: var(--ink); transform-origin: left; animation: grow 0.8s var(--ease) both; }
 .is-ours .rc-bar { background: var(--plate); box-shadow: inset -2px 0 0 var(--ink); }

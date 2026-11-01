@@ -1,0 +1,45 @@
+{
+  "engine": "OSRM foot profile, routing.openstreetmap.de",
+  "plans": 96,
+  "plansWhereEveryTransferFitsRoutedTime": 91,
+  "share": 0.9479166666666666,
+  "transfers": 672,
+  "transfersFitting": 664,
+  "transferShare": 0.9880952380952381,
+  "transfersSkippedNoRoute": 0,
+  "slackMin": 5,
+  "worstShortfallsMin": [
+    {
+      "scenario": "paris-food-mon",
+      "short": 11.120000000000001
+    },
+    {
+      "scenario": "paris-food-sun",
+      "short": 11.120000000000001
+    },
+    {
+      "scenario": "paris-mixed-mon",
+      "short": 11.120000000000001
+    },
+    {
+      "scenario": "paris-culture-mon",
+      "short": 10.381666666666666
+    },
+    {
+      "scenario": "paris-mixed-mon",
+      "short": 10.381666666666666
+    },
+    {
+      "scenario": "paris-mixed-sun",
+      "short": 10.381666666666666
+    },
+    {
+      "scenario": "paris-food-mon",
+      "short": 7.106666666666666
+    },
+    {
+      "scenario": "paris-food-sun",
+      "short": 7.106666666666666
+    }
+  ]
+}
