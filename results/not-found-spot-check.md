@@ -1,6 +1,6 @@
 # Spot-check of LLM stops that could not be matched
 
-Method: a seeded random sample of 45 distinct names from `results/not-found-names.json` (system `llm-70b`, LCG seed 12345), read by hand by the repo author on 2026-11-01.
+Method: a seeded random sample of 45 distinct names from `results/not-found-names.json` (system `llm-70b`, LCG seed 12345), read and labelled by the AI assistant that built this repo on 2026-11-01, not by the repo owner.
 One reader, no second rater, no live lookup of every name: treat the split as indicative, not measured.
 
 | Reading | Count of 45 | Examples |

@@ -79,7 +79,13 @@ export function dayHours(poi: Poi, date: DayDate, citySlug: string): DayHours {
     const to = new Date(date.y, date.m - 1, date.d + 2, 0, 0, 0);
     const spans: Span[] = [];
     let unknown = false;
-    for (const [a, b, isUnknown] of oh.getOpenIntervals(from, to)) {
+    let intervals: ReturnType<typeof oh.getOpenIntervals> = [];
+    try {
+      intervals = oh.getOpenIntervals(from, to);
+    } catch {
+      unknown = true; // parses but cannot be evaluated for this date
+    }
+    for (const [a, b, isUnknown] of intervals) {
       if (isUnknown) unknown = true;
       // 2 days requested, keep what starts before the end of the visit day
       const s = (a.getTime() - from.getTime()) / 60000;

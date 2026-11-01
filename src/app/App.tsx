@@ -14,12 +14,16 @@ type View = "plan" | "map" | "evidence" | "method";
 const PROFILES: Profile[] = ["culture", "nature", "food", "mixed"];
 const TABS: [View, string][] = [["plan", "Plan"], ["map", "Map"], ["evidence", "Evidence"], ["method", "Method"]];
 
+function validDate(s?: string): s is string {
+  return !!s && /^\d{4}-\d{2}-\d{2}$/.test(s) && addDays(s, 0) === s;
+}
+
 function fromHash() {
   const [slug, profile, date, days] = location.hash.replace(/^#\/?/, "").split("/");
   return {
     slug: CITY_SLUGS.includes(slug) ? slug : "paris",
     profile: (PROFILES.includes(profile as Profile) ? profile : "culture") as Profile,
-    date: /^\d{4}-\d{2}-\d{2}$/.test(date ?? "") ? date : tomorrow(),
+    date: validDate(date) ? date : tomorrow(),
     days: Math.min(3, Math.max(1, Number(days) || 1)),
   };
 }
@@ -82,7 +86,7 @@ export function App() {
   return (
     <div className="app" data-view={view}>
       <header className="top">
-        <a className="brand" href="#/" onClick={() => setView("plan")}>
+        <a className="brand" href={`#/${slug}/${profile}/${date}/${days}`} onClick={() => setView("plan")}>
           <Diamond size={26} />
           <span>Feasible Day</span>
         </a>

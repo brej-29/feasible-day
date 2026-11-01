@@ -20,6 +20,7 @@ type Cache = Record<string, Hit | null>;
 const cache: Cache = existsSync(FILE) ? JSON.parse(readFileSync(FILE, "utf8")) : {};
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 let last = 0;
+let fresh = 0;
 
 export const save = () => writeFileSync(FILE, JSON.stringify(cache, null, 0));
 
@@ -49,6 +50,7 @@ export async function confirmPlace(name: string, slug: string, allowCall: boolea
       const hit = rows.map((x) => ({ lat: +x.lat, lon: +x.lon, display: x.display_name }))
         .find((x) => haversineKm(c, x) <= MAX_KM && similar(name, x.display));
       cache[key] = hit ?? null;
+      if (++fresh % 20 === 0) save();
       return cache[key];
     } catch { await sleep(5000); }
   }

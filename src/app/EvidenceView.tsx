@@ -119,7 +119,7 @@ function Compare({ ev }: { ev: Evidence }) {
   useEffect(() => {
     let live = true;
     const sc = ev.scenarios.find((s) => s.id === id);
-    if (!sc) return;
+    if (!sc) { setMine(null); return; }
     loadSnapshot(slug).then((snap) => {
       const date = parseDate(day === "mon" ? "2026-11-16" : "2026-11-22");
       const plan = planDay(snap, profile, date);
