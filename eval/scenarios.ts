@@ -16,8 +16,9 @@ export interface Scenario {
   day: (typeof DAYS)[number];
 }
 
-export const scenarios = (): Scenario[] =>
-  CITIES.flatMap((c) =>
+/** The pre-registered cohort by default (12 cities); `ext` selects the cities added later, which never tune the planner. */
+export const scenarios = (ext = false): Scenario[] =>
+  CITIES.filter((c) => !!c.ext === ext).flatMap((c) =>
     PROFILES.flatMap((profile) =>
       DAYS.map((day) => ({ id: `${c.slug}-${profile}-${day.key}`, slug: c.slug, city: c.name, profile, day })),
     ),

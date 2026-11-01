@@ -3,11 +3,11 @@
  *   npm run eval                      offline, uses stored LLM outputs
  *   npm run eval -- --llm --reps 3    also calls the LLMs for any missing outputs (needs HF_TOKEN)
  */
-import { existsSync, mkdirSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { CITIES } from "../src/core/cities";
 import { dayHours } from "../src/core/hours";
 import { planDay } from "../src/core/planner";
-import type { EvPlan, Evidence } from "../src/core/evidence";
+import type { EvPlan, Evidence, Routed } from "../src/core/evidence";
 import { verifyDay, type ExtStop, type Report } from "../src/core/verify";
 import { matchPoi } from "../src/core/names";
 import { confirmPlace, save } from "./geocode";
@@ -75,6 +75,42 @@ function evPlan(s: Scenario, stops: ExtStop[] | null): EvPlan {
   };
 }
 
+/** Cities added after pre-registration: no LLM baselines (cost), same planner and verifier, reported apart from the headline. */
+function extensionSummary() {
+  const sc = scenarios(true).filter((s) => existsSync(`data/snapshots/${s.slug}.json`));
+  if (!sc.length) return null;
+  const rows: Row[] = sc.flatMap((s) => {
+    const snap = loadSnapshot(s.slug);
+    return [
+      score(s, "legacy", 0, legacyPlan(snap, s.profile)),
+      score(s, "planner", 0, asExt(planDay(snap, s.profile, s.day.date))),
+      score(s, "planner-no-hours", 0, asExt(planDay(snap, s.profile, s.day.date, { ignoreHours: true }))),
+      score(s, "planner-no-routing", 0, asExt(planDay(snap, s.profile, s.day.date, { noRouting: true }))),
+    ];
+  });
+  const agg = (rs: Row[]) => {
+    const k = rs.filter((r) => r.r.feasible).length;
+    const grounded = rs.reduce((a, r) => a + r.r.grounded, 0);
+    const known = rs.reduce((a, r) => a + r.r.knownHours, 0);
+    return {
+      runs: rs.length, feasible: k, rate: k / rs.length, wilson95: wilson(k, rs.length),
+      meanStops: mean(rs.map((r) => r.n)),
+      unverifiedShare: grounded ? (grounded - known) / grounded : null,
+      closedStopsPerPlan: mean(rs.map((r) => r.r.closedAtVisit)),
+      fewerThan4: mean(rs.map((r) => (r.n < 4 ? 1 : 0))),
+    };
+  };
+  const systems = Object.fromEntries(["legacy", "planner", "planner-no-hours", "planner-no-routing"].map((x) => [x, agg(rows.filter((r) => r.system === x))]));
+  const cities = [...new Set(sc.map((s) => s.slug))].map((slug) => {
+    const cs = rows.filter((r) => r.system === "planner" && sc.find((s) => s.id === r.scenario)!.slug === slug);
+    return { slug, city: sc.find((s) => s.slug === slug)!.city, ...agg(cs) };
+  });
+  const f = "results/osrm-check-extension.json";
+  const o = existsSync(f) ? (JSON.parse(readFileSync(f, "utf8")) as { plans: number; plansWhereEveryTransferFitsRoutedTime: number; transfers: number; transfersFitting: number; perCity: Record<string, Routed> }) : null;
+  const routed = o ? { plans: o.plans, plansOk: o.plansWhereEveryTransferFitsRoutedTime, transfers: o.transfers, transfersOk: o.transfersFitting, perCity: o.perCity } : undefined;
+  return { days: sc.length, routed, systems, cities };
+}
+
 async function main() {
   const all = scenarios().filter((s) => existsSync(`data/snapshots/${s.slug}.json`));
   const missing = CITIES.filter((c) => !existsSync(`data/snapshots/${c.slug}.json`)).map((c) => c.slug);
@@ -110,6 +146,8 @@ async function main() {
   }
 
   save();
+
+  const extension = extensionSummary();
 
   // ---- summary -------------------------------------------------------------------------
   const ids = [...new Set(all.map((s) => s.id))];
@@ -216,11 +254,12 @@ async function main() {
   mkdirSync("public", { recursive: true });
   const evidence: Evidence = {
     reps: REPS, models, summary: summary as Evidence["summary"], ablations,
-    hypotheses: hyp as Record<string, unknown>, coverage,
+    hypotheses: hyp as Record<string, unknown>, coverage, extension,
     scenarios: all.map((x) => ({ id: x.id, slug: x.slug, city: x.city, profile: x.profile, day: x.day.key })), showcase,
   };
   writeFileSync("public/evidence.json", JSON.stringify(evidence));
   writeFileSync("results/hours-coverage.json", JSON.stringify(coverage, null, 2));
+  writeFileSync("results/extension.json", JSON.stringify(extension, null, 2));
   console.log(JSON.stringify({ hyp, ablations }, null, 2));
   for (const [sys, v] of Object.entries(summary)) {
     const x = v as { runs: number; feasibleDay: { rate: number; wilson95: number[] }; meanStops: number; profileMatch: number; detourRatio: number };

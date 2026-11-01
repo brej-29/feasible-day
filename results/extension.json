@@ -1,0 +1,382 @@
+{
+  "days": 120,
+  "routed": {
+    "plans": 120,
+    "plansOk": 71,
+    "transfers": 834,
+    "transfersOk": 766,
+    "perCity": {
+      "Chennai": {
+        "plans": 8,
+        "plansOk": 2,
+        "transfers": 56,
+        "transfersOk": 50
+      },
+      "Madurai": {
+        "plans": 8,
+        "plansOk": 4,
+        "transfers": 50,
+        "transfersOk": 46
+      },
+      "Ernakulam (Kochi)": {
+        "plans": 8,
+        "plansOk": 2,
+        "transfers": 56,
+        "transfersOk": 48
+      },
+      "Fort Kochi": {
+        "plans": 8,
+        "plansOk": 8,
+        "transfers": 56,
+        "transfersOk": 56
+      },
+      "Thiruvananthapuram": {
+        "plans": 8,
+        "plansOk": 6,
+        "transfers": 56,
+        "transfersOk": 54
+      },
+      "Bengaluru": {
+        "plans": 8,
+        "plansOk": 8,
+        "transfers": 56,
+        "transfersOk": 56
+      },
+      "Hyderabad": {
+        "plans": 8,
+        "plansOk": 0,
+        "transfers": 56,
+        "transfersOk": 32
+      },
+      "Pune": {
+        "plans": 8,
+        "plansOk": 3,
+        "transfers": 56,
+        "transfersOk": 50
+      },
+      "Kyoto": {
+        "plans": 8,
+        "plansOk": 8,
+        "transfers": 56,
+        "transfersOk": 56
+      },
+      "Osaka": {
+        "plans": 8,
+        "plansOk": 8,
+        "transfers": 56,
+        "transfersOk": 56
+      },
+      "Seoul": {
+        "plans": 8,
+        "plansOk": 8,
+        "transfers": 56,
+        "transfersOk": 56
+      },
+      "Busan": {
+        "plans": 8,
+        "plansOk": 4,
+        "transfers": 56,
+        "transfersOk": 52
+      },
+      "Beijing": {
+        "plans": 8,
+        "plansOk": 2,
+        "transfers": 56,
+        "transfersOk": 50
+      },
+      "Shanghai": {
+        "plans": 8,
+        "plansOk": 6,
+        "transfers": 56,
+        "transfersOk": 54
+      },
+      "Xi'an": {
+        "plans": 8,
+        "plansOk": 2,
+        "transfers": 56,
+        "transfersOk": 50
+      }
+    }
+  },
+  "systems": {
+    "legacy": {
+      "runs": 120,
+      "feasible": 0,
+      "rate": 0,
+      "wilson95": [
+        0,
+        0.031020271055929517
+      ],
+      "meanStops": 5.933333333333334,
+      "unverifiedShare": 0.6404494382022472,
+      "closedStopsPerPlan": 0.5833333333333334,
+      "fewerThan4": 0
+    },
+    "planner": {
+      "runs": 120,
+      "feasible": 120,
+      "rate": 1,
+      "wilson95": [
+        0.9689797289440706,
+        1
+      ],
+      "meanStops": 7.95,
+      "unverifiedShare": 0.590146750524109,
+      "closedStopsPerPlan": 0,
+      "fewerThan4": 0
+    },
+    "planner-no-hours": {
+      "runs": 120,
+      "feasible": 49,
+      "rate": 0.4083333333333333,
+      "wilson95": [
+        0.32455990283507163,
+        0.4977938135251822
+      ],
+      "meanStops": 7.95,
+      "unverifiedShare": 0.5932914046121593,
+      "closedStopsPerPlan": 0.8833333333333333,
+      "fewerThan4": 0
+    },
+    "planner-no-routing": {
+      "runs": 120,
+      "feasible": 106,
+      "rate": 0.8833333333333333,
+      "wilson95": [
+        0.8136649880680831,
+        0.9292194707890377
+      ],
+      "meanStops": 7.808333333333334,
+      "unverifiedShare": 0.4951974386339381,
+      "closedStopsPerPlan": 0,
+      "fewerThan4": 0
+    }
+  },
+  "cities": [
+    {
+      "slug": "chennai",
+      "city": "Chennai",
+      "runs": 8,
+      "feasible": 8,
+      "rate": 1,
+      "wilson95": [
+        0.6755843804891231,
+        1
+      ],
+      "meanStops": 8,
+      "unverifiedShare": 0.65625,
+      "closedStopsPerPlan": 0,
+      "fewerThan4": 0
+    },
+    {
+      "slug": "madurai",
+      "city": "Madurai",
+      "runs": 8,
+      "feasible": 8,
+      "rate": 1,
+      "wilson95": [
+        0.6755843804891231,
+        1
+      ],
+      "meanStops": 7.25,
+      "unverifiedShare": 0.41379310344827586,
+      "closedStopsPerPlan": 0,
+      "fewerThan4": 0
+    },
+    {
+      "slug": "ernakulam",
+      "city": "Ernakulam (Kochi)",
+      "runs": 8,
+      "feasible": 8,
+      "rate": 1,
+      "wilson95": [
+        0.6755843804891231,
+        1
+      ],
+      "meanStops": 8,
+      "unverifiedShare": 0.59375,
+      "closedStopsPerPlan": 0,
+      "fewerThan4": 0
+    },
+    {
+      "slug": "fort-kochi",
+      "city": "Fort Kochi",
+      "runs": 8,
+      "feasible": 8,
+      "rate": 1,
+      "wilson95": [
+        0.6755843804891231,
+        1
+      ],
+      "meanStops": 8,
+      "unverifiedShare": 0.5625,
+      "closedStopsPerPlan": 0,
+      "fewerThan4": 0
+    },
+    {
+      "slug": "thiruvananthapuram",
+      "city": "Thiruvananthapuram",
+      "runs": 8,
+      "feasible": 8,
+      "rate": 1,
+      "wilson95": [
+        0.6755843804891231,
+        1
+      ],
+      "meanStops": 8,
+      "unverifiedShare": 0.53125,
+      "closedStopsPerPlan": 0,
+      "fewerThan4": 0
+    },
+    {
+      "slug": "bengaluru",
+      "city": "Bengaluru",
+      "runs": 8,
+      "feasible": 8,
+      "rate": 1,
+      "wilson95": [
+        0.6755843804891231,
+        1
+      ],
+      "meanStops": 8,
+      "unverifiedShare": 0.578125,
+      "closedStopsPerPlan": 0,
+      "fewerThan4": 0
+    },
+    {
+      "slug": "hyderabad",
+      "city": "Hyderabad",
+      "runs": 8,
+      "feasible": 8,
+      "rate": 1,
+      "wilson95": [
+        0.6755843804891231,
+        1
+      ],
+      "meanStops": 8,
+      "unverifiedShare": 0.65625,
+      "closedStopsPerPlan": 0,
+      "fewerThan4": 0
+    },
+    {
+      "slug": "pune",
+      "city": "Pune",
+      "runs": 8,
+      "feasible": 8,
+      "rate": 1,
+      "wilson95": [
+        0.6755843804891231,
+        1
+      ],
+      "meanStops": 8,
+      "unverifiedShare": 0.6875,
+      "closedStopsPerPlan": 0,
+      "fewerThan4": 0
+    },
+    {
+      "slug": "kyoto",
+      "city": "Kyoto",
+      "runs": 8,
+      "feasible": 8,
+      "rate": 1,
+      "wilson95": [
+        0.6755843804891231,
+        1
+      ],
+      "meanStops": 8,
+      "unverifiedShare": 0.578125,
+      "closedStopsPerPlan": 0,
+      "fewerThan4": 0
+    },
+    {
+      "slug": "osaka",
+      "city": "Osaka",
+      "runs": 8,
+      "feasible": 8,
+      "rate": 1,
+      "wilson95": [
+        0.6755843804891231,
+        1
+      ],
+      "meanStops": 8,
+      "unverifiedShare": 0.703125,
+      "closedStopsPerPlan": 0,
+      "fewerThan4": 0
+    },
+    {
+      "slug": "seoul",
+      "city": "Seoul",
+      "runs": 8,
+      "feasible": 8,
+      "rate": 1,
+      "wilson95": [
+        0.6755843804891231,
+        1
+      ],
+      "meanStops": 8,
+      "unverifiedShare": 0.609375,
+      "closedStopsPerPlan": 0,
+      "fewerThan4": 0
+    },
+    {
+      "slug": "busan",
+      "city": "Busan",
+      "runs": 8,
+      "feasible": 8,
+      "rate": 1,
+      "wilson95": [
+        0.6755843804891231,
+        1
+      ],
+      "meanStops": 8,
+      "unverifiedShare": 0.625,
+      "closedStopsPerPlan": 0,
+      "fewerThan4": 0
+    },
+    {
+      "slug": "beijing",
+      "city": "Beijing",
+      "runs": 8,
+      "feasible": 8,
+      "rate": 1,
+      "wilson95": [
+        0.6755843804891231,
+        1
+      ],
+      "meanStops": 8,
+      "unverifiedShare": 0.5625,
+      "closedStopsPerPlan": 0,
+      "fewerThan4": 0
+    },
+    {
+      "slug": "shanghai",
+      "city": "Shanghai",
+      "runs": 8,
+      "feasible": 8,
+      "rate": 1,
+      "wilson95": [
+        0.6755843804891231,
+        1
+      ],
+      "meanStops": 8,
+      "unverifiedShare": 0.671875,
+      "closedStopsPerPlan": 0,
+      "fewerThan4": 0
+    },
+    {
+      "slug": "xian",
+      "city": "Xi'an",
+      "runs": 8,
+      "feasible": 8,
+      "rate": 1,
+      "wilson95": [
+        0.6755843804891231,
+        1
+      ],
+      "meanStops": 8,
+      "unverifiedShare": 0.40625,
+      "closedStopsPerPlan": 0,
+      "fewerThan4": 0
+    }
+  ]
+}

@@ -60,6 +60,31 @@ export interface Coverage {
   city: string;
   nonFood: Record<string, { pois: number; withHours: number; knownOnTestDays: number; holidayClausesDropped: number }>;
 }
+export interface ExtAgg {
+  runs: number;
+  feasible: number;
+  rate: number;
+  wilson95: [number, number];
+  meanStops: number;
+  unverifiedShare: number | null;
+  closedStopsPerPlan: number;
+  fewerThan4: number;
+}
+/** Cities added after pre-registration. No LLM baselines; never used to tune the planner. */
+export interface Routed {
+  plans: number;
+  plansOk: number;
+  transfers: number;
+  transfersOk: number;
+}
+/** Cities added after pre-registration. No LLM baselines; never used to tune the planner. */
+export interface Extension {
+  days: number;
+  /** independent OSRM re-timing of the planner's transfers (results/osrm-check-extension.json) */
+  routed?: Routed & { perCity: Record<string, Routed> };
+  systems: Record<string, ExtAgg>;
+  cities: (ExtAgg & { slug: string; city: string })[];
+}
 export interface Evidence {
   reps: number;
   models: Record<string, string>;
@@ -67,6 +92,7 @@ export interface Evidence {
   ablations: { hoursAwareness_closedStopsPerPlan: Diff; routing_detourRatio: Diff };
   hypotheses: Record<string, unknown>;
   coverage: Coverage[];
+  extension?: Extension | null;
   scenarios: { id: string; slug: string; city: string; profile: string; day: "mon" | "sun" }[];
   showcase: Record<string, Record<string, EvPlan>>;
 }

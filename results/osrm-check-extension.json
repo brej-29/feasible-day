@@ -1,0 +1,137 @@
+{
+  "engine": "OSRM foot profile, routing.openstreetmap.de",
+  "plans": 120,
+  "plansWhereEveryTransferFitsRoutedTime": 71,
+  "share": 0.5916666666666667,
+  "transfers": 834,
+  "transfersFitting": 766,
+  "transferShare": 0.9184652278177458,
+  "transfersSkippedNoRoute": 0,
+  "perCity": {
+    "Chennai": {
+      "plans": 8,
+      "plansOk": 2,
+      "transfers": 56,
+      "transfersOk": 50
+    },
+    "Madurai": {
+      "plans": 8,
+      "plansOk": 4,
+      "transfers": 50,
+      "transfersOk": 46
+    },
+    "Ernakulam (Kochi)": {
+      "plans": 8,
+      "plansOk": 2,
+      "transfers": 56,
+      "transfersOk": 48
+    },
+    "Fort Kochi": {
+      "plans": 8,
+      "plansOk": 8,
+      "transfers": 56,
+      "transfersOk": 56
+    },
+    "Thiruvananthapuram": {
+      "plans": 8,
+      "plansOk": 6,
+      "transfers": 56,
+      "transfersOk": 54
+    },
+    "Bengaluru": {
+      "plans": 8,
+      "plansOk": 8,
+      "transfers": 56,
+      "transfersOk": 56
+    },
+    "Hyderabad": {
+      "plans": 8,
+      "plansOk": 0,
+      "transfers": 56,
+      "transfersOk": 32
+    },
+    "Pune": {
+      "plans": 8,
+      "plansOk": 3,
+      "transfers": 56,
+      "transfersOk": 50
+    },
+    "Kyoto": {
+      "plans": 8,
+      "plansOk": 8,
+      "transfers": 56,
+      "transfersOk": 56
+    },
+    "Osaka": {
+      "plans": 8,
+      "plansOk": 8,
+      "transfers": 56,
+      "transfersOk": 56
+    },
+    "Seoul": {
+      "plans": 8,
+      "plansOk": 8,
+      "transfers": 56,
+      "transfersOk": 56
+    },
+    "Busan": {
+      "plans": 8,
+      "plansOk": 4,
+      "transfers": 56,
+      "transfersOk": 52
+    },
+    "Beijing": {
+      "plans": 8,
+      "plansOk": 2,
+      "transfers": 56,
+      "transfersOk": 50
+    },
+    "Shanghai": {
+      "plans": 8,
+      "plansOk": 6,
+      "transfers": 56,
+      "transfersOk": 54
+    },
+    "Xi'an": {
+      "plans": 8,
+      "plansOk": 2,
+      "transfers": 56,
+      "transfersOk": 50
+    }
+  },
+  "slackMin": 5,
+  "worstShortfallsMin": [
+    {
+      "scenario": "hyderabad-food-mon",
+      "short": 47.46499999999999
+    },
+    {
+      "scenario": "hyderabad-food-sun",
+      "short": 47.46499999999999
+    },
+    {
+      "scenario": "hyderabad-culture-mon",
+      "short": 33.00333333333333
+    },
+    {
+      "scenario": "hyderabad-culture-sun",
+      "short": 33.00333333333333
+    },
+    {
+      "scenario": "hyderabad-mixed-mon",
+      "short": 33.00333333333333
+    },
+    {
+      "scenario": "hyderabad-mixed-sun",
+      "short": 33.00333333333333
+    },
+    {
+      "scenario": "hyderabad-food-mon",
+      "short": 20.590000000000003
+    },
+    {
+      "scenario": "hyderabad-food-sun",
+      "short": 20.590000000000003
+    }
+  ]
+}

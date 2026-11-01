@@ -31,28 +31,31 @@ async function routedMin(a: { lat: number; lon: number }, b: { lat: number; lon:
   return null;
 }
 
+const perCity: Record<string, { plans: number; plansOk: number; transfers: number; transfersOk: number }> = {};
 let plans = 0, plansOk = 0, transfers = 0, transfersOk = 0, skipped = 0;
 const worst: { scenario: string; short: number }[] = [];
-for (const s of scenarios()) {
+const EXT = process.argv.includes("--ext"); // the cities added after pre-registration
+for (const s of scenarios(EXT)) {
   const plan = planDay(loadSnapshot(s.slug), s.profile, s.day.date);
+  const pc = (perCity[s.city] ??= { plans: 0, plansOk: 0, transfers: 0, transfersOk: 0 });
   let ok = true;
   for (let i = 1; i < plan.stops.length; i++) {
     const gap = plan.stops[i].startMin - plan.stops[i - 1].endMin;
     const need = await routedMin(plan.stops[i - 1].poi, plan.stops[i].poi);
     if (need === null) { skipped++; continue; }
-    transfers++;
-    if (gap + SLACK_MIN >= need) transfersOk++;
+    transfers++; pc.transfers++;
+    if (gap + SLACK_MIN >= need) { transfersOk++; pc.transfersOk++; }
     else { ok = false; worst.push({ scenario: s.id, short: need - gap }); }
   }
-  plans++;
-  if (ok) plansOk++;
+  plans++; pc.plans++;
+  if (ok) { plansOk++; pc.plansOk++; }
 }
 worst.sort((a, b) => b.short - a.short);
 const out = {
   engine: "OSRM foot profile, routing.openstreetmap.de", plans, plansWhereEveryTransferFitsRoutedTime: plansOk,
   share: plansOk / plans, transfers, transfersFitting: transfersOk, transferShare: transfersOk / transfers,
-  transfersSkippedNoRoute: skipped, slackMin: SLACK_MIN, worstShortfallsMin: worst.slice(0, 8),
+  transfersSkippedNoRoute: skipped, perCity, slackMin: SLACK_MIN, worstShortfallsMin: worst.slice(0, 8),
 };
 mkdirSync("results", { recursive: true });
-writeFileSync("results/osrm-check.json", JSON.stringify(out, null, 2));
+writeFileSync(EXT ? "results/osrm-check-extension.json" : "results/osrm-check.json", JSON.stringify(out, null, 2));
 console.log(out);

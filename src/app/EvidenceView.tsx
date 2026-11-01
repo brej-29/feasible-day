@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import type { EvPlan, Evidence, SystemSummary } from "../core/evidence";
+import type { EvPlan, Evidence, Extension, SystemSummary } from "../core/evidence";
 import { planDay } from "../core/planner";
 import type { Profile } from "../core/types";
 import { verifyDay } from "../core/verify";
@@ -174,6 +174,31 @@ function Coverage({ rows }: { rows: Evidence["coverage"] }) {
   );
 }
 
+function Added({ x }: { x: Extension }) {
+  const p = x.systems.planner;
+  return (
+    <section className="block" aria-labelledby="ext-h">
+      <h2 id="ext-h">Cities added later: {x.cities.length} places, {x.days} test days</h2>
+      <p className="lede">
+        Added after the thresholds were fixed and never used to tune the planner. No LLM baselines were run here. The planner passes {pct(p.rate, 1)} of days (95% interval {pct(p.wilson95[0])} to {pct(p.wilson95[1])}),
+        but {pct(p.unverifiedShare)} of its stops have no opening hours in OpenStreetMap, so a pass here says less than in the first 12 cities.
+        {x.routed && <> The independent routing re-check is weaker here: only <b>{pct(x.routed.plansOk / x.routed.plans)}</b> of plans have every transfer fitting routed walking time ({pct(x.routed.transfersOk / x.routed.transfers)} of transfers), against 94.8% of plans in the first 12 cities. Treat walking times in these cities as estimates.</>}
+      </p>
+      <div className="tablewrap">
+        <table>
+          <caption>Planner, per added city</caption>
+          <thead><tr><th scope="col">City</th><th scope="col">Days passing</th><th scope="col">Mean stops</th><th scope="col">Hours unverified</th><th scope="col">Transfers fitting routed time</th></tr></thead>
+          <tbody>
+            {x.cities.map((c) => (
+              <tr key={c.slug}><th scope="row">{c.city}</th><td>{c.feasible}/{c.runs}</td><td>{c.meanStops.toFixed(1)}</td><td>{pct(c.unverifiedShare)}</td><td>{x.routed?.perCity[c.city] ? pct(x.routed.perCity[c.city].transfersOk / x.routed.perCity[c.city].transfers) : "n/a"}</td></tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  );
+}
+
 export function EvidenceView({ ev }: { ev: Evidence }) {
   const s = ev.summary;
   const hyp = ev.hypotheses as Record<string, unknown>;
@@ -194,6 +219,7 @@ export function EvidenceView({ ev }: { ev: Evidence }) {
           <li>Skipping route optimisation adds <b>{ev.ablations.routing_detourRatio.diff.toFixed(2)}</b> to the detour ratio (95% interval {ev.ablations.routing_detourRatio.ci[0].toFixed(2)} to {ev.ablations.routing_detourRatio.ci[1].toFixed(2)}). 1.00 would be the shortest possible walk through the same stops.</li>
         </ul>
       </section>
+      {ev.extension && <Added x={ev.extension} />}
       <Coverage rows={ev.coverage} />
       <section className="block" aria-labelledby="hy-h">
         <h2 id="hy-h">Pre-registered thresholds</h2>
