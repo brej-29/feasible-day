@@ -7,7 +7,8 @@ import { REQUEST_REPO } from "../src/core/notices";
  * sanitised and used as a search string. It is never given to the LLM and nothing is added automatically.
  */
 const UA = "feasible-day-research/0.1 (github.com/brej-29)";
-const clean = (s: string) => s.replace(/[\u0000-\u001f\u007f|`<>]/g, " ").replace(/\s+/g, " ").trim().slice(0, 80);
+/** Allowlist, not blocklist: place names only. Quotes, backticks, pipes, brackets and slashes cannot survive, so the text is inert in markdown and in the pasted TypeScript line. */
+const clean = (s: string) => s.normalize("NFC").replace(/[^\p{L}\p{M}\p{N} .,'()-]/gu, " ").replace(/\s+/g, " ").trim().slice(0, 80);
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
 interface Issue { number: number; body: string | null; user: { login: string } | null; reactions?: { "+1"?: number } }
@@ -67,7 +68,9 @@ export async function runRequests(): Promise<string> {
     const geo = have ? null : await geocode(g.city, g.country).catch(() => null);
     const n = geo ? await sights(geo.lat, geo.lon) : null;
     const where = geo ? `${geo.lat.toFixed(4)}, ${geo.lon.toFixed(4)} (${geo.cc || "?"})` : have ? "already available" : "not found";
-    const line = geo ? `\`{ slug: "${g.city.toLowerCase().replace(/[^a-z]+/g, "-")}", name: "${g.city}", country: "${g.country}", lat: ${geo.lat.toFixed(4)}, lon: ${geo.lon.toFixed(4)}, tz: "TODO", cc: "${geo.cc}", ext: true }\`` : "";
+    const slug = g.city.toLowerCase().replace(/[^a-z]+/g, "-").replace(/^-|-$/g, "") || "TODO";
+    const cc = /^[a-z]{2}$/.test(geo?.cc ?? "") ? geo!.cc : "TODO";
+    const line = geo ? `\`{ slug: ${JSON.stringify(slug)}, name: ${JSON.stringify(g.city)}, country: ${JSON.stringify(g.country)}, lat: ${geo.lat.toFixed(4)}, lon: ${geo.lon.toFixed(4)}, tz: "TODO", cc: ${JSON.stringify(cc)}, ext: true }\`` : "";
     rows.push(`| ${g.city} | ${g.country} | ${g.people.size + g.thumbs} | ${g.issues.map((x) => "#" + x).join(" ")} | ${where} | ${n ?? "?"} | ${line} |`);
   }
   const md = [

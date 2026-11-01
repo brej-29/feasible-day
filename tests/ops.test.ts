@@ -36,4 +36,11 @@ describe("city requests", () => {
     expect(field(body, "Country")).toBe("India");
     expect(field(body, "Missing")).toBe("");
   });
+
+  it("keeps only place-name characters, so issue text cannot break out of markdown or code", () => {
+    const body = '### City or area\n\nX", ext: true }); process.exit(1) //`| evil |\n\n### Country\n\n[a](http://x)';
+    const city = field(body, "City or area");
+    expect(city).not.toMatch(/["`|;\/<>[\]]/);
+    expect(field(body, "Country")).not.toMatch(/[[\]/:]/);
+  });
 });
