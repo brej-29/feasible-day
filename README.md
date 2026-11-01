@@ -55,7 +55,7 @@ Pre-registered thresholds: H1 (LLM-only mostly infeasible) met, also when unmatc
 1. A snapshot of notable places from OpenStreetMap (Overpass API) for 12 city centres, committed in `data/snapshots/` (ODbL).
 2. A planner anchors the day on the densest cluster of important places, fixes lunch (and dinner on food days) in meal windows, then inserts stops one at a time by importance per extra walking minute, simulating the whole day (opening hours for the date, walking time, 21:00 limit) for every insertion.
 3. A verifier ([`src/core/verify.ts`](src/core/verify.ts)) is the single definition of feasibility, used by the planner tests, the evaluation, and the in-app Rulebook panel.
-4. The app is static React: everything runs in the browser, there is no server and no key. Architecture notes: [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
+4. The app is static React: everything runs in the browser, there is no server and no key. Architecture notes: [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md). Design system: [`DESIGN.md`](DESIGN.md).
 
 The interface is built around the thing a walker already trusts: trail signposts. Each transfer is a yellow signpost arm with the destination and walking minutes; hours that were checked are solid, hours that were not are hatched. The Evidence tab puts the numbers above in the product, with a side-by-side of the same day from the model and from the planner.
 
@@ -88,7 +88,8 @@ Configuration: `LLM_70B`, `LLM_8B` (model ids), `LLM_ENDPOINT`, `VITE_MAP_STYLE`
 ## Live app and free-tier limits
 
 - Hosted as a **static Hugging Face Space** (free). No server, so no cold start and no quota to run out; first load fetches one city snapshot (about 150 to 400 KB).
-- Basemap: OpenFreeMap vector tiles (free, no key). If it is unreachable the timeline and Rulebook still work, only the map pane is blank.
+- Verified live from `main` on 2026-11-01: plan, map, Evidence tab. On first load the map can take about 10 seconds to appear (vector style, fonts and worker download); the plan and Rulebook show immediately.
+- Basemap: OpenFreeMap vector tiles (free, no key, third-party service with no uptime guarantee). If it is unreachable the timeline and Rulebook still work, only the map pane is blank.
 - The app calls no LLM. LLM outputs appear only as stored baseline plans in the Evidence tab.
 - Deploy: `npm run build` then `uvx --from huggingface_hub python scripts/deploy_hf.py BrejBala/feasible-day`. `.github/workflows/deploy.yml` does this on push to `main` when a write token is set as the repository secret `HF_TOKEN`.
 
