@@ -1,0 +1,350 @@
+[
+  {
+    "city": "Paris",
+    "nonFood": {
+      "culture": {
+        "pois": 569,
+        "withHours": 211,
+        "knownOnTestDays": 203,
+        "holidayClausesDropped": 0
+      },
+      "landmark": {
+        "pois": 210,
+        "withHours": 29,
+        "knownOnTestDays": 29,
+        "holidayClausesDropped": 1
+      },
+      "history": {
+        "pois": 260,
+        "withHours": 24,
+        "knownOnTestDays": 23,
+        "holidayClausesDropped": 0
+      },
+      "nature": {
+        "pois": 239,
+        "withHours": 43,
+        "knownOnTestDays": 42,
+        "holidayClausesDropped": 0
+      }
+    }
+  },
+  {
+    "city": "London",
+    "nonFood": {
+      "culture": {
+        "pois": 228,
+        "withHours": 89,
+        "knownOnTestDays": 86,
+        "holidayClausesDropped": 6
+      },
+      "landmark": {
+        "pois": 181,
+        "withHours": 28,
+        "knownOnTestDays": 26,
+        "holidayClausesDropped": 2
+      },
+      "history": {
+        "pois": 388,
+        "withHours": 9,
+        "knownOnTestDays": 9,
+        "holidayClausesDropped": 0
+      },
+      "nature": {
+        "pois": 116,
+        "withHours": 24,
+        "knownOnTestDays": 23,
+        "holidayClausesDropped": 1
+      }
+    }
+  },
+  {
+    "city": "Rome",
+    "nonFood": {
+      "culture": {
+        "pois": 155,
+        "withHours": 75,
+        "knownOnTestDays": 70,
+        "holidayClausesDropped": 0
+      },
+      "landmark": {
+        "pois": 188,
+        "withHours": 38,
+        "knownOnTestDays": 38,
+        "holidayClausesDropped": 0
+      },
+      "history": {
+        "pois": 452,
+        "withHours": 45,
+        "knownOnTestDays": 44,
+        "holidayClausesDropped": 0
+      },
+      "nature": {
+        "pois": 18,
+        "withHours": 4,
+        "knownOnTestDays": 4,
+        "holidayClausesDropped": 0
+      }
+    }
+  },
+  {
+    "city": "Barcelona",
+    "nonFood": {
+      "culture": {
+        "pois": 103,
+        "withHours": 40,
+        "knownOnTestDays": 39,
+        "holidayClausesDropped": 1
+      },
+      "landmark": {
+        "pois": 95,
+        "withHours": 17,
+        "knownOnTestDays": 17,
+        "holidayClausesDropped": 0
+      },
+      "history": {
+        "pois": 154,
+        "withHours": 3,
+        "knownOnTestDays": 2,
+        "holidayClausesDropped": 0
+      },
+      "nature": {
+        "pois": 81,
+        "withHours": 21,
+        "knownOnTestDays": 21,
+        "holidayClausesDropped": 0
+      }
+    }
+  },
+  {
+    "city": "Berlin",
+    "nonFood": {
+      "culture": {
+        "pois": 282,
+        "withHours": 176,
+        "knownOnTestDays": 166,
+        "holidayClausesDropped": 0
+      },
+      "landmark": {
+        "pois": 83,
+        "withHours": 22,
+        "knownOnTestDays": 19,
+        "holidayClausesDropped": 0
+      },
+      "history": {
+        "pois": 1212,
+        "withHours": 16,
+        "knownOnTestDays": 16,
+        "holidayClausesDropped": 0
+      },
+      "nature": {
+        "pois": 80,
+        "withHours": 13,
+        "knownOnTestDays": 13,
+        "holidayClausesDropped": 0
+      }
+    }
+  },
+  {
+    "city": "Amsterdam",
+    "nonFood": {
+      "culture": {
+        "pois": 152,
+        "withHours": 96,
+        "knownOnTestDays": 87,
+        "holidayClausesDropped": 1
+      },
+      "landmark": {
+        "pois": 148,
+        "withHours": 20,
+        "knownOnTestDays": 19,
+        "holidayClausesDropped": 0
+      },
+      "history": {
+        "pois": 93,
+        "withHours": 2,
+        "knownOnTestDays": 2,
+        "holidayClausesDropped": 0
+      },
+      "nature": {
+        "pois": 34,
+        "withHours": 1,
+        "knownOnTestDays": 1,
+        "holidayClausesDropped": 0
+      }
+    }
+  },
+  {
+    "city": "Lisbon",
+    "nonFood": {
+      "culture": {
+        "pois": 110,
+        "withHours": 57,
+        "knownOnTestDays": 57,
+        "holidayClausesDropped": 0
+      },
+      "landmark": {
+        "pois": 133,
+        "withHours": 19,
+        "knownOnTestDays": 19,
+        "holidayClausesDropped": 0
+      },
+      "history": {
+        "pois": 188,
+        "withHours": 3,
+        "knownOnTestDays": 3,
+        "holidayClausesDropped": 0
+      },
+      "nature": {
+        "pois": 41,
+        "withHours": 7,
+        "knownOnTestDays": 7,
+        "holidayClausesDropped": 0
+      }
+    }
+  },
+  {
+    "city": "Vienna",
+    "nonFood": {
+      "culture": {
+        "pois": 238,
+        "withHours": 159,
+        "knownOnTestDays": 145,
+        "holidayClausesDropped": 0
+      },
+      "landmark": {
+        "pois": 81,
+        "withHours": 16,
+        "knownOnTestDays": 16,
+        "holidayClausesDropped": 0
+      },
+      "history": {
+        "pois": 508,
+        "withHours": 5,
+        "knownOnTestDays": 5,
+        "holidayClausesDropped": 0
+      },
+      "nature": {
+        "pois": 96,
+        "withHours": 10,
+        "knownOnTestDays": 10,
+        "holidayClausesDropped": 0
+      }
+    }
+  },
+  {
+    "city": "Prague",
+    "nonFood": {
+      "culture": {
+        "pois": 178,
+        "withHours": 118,
+        "knownOnTestDays": 115,
+        "holidayClausesDropped": 0
+      },
+      "landmark": {
+        "pois": 125,
+        "withHours": 22,
+        "knownOnTestDays": 21,
+        "holidayClausesDropped": 0
+      },
+      "history": {
+        "pois": 606,
+        "withHours": 8,
+        "knownOnTestDays": 5,
+        "holidayClausesDropped": 0
+      },
+      "nature": {
+        "pois": 78,
+        "withHours": 11,
+        "knownOnTestDays": 11,
+        "holidayClausesDropped": 0
+      }
+    }
+  },
+  {
+    "city": "New York",
+    "nonFood": {
+      "culture": {
+        "pois": 184,
+        "withHours": 145,
+        "knownOnTestDays": 145,
+        "holidayClausesDropped": 0
+      },
+      "landmark": {
+        "pois": 88,
+        "withHours": 14,
+        "knownOnTestDays": 14,
+        "holidayClausesDropped": 0
+      },
+      "history": {
+        "pois": 133,
+        "withHours": 1,
+        "knownOnTestDays": 1,
+        "holidayClausesDropped": 0
+      },
+      "nature": {
+        "pois": 89,
+        "withHours": 8,
+        "knownOnTestDays": 8,
+        "holidayClausesDropped": 0
+      }
+    }
+  },
+  {
+    "city": "Tokyo",
+    "nonFood": {
+      "culture": {
+        "pois": 152,
+        "withHours": 54,
+        "knownOnTestDays": 54,
+        "holidayClausesDropped": 0
+      },
+      "landmark": {
+        "pois": 60,
+        "withHours": 6,
+        "knownOnTestDays": 6,
+        "holidayClausesDropped": 0
+      },
+      "history": {
+        "pois": 272,
+        "withHours": 8,
+        "knownOnTestDays": 8,
+        "holidayClausesDropped": 0
+      },
+      "nature": {
+        "pois": 50,
+        "withHours": 13,
+        "knownOnTestDays": 13,
+        "holidayClausesDropped": 0
+      }
+    }
+  },
+  {
+    "city": "Mumbai",
+    "nonFood": {
+      "culture": {
+        "pois": 13,
+        "withHours": 3,
+        "knownOnTestDays": 3,
+        "holidayClausesDropped": 0
+      },
+      "landmark": {
+        "pois": 6,
+        "withHours": 1,
+        "knownOnTestDays": 1,
+        "holidayClausesDropped": 0
+      },
+      "history": {
+        "pois": 8,
+        "withHours": 0,
+        "knownOnTestDays": 0,
+        "holidayClausesDropped": 0
+      },
+      "nature": {
+        "pois": 2,
+        "withHours": 1,
+        "knownOnTestDays": 1,
+        "holidayClausesDropped": 0
+      }
+    }
+  }
+]

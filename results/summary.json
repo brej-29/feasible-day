@@ -1,0 +1,378 @@
+{
+  "generatedFrom": "npm run eval",
+  "reps": 3,
+  "models": {
+    "llm-70b": "meta-llama/Llama-3.3-70B-Instruct",
+    "llm-8b": "meta-llama/Llama-3.1-8B-Instruct"
+  },
+  "summary": {
+    "legacy": {
+      "runs": 96,
+      "scenarios": 96,
+      "feasibleDay": {
+        "k": 0,
+        "n": 96,
+        "rate": 0,
+        "wilson95": [
+          0,
+          0.03847694748481595
+        ],
+        "clusterBootstrap95": [
+          0,
+          0
+        ]
+      },
+      "scheduleFeasibleGivenGrounding": 0,
+      "scheduleFeasibleGivenGroundingWilson95": [
+        0,
+        0.03847694748481595
+      ],
+      "failureShare": {
+        "notParsed": 0,
+        "fewerThan4Stops": 0,
+        "anyUngroundedStop": 0,
+        "anyClosedAtVisit": 0.7083333333333334,
+        "anyUnwalkableTransfer": 1,
+        "anyOutsideDay": 0,
+        "anyDuplicate": 0
+      },
+      "stopLevel": {
+        "stops": 576,
+        "groundedRate": 1,
+        "inSnapshotRate": 1,
+        "confirmedByGeocoderRate": 0,
+        "notFoundRate": 0,
+        "stopsWithKnownHours": 330,
+        "closedAtVisitRate": 0.47878787878787876,
+        "unverifiedShare": 0.4270833333333333
+      },
+      "meanStops": 6,
+      "meanStopsCI": [
+        6,
+        6
+      ],
+      "profileMatch": 1,
+      "profileMatchCI": [
+        1,
+        1
+      ],
+      "detourRatio": 1.5176641204332404,
+      "detourRatioCI": [
+        1.4699520019361039,
+        1.570247773437968
+      ],
+      "meanWalkKm": 13.753522915701486
+    },
+    "llm-70b": {
+      "runs": 288,
+      "scenarios": 96,
+      "feasibleDay": {
+        "k": 2,
+        "n": 288,
+        "rate": 0.006944444444444444,
+        "wilson95": [
+          0.0019064476108571384,
+          0.024962922622858683
+        ],
+        "clusterBootstrap95": [
+          0,
+          0.020833333333333332
+        ]
+      },
+      "scheduleFeasibleGivenGrounding": 0.3159722222222222,
+      "scheduleFeasibleGivenGroundingWilson95": [
+        0.26500078876843874,
+        0.37178848322020175
+      ],
+      "failureShare": {
+        "notParsed": 0.003472222222222222,
+        "fewerThan4Stops": 0.003472222222222222,
+        "anyUngroundedStop": 0.8506944444444444,
+        "anyClosedAtVisit": 0.375,
+        "anyUnwalkableTransfer": 0.4548611111111111,
+        "anyOutsideDay": 0,
+        "anyDuplicate": 0.003472222222222222
+      },
+      "stopLevel": {
+        "stops": 1819,
+        "groundedRate": 0.6772952171522815,
+        "inSnapshotRate": 0.47113798790544253,
+        "confirmedByGeocoderRate": 0.20615722924683894,
+        "notFoundRate": 0.32270478284771853,
+        "stopsWithKnownHours": 488,
+        "closedAtVisitRate": 0.2725409836065574,
+        "unverifiedShare": 0.6038961038961039
+      },
+      "meanStops": 6.315972222222222,
+      "meanStopsCI": [
+        6.166666666666667,
+        6.475694444444445
+      ],
+      "profileMatch": 0.8877810846560845,
+      "profileMatchCI": [
+        0.8329282407407408,
+        0.9355241402116403
+      ],
+      "detourRatio": 1.3823875511755495,
+      "detourRatioCI": [
+        1.3207662494017118,
+        1.4455765229428996
+      ],
+      "meanWalkKm": 7.134402396756623
+    },
+    "llm-8b": {
+      "runs": 288,
+      "scenarios": 96,
+      "feasibleDay": {
+        "k": 0,
+        "n": 288,
+        "rate": 0,
+        "wilson95": [
+          0,
+          0.01316330502573999
+        ],
+        "clusterBootstrap95": [
+          0,
+          0
+        ]
+      },
+      "scheduleFeasibleGivenGrounding": 0.17708333333333334,
+      "scheduleFeasibleGivenGroundingWilson95": [
+        0.1373307071054009,
+        0.22533726072372293
+      ],
+      "failureShare": {
+        "notParsed": 0.010416666666666666,
+        "fewerThan4Stops": 0.010416666666666666,
+        "anyUngroundedStop": 0.9166666666666666,
+        "anyClosedAtVisit": 0.3854166666666667,
+        "anyUnwalkableTransfer": 0.6770833333333334,
+        "anyOutsideDay": 0.024305555555555556,
+        "anyDuplicate": 0.041666666666666664
+      },
+      "stopLevel": {
+        "stops": 2080,
+        "groundedRate": 0.5846153846153846,
+        "inSnapshotRate": 0.36923076923076925,
+        "confirmedByGeocoderRate": 0.2153846153846154,
+        "notFoundRate": 0.4153846153846154,
+        "stopsWithKnownHours": 470,
+        "closedAtVisitRate": 0.3148936170212766,
+        "unverifiedShare": 0.6134868421052632
+      },
+      "meanStops": 7.222222222222222,
+      "meanStopsCI": [
+        6.996527777777778,
+        7.444444444444445
+      ],
+      "profileMatch": 0.7818287037037037,
+      "profileMatchCI": [
+        0.7234953703703704,
+        0.8347222222222221
+      ],
+      "detourRatio": 1.4488622902666812,
+      "detourRatioCI": [
+        1.4012746525092683,
+        1.4977910971461672
+      ],
+      "meanWalkKm": 10.109609469100752
+    },
+    "planner": {
+      "runs": 96,
+      "scenarios": 96,
+      "feasibleDay": {
+        "k": 96,
+        "n": 96,
+        "rate": 1,
+        "wilson95": [
+          0.9615230525151841,
+          1
+        ],
+        "clusterBootstrap95": [
+          1,
+          1
+        ]
+      },
+      "scheduleFeasibleGivenGrounding": 1,
+      "scheduleFeasibleGivenGroundingWilson95": [
+        0.9615230525151841,
+        1
+      ],
+      "failureShare": {
+        "notParsed": 0,
+        "fewerThan4Stops": 0,
+        "anyUngroundedStop": 0,
+        "anyClosedAtVisit": 0,
+        "anyUnwalkableTransfer": 0,
+        "anyOutsideDay": 0,
+        "anyDuplicate": 0
+      },
+      "stopLevel": {
+        "stops": 768,
+        "groundedRate": 1,
+        "inSnapshotRate": 1,
+        "confirmedByGeocoderRate": 0,
+        "notFoundRate": 0,
+        "stopsWithKnownHours": 450,
+        "closedAtVisitRate": 0,
+        "unverifiedShare": 0.4140625
+      },
+      "meanStops": 8,
+      "meanStopsCI": [
+        8,
+        8
+      ],
+      "profileMatch": 0.9947916666666666,
+      "profileMatchCI": [
+        0.9895833333333334,
+        0.9986979166666666
+      ],
+      "detourRatio": 1.1384679202225103,
+      "detourRatioCI": [
+        1.1028848108144038,
+        1.1767889556568478
+      ],
+      "meanWalkKm": 1.7915425609982467
+    },
+    "planner-no-hours": {
+      "runs": 96,
+      "scenarios": 96,
+      "feasibleDay": {
+        "k": 15,
+        "n": 96,
+        "rate": 0.15625,
+        "wilson95": [
+          0.09703624472178266,
+          0.24191665667402834
+        ],
+        "clusterBootstrap95": [
+          0.08333333333333333,
+          0.22916666666666666
+        ]
+      },
+      "scheduleFeasibleGivenGrounding": 0.15625,
+      "scheduleFeasibleGivenGroundingWilson95": [
+        0.09703624472178266,
+        0.24191665667402834
+      ],
+      "failureShare": {
+        "notParsed": 0,
+        "fewerThan4Stops": 0,
+        "anyUngroundedStop": 0,
+        "anyClosedAtVisit": 0.84375,
+        "anyUnwalkableTransfer": 0,
+        "anyOutsideDay": 0,
+        "anyDuplicate": 0
+      },
+      "stopLevel": {
+        "stops": 768,
+        "groundedRate": 1,
+        "inSnapshotRate": 1,
+        "confirmedByGeocoderRate": 0,
+        "notFoundRate": 0,
+        "stopsWithKnownHours": 442,
+        "closedAtVisitRate": 0.4004524886877828,
+        "unverifiedShare": 0.4244791666666667
+      },
+      "meanStops": 8,
+      "meanStopsCI": [
+        8,
+        8
+      ],
+      "profileMatch": 0.9947916666666666,
+      "profileMatchCI": [
+        0.9895833333333334,
+        0.9986979166666666
+      ],
+      "detourRatio": 1.0668376608006565,
+      "detourRatioCI": [
+        1.0446905122525212,
+        1.0922322331898613
+      ],
+      "meanWalkKm": 1.619904560388753
+    },
+    "planner-no-routing": {
+      "runs": 96,
+      "scenarios": 96,
+      "feasibleDay": {
+        "k": 92,
+        "n": 96,
+        "rate": 0.9583333333333334,
+        "wilson95": [
+          0.8977165749246646,
+          0.9836795565475877
+        ],
+        "clusterBootstrap95": [
+          0.9166666666666666,
+          0.9895833333333334
+        ]
+      },
+      "scheduleFeasibleGivenGrounding": 0.9583333333333334,
+      "scheduleFeasibleGivenGroundingWilson95": [
+        0.8977165749246646,
+        0.9836795565475877
+      ],
+      "failureShare": {
+        "notParsed": 0,
+        "fewerThan4Stops": 0,
+        "anyUngroundedStop": 0,
+        "anyClosedAtVisit": 0,
+        "anyUnwalkableTransfer": 0,
+        "anyOutsideDay": 0,
+        "anyDuplicate": 0.041666666666666664
+      },
+      "stopLevel": {
+        "stops": 757,
+        "groundedRate": 1,
+        "inSnapshotRate": 1,
+        "confirmedByGeocoderRate": 0,
+        "notFoundRate": 0,
+        "stopsWithKnownHours": 624,
+        "closedAtVisitRate": 0,
+        "unverifiedShare": 0.17569352708058125
+      },
+      "meanStops": 7.885416666666667,
+      "meanStopsCI": [
+        7.78125,
+        7.989583333333333
+      ],
+      "profileMatch": 1,
+      "profileMatchCI": [
+        1,
+        1
+      ],
+      "detourRatio": 1.8091133855227006,
+      "detourRatioCI": [
+        1.7402560236577818,
+        1.8812189544661324
+      ],
+      "meanWalkKm": 10.34491106226038
+    }
+  },
+  "ablations": {
+    "hoursAwareness_closedStopsPerPlan": {
+      "diff": 1.84375,
+      "ci": [
+        1.59375,
+        2.1041666666666665
+      ]
+    },
+    "routing_detourRatio": {
+      "diff": 0.6706454653001895,
+      "ci": [
+        0.5998643982055557,
+        0.7442942722090194
+      ]
+    }
+  },
+  "hypotheses": {
+    "H1_llmMostlyInfeasible": true,
+    "H1b_llmMostlyInfeasibleEvenIgnoringUnmatchedStops": true,
+    "H2_plannerFeasible": true,
+    "H3_notByDoingLess": true,
+    "H4_ablations": {
+      "hoursCIExcludesZero": true,
+      "routingCIExcludesZero": true
+    }
+  }
+}

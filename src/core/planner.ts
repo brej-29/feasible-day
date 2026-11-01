@@ -129,7 +129,7 @@ export function planDay(snap: Snapshot, profile: Profile, date: DayDate, opts: P
           const trial = [...route.slice(0, pos), c, ...route.slice(pos)];
           if (!simulate(trial, startMin, endMin, date, slug)) continue;
           const extra = routeWalkMin(trial) - base;
-          const gain = c.score / (extra + c.dur * 0.25 + 8);
+          const gain = c.score / (extra + 8);
           if (!best || gain > best.gain) best = { trial, gain };
         }
       }

@@ -1,0 +1,4670 @@
+[
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Imperial Palace East Garden",
+  "count": 27
+ },
+ {
+  "system": "llm-8b",
+  "city": "Barcelona",
+  "name": "La Boqueria Market",
+  "count": 26
+ },
+ {
+  "system": "llm-70b",
+  "city": "Vienna",
+  "name": "St. Stephen's Cathedral",
+  "count": 26
+ },
+ {
+  "system": "llm-8b",
+  "city": "Prague",
+  "name": "Old Town Square",
+  "count": 23
+ },
+ {
+  "system": "llm-8b",
+  "city": "Mumbai",
+  "name": "Colaba Causeway",
+  "count": 22
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Meiji Shrine",
+  "count": 16
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Tokyo National Museum",
+  "count": 15
+ },
+ {
+  "system": "llm-8b",
+  "city": "Rome",
+  "name": "Caffè Greco",
+  "count": 14
+ },
+ {
+  "system": "llm-70b",
+  "city": "Tokyo",
+  "name": "Shibuya Crossing",
+  "count": 14
+ },
+ {
+  "system": "llm-70b",
+  "city": "Lisbon",
+  "name": "Solar do Castelo",
+  "count": 13
+ },
+ {
+  "system": "llm-8b",
+  "city": "Prague",
+  "name": "Wenceslas Square",
+  "count": 13
+ },
+ {
+  "system": "llm-70b",
+  "city": "Prague",
+  "name": "Wallenstein Garden",
+  "count": 13
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Tsukiji Outer Market",
+  "count": 13
+ },
+ {
+  "system": "llm-8b",
+  "city": "Mumbai",
+  "name": "Haji Ali Dargah",
+  "count": 13
+ },
+ {
+  "system": "llm-8b",
+  "city": "Rome",
+  "name": "Caffè Sant'Eustachio",
+  "count": 12
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Rossio Square",
+  "count": 12
+ },
+ {
+  "system": "llm-8b",
+  "city": "Prague",
+  "name": "Petřín Hill",
+  "count": 12
+ },
+ {
+  "system": "llm-70b",
+  "city": "Amsterdam",
+  "name": "Canal Ring",
+  "count": 11
+ },
+ {
+  "system": "llm-70b",
+  "city": "Paris",
+  "name": "Seine River Walk",
+  "count": 10
+ },
+ {
+  "system": "llm-8b",
+  "city": "London",
+  "name": "Somerset House",
+  "count": 10
+ },
+ {
+  "system": "llm-8b",
+  "city": "Barcelona",
+  "name": "Barceloneta Beach",
+  "count": 10
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "Schönbrunn Palace",
+  "count": 10
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "Belvedere Palace",
+  "count": 10
+ },
+ {
+  "system": "llm-8b",
+  "city": "New York",
+  "name": "Top of the Rock Observation Deck",
+  "count": 10
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Yoyogi Park",
+  "count": 10
+ },
+ {
+  "system": "llm-70b",
+  "city": "Tokyo",
+  "name": "Nonbei Yokocho",
+  "count": 10
+ },
+ {
+  "system": "llm-70b",
+  "city": "Paris",
+  "name": "Seine River Banks",
+  "count": 9
+ },
+ {
+  "system": "llm-70b",
+  "city": "Lisbon",
+  "name": "Cafe Martinho da Arcada",
+  "count": 9
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Café Comércio",
+  "count": 9
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Ueno Park",
+  "count": 9
+ },
+ {
+  "system": "llm-8b",
+  "city": "Prague",
+  "name": "Café Slavia",
+  "count": 8
+ },
+ {
+  "system": "llm-70b",
+  "city": "Barcelona",
+  "name": "Mirador de Colom",
+  "count": 7
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "Schönbrunn Palace Gardens",
+  "count": 7
+ },
+ {
+  "system": "llm-70b",
+  "city": "Vienna",
+  "name": "Kahlenberg Hill",
+  "count": 7
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Shinjuku Omoide Yokocho",
+  "count": 7
+ },
+ {
+  "system": "llm-70b",
+  "city": "Paris",
+  "name": "Saint-Germain-des-Prés Church",
+  "count": 6
+ },
+ {
+  "system": "llm-70b",
+  "city": "Rome",
+  "name": "La Rosetta",
+  "count": 6
+ },
+ {
+  "system": "llm-70b",
+  "city": "Rome",
+  "name": "Pincio Hill",
+  "count": 6
+ },
+ {
+  "system": "llm-70b",
+  "city": "Rome",
+  "name": "Gianicolo Hill",
+  "count": 6
+ },
+ {
+  "system": "llm-8b",
+  "city": "Barcelona",
+  "name": "Barcelona Cathedral",
+  "count": 6
+ },
+ {
+  "system": "llm-70b",
+  "city": "Lisbon",
+  "name": "Eduardo VII Park",
+  "count": 6
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Café A Brasileira",
+  "count": 6
+ },
+ {
+  "system": "llm-70b",
+  "city": "Vienna",
+  "name": "a traditional Viennese restaurant",
+  "count": 6
+ },
+ {
+  "system": "llm-70b",
+  "city": "Tokyo",
+  "name": "Innsyoutei",
+  "count": 6
+ },
+ {
+  "system": "llm-70b",
+  "city": "Tokyo",
+  "name": "Hamariyama Park",
+  "count": 6
+ },
+ {
+  "system": "llm-70b",
+  "city": "Mumbai",
+  "name": "Victoria Terminus",
+  "count": 6
+ },
+ {
+  "system": "llm-70b",
+  "city": "Mumbai",
+  "name": "a nearby restaurant",
+  "count": 6
+ },
+ {
+  "system": "llm-70b",
+  "city": "London",
+  "name": "South Bank of the Thames",
+  "count": 5
+ },
+ {
+  "system": "llm-8b",
+  "city": "Barcelona",
+  "name": "Casa Milà (La Pedrera)",
+  "count": 5
+ },
+ {
+  "system": "llm-8b",
+  "city": "Barcelona",
+  "name": "Tibidabo viewpoint",
+  "count": 5
+ },
+ {
+  "system": "llm-70b",
+  "city": "Lisbon",
+  "name": "Pois Cafe",
+  "count": 5
+ },
+ {
+  "system": "llm-70b",
+  "city": "Vienna",
+  "name": "Botanical Garden of the University of Vienna",
+  "count": 5
+ },
+ {
+  "system": "llm-70b",
+  "city": "Prague",
+  "name": "Museum of the Capital City of Prague",
+  "count": 5
+ },
+ {
+  "system": "llm-70b",
+  "city": "Prague",
+  "name": "St. Nicholas Church",
+  "count": 5
+ },
+ {
+  "system": "llm-70b",
+  "city": "Prague",
+  "name": "Vltava River Walk",
+  "count": 5
+ },
+ {
+  "system": "llm-70b",
+  "city": "Tokyo",
+  "name": "Nakajima no Ochaya",
+  "count": 5
+ },
+ {
+  "system": "llm-8b",
+  "city": "Paris",
+  "name": "Le Pied de Cochon",
+  "count": 4
+ },
+ {
+  "system": "llm-70b",
+  "city": "Berlin",
+  "name": "Cafe Bauer",
+  "count": 4
+ },
+ {
+  "system": "llm-8b",
+  "city": "Berlin",
+  "name": "Kreuzberg Market",
+  "count": 4
+ },
+ {
+  "system": "llm-70b",
+  "city": "Amsterdam",
+  "name": "SkyLounge Amsterdam",
+  "count": 4
+ },
+ {
+  "system": "llm-8b",
+  "city": "Amsterdam",
+  "name": "Jordaan neighborhood",
+  "count": 4
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Lisbon Cathedral (Sé de Lisboa)",
+  "count": 4
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "National Pantheon (Panteão Nacional)",
+  "count": 4
+ },
+ {
+  "system": "llm-70b",
+  "city": "Lisbon",
+  "name": "a local restaurant in Bairro Alto",
+  "count": 4
+ },
+ {
+  "system": "llm-70b",
+  "city": "Tokyo",
+  "name": "Tokyo Metropolitan Government Building Observation Deck",
+  "count": 4
+ },
+ {
+  "system": "llm-70b",
+  "city": "Tokyo",
+  "name": "Harajuku Cream Puff Cafe",
+  "count": 4
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Sushi Dai",
+  "count": 4
+ },
+ {
+  "system": "llm-70b",
+  "city": "Mumbai",
+  "name": "Worli Sea Face",
+  "count": 4
+ },
+ {
+  "system": "llm-70b",
+  "city": "Mumbai",
+  "name": "Haji Ali Juice Center",
+  "count": 4
+ },
+ {
+  "system": "llm-8b",
+  "city": "Paris",
+  "name": "Eiffel Tower",
+  "count": 3
+ },
+ {
+  "system": "llm-70b",
+  "city": "Rome",
+  "name": "Orange Garden",
+  "count": 3
+ },
+ {
+  "system": "llm-70b",
+  "city": "Rome",
+  "name": "Pizza al Moro",
+  "count": 3
+ },
+ {
+  "system": "llm-70b",
+  "city": "Barcelona",
+  "name": "Plaça Sant Jaume",
+  "count": 3
+ },
+ {
+  "system": "llm-70b",
+  "city": "Barcelona",
+  "name": "Plaça Catalunya",
+  "count": 3
+ },
+ {
+  "system": "llm-8b",
+  "city": "Barcelona",
+  "name": "Barcelona Cathedral (La Seu)",
+  "count": 3
+ },
+ {
+  "system": "llm-8b",
+  "city": "Barcelona",
+  "name": "Montjuïc Hill",
+  "count": 3
+ },
+ {
+  "system": "llm-70b",
+  "city": "Barcelona",
+  "name": "Cafè Granja Viader",
+  "count": 3
+ },
+ {
+  "system": "llm-8b",
+  "city": "Barcelona",
+  "name": "Café Comerç",
+  "count": 3
+ },
+ {
+  "system": "llm-70b",
+  "city": "Berlin",
+  "name": "Kreuzberg Panorama",
+  "count": 3
+ },
+ {
+  "system": "llm-8b",
+  "city": "Berlin",
+  "name": "Tiergarten Park",
+  "count": 3
+ },
+ {
+  "system": "llm-70b",
+  "city": "Berlin",
+  "name": "Oberbaum Bridge",
+  "count": 3
+ },
+ {
+  "system": "llm-8b",
+  "city": "Amsterdam",
+  "name": "Café Hoppe",
+  "count": 3
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Café Martinho",
+  "count": 3
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Lisbon Castle (Castelo de São Jorge)",
+  "count": 3
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "The Ringstrasse",
+  "count": 3
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "a nearby café",
+  "count": 3
+ },
+ {
+  "system": "llm-70b",
+  "city": "Vienna",
+  "name": "Secession Building",
+  "count": 3
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "St. Stephen's Cathedral (Stephansdom)",
+  "count": 3
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "Prater Park",
+  "count": 3
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "Schönbrunn Gardens",
+  "count": 3
+ },
+ {
+  "system": "llm-70b",
+  "city": "Prague",
+  "name": "a traditional Czech restaurant",
+  "count": 3
+ },
+ {
+  "system": "llm-8b",
+  "city": "Prague",
+  "name": "John Lennon Wall",
+  "count": 3
+ },
+ {
+  "system": "llm-8b",
+  "city": "Prague",
+  "name": "St. Vitus Cathedral",
+  "count": 3
+ },
+ {
+  "system": "llm-8b",
+  "city": "New York",
+  "name": "The Loeb Boathouse",
+  "count": 3
+ },
+ {
+  "system": "llm-8b",
+  "city": "New York",
+  "name": "The Conservatory Garden",
+  "count": 3
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Nakamise Shopping Street",
+  "count": 3
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Tokyo Skytree",
+  "count": 3
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Harajuku's Takeshita Street",
+  "count": 3
+ },
+ {
+  "system": "llm-70b",
+  "city": "Tokyo",
+  "name": "Takeshita-dori",
+  "count": 3
+ },
+ {
+  "system": "llm-8b",
+  "city": "Mumbai",
+  "name": "Bhau Daji Lad Museum",
+  "count": 3
+ },
+ {
+  "system": "llm-70b",
+  "city": "Paris",
+  "name": "Chez L'Ami Jean",
+  "count": 2
+ },
+ {
+  "system": "llm-8b",
+  "city": "Paris",
+  "name": "Champ de Mars and the Eiffel Tower",
+  "count": 2
+ },
+ {
+  "system": "llm-8b",
+  "city": "Paris",
+  "name": "Le Loir dans la Fleur",
+  "count": 2
+ },
+ {
+  "system": "llm-70b",
+  "city": "London",
+  "name": "Trafalgar Square and St Martin-in-the-Fields",
+  "count": 2
+ },
+ {
+  "system": "llm-70b",
+  "city": "London",
+  "name": "Serpentine Lake",
+  "count": 2
+ },
+ {
+  "system": "llm-70b",
+  "city": "London",
+  "name": "The Serpentine Bar & Kitchen",
+  "count": 2
+ },
+ {
+  "system": "llm-70b",
+  "city": "London",
+  "name": "Busaba Eathai Wardour Street",
+  "count": 2
+ },
+ {
+  "system": "llm-70b",
+  "city": "Rome",
+  "name": "National Roman Museum",
+  "count": 2
+ },
+ {
+  "system": "llm-8b",
+  "city": "Rome",
+  "name": "Janiculum Hill",
+  "count": 2
+ },
+ {
+  "system": "llm-70b",
+  "city": "Rome",
+  "name": "Viewpoint at Piazza dei Cavalieri di Malta",
+  "count": 2
+ },
+ {
+  "system": "llm-8b",
+  "city": "Rome",
+  "name": "Enoteca Ferrara",
+  "count": 2
+ },
+ {
+  "system": "llm-8b",
+  "city": "Barcelona",
+  "name": "Cathedral of Barcelona (La Seu)",
+  "count": 2
+ },
+ {
+  "system": "llm-8b",
+  "city": "Barcelona",
+  "name": "La Pedrera (Casa Milà)",
+  "count": 2
+ },
+ {
+  "system": "llm-8b",
+  "city": "Barcelona",
+  "name": "Tibidabo Hill",
+  "count": 2
+ },
+ {
+  "system": "llm-8b",
+  "city": "Barcelona",
+  "name": "Bar El Quim",
+  "count": 2
+ },
+ {
+  "system": "llm-8b",
+  "city": "Barcelona",
+  "name": "Tapas at El Xampanyet",
+  "count": 2
+ },
+ {
+  "system": "llm-70b",
+  "city": "Barcelona",
+  "name": "Cafe Granja Viader",
+  "count": 2
+ },
+ {
+  "system": "llm-70b",
+  "city": "Barcelona",
+  "name": "Placa Catalunya",
+  "count": 2
+ },
+ {
+  "system": "llm-8b",
+  "city": "Berlin",
+  "name": "Berlin Wall Memorial at Bernauer Straße",
+  "count": 2
+ },
+ {
+  "system": "llm-70b",
+  "city": "Berlin",
+  "name": "Berlin Cathedral dome viewpoint",
+  "count": 2
+ },
+ {
+  "system": "llm-8b",
+  "city": "Berlin",
+  "name": "Kreuzberg's Viktoriapark",
+  "count": 2
+ },
+ {
+  "system": "llm-8b",
+  "city": "Berlin",
+  "name": "Fernsehturm (TV Tower)",
+  "count": 2
+ },
+ {
+  "system": "llm-70b",
+  "city": "Amsterdam",
+  "name": "canal ring walk",
+  "count": 2
+ },
+ {
+  "system": "llm-8b",
+  "city": "Amsterdam",
+  "name": "Rijksmuseum Gardens",
+  "count": 2
+ },
+ {
+  "system": "llm-8b",
+  "city": "Amsterdam",
+  "name": "Café Papeneiland (again)",
+  "count": 2
+ },
+ {
+  "system": "llm-8b",
+  "city": "Amsterdam",
+  "name": "Café de Jaren",
+  "count": 2
+ },
+ {
+  "system": "llm-70b",
+  "city": "Lisbon",
+  "name": "Café Martinho da Arcada",
+  "count": 2
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Rossio Square (Praça do Rossio)",
+  "count": 2
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Restaurante Solar do Castelo",
+  "count": 2
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Café Nicola",
+  "count": 2
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "Kunsthaus Wien (Museum of Fine Arts)",
+  "count": 2
+ },
+ {
+  "system": "llm-70b",
+  "city": "Vienna",
+  "name": "View from the top of the Riesenrad in the Prater",
+  "count": 2
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "Schönbrunn Palace and Gardens",
+  "count": 2
+ },
+ {
+  "system": "llm-70b",
+  "city": "Vienna",
+  "name": "Graben Street Food Stalls",
+  "count": 2
+ },
+ {
+  "system": "llm-70b",
+  "city": "Vienna",
+  "name": "Graben Street and surrounding cafes",
+  "count": 2
+ },
+ {
+  "system": "llm-70b",
+  "city": "Prague",
+  "name": "Convent of St. Agnes of Bohemia",
+  "count": 2
+ },
+ {
+  "system": "llm-70b",
+  "city": "Prague",
+  "name": "and evening walk across Charles Bridge",
+  "count": 2
+ },
+ {
+  "system": "llm-70b",
+  "city": "Prague",
+  "name": "Charles Bridge for sunset views",
+  "count": 2
+ },
+ {
+  "system": "llm-8b",
+  "city": "Prague",
+  "name": "Strahov Garden",
+  "count": 2
+ },
+ {
+  "system": "llm-8b",
+  "city": "Prague",
+  "name": "End of the day",
+  "count": 2
+ },
+ {
+  "system": "llm-8b",
+  "city": "Prague",
+  "name": "Letná Viewpoint",
+  "count": 2
+ },
+ {
+  "system": "llm-8b",
+  "city": "Prague",
+  "name": "a nearby restaurant",
+  "count": 2
+ },
+ {
+  "system": "llm-70b",
+  "city": "Prague",
+  "name": "Cafe Slavia",
+  "count": 2
+ },
+ {
+  "system": "llm-70b",
+  "city": "New York",
+  "name": "Cooper Hewitt, Smithsonian Design Museum",
+  "count": 2
+ },
+ {
+  "system": "llm-8b",
+  "city": "New York",
+  "name": "The Solomon R. Guggenheim Museum",
+  "count": 2
+ },
+ {
+  "system": "llm-8b",
+  "city": "New York",
+  "name": "Central Park (Loeb Boathouse)",
+  "count": 2
+ },
+ {
+  "system": "llm-8b",
+  "city": "New York",
+  "name": "Cafe Regine",
+  "count": 2
+ },
+ {
+  "system": "llm-70b",
+  "city": "Tokyo",
+  "name": "University of Tokyo - Yasuda Auditorium",
+  "count": 2
+ },
+ {
+  "system": "llm-70b",
+  "city": "Tokyo",
+  "name": "and stroll around Ginza",
+  "count": 2
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Ichiran Ramen",
+  "count": 2
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Edo-Tokyo Museum",
+  "count": 2
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Asakusa Kannon Temple (Senso-ji)",
+  "count": 2
+ },
+ {
+  "system": "llm-70b",
+  "city": "Tokyo",
+  "name": "Museum of Imperial Collections",
+  "count": 2
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Tokyo Metropolitan Government Building",
+  "count": 2
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Ippudo Ramen",
+  "count": 2
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Tofuya Ukai",
+  "count": 2
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Nihonbashi",
+  "count": 2
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Omoide Yokocho",
+  "count": 2
+ },
+ {
+  "system": "llm-70b",
+  "city": "Tokyo",
+  "name": "Ginza District",
+  "count": 2
+ },
+ {
+  "system": "llm-70b",
+  "city": "Tokyo",
+  "name": "Harajuku Lunch: Kawaii Monster Cafe",
+  "count": 2
+ },
+ {
+  "system": "llm-8b",
+  "city": "Mumbai",
+  "name": "Viewpoint at Malabar Hill",
+  "count": 2
+ },
+ {
+  "system": "llm-8b",
+  "city": "Mumbai",
+  "name": "Sanjay Gandhi National Park",
+  "count": 2
+ },
+ {
+  "system": "llm-8b",
+  "city": "Mumbai",
+  "name": "Juhu Beach",
+  "count": 2
+ },
+ {
+  "system": "llm-8b",
+  "city": "Mumbai",
+  "name": "Malabar Hill Viewpoint",
+  "count": 2
+ },
+ {
+  "system": "llm-8b",
+  "city": "Paris",
+  "name": "Seine River Banks (from Musée d'Orsay to Pont des Arts)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Paris",
+  "name": "Champs-Élysées (from Arc de Triomphe to Place de la Concorde)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Paris",
+  "name": "Musée de la Ville de Paris (Hôtel de Ville)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Paris",
+  "name": "Le Loir dans la Theière (or another nearby restaurant)",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Paris",
+  "name": "Seine River Walk and View of the Eiffel Tower",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Paris",
+  "name": "Seine River Cruise (optional)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Paris",
+  "name": "Le Grand Vefour (lunch)",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Paris",
+  "name": "Champ de Mars for Eiffel Tower viewpoint",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Paris",
+  "name": "Montmartre's Place du Tertre",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Paris",
+  "name": "Montmartre - Jardin des Artists",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Paris",
+  "name": "Viewpoint of the Sacré-Cœur",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Paris",
+  "name": "a bistro on Rue Mouffetard",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Paris",
+  "name": "Institute du Monde Arabe rooftop",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Paris",
+  "name": "Seine River walk to Pont des Arts",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Paris",
+  "name": "Champ de Mars and Eiffel Tower",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Paris",
+  "name": "Seine River Walk (Quai de la Bourdonnais)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Paris",
+  "name": "Montmartre and the Sacré-Cœur",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Paris",
+  "name": "Muséum national d'Histoire naturelle (adjacent to Jardin des Plantes)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Paris",
+  "name": "Café Marly (near the Louvre)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Paris",
+  "name": "Terrasse de l'Hôtel Ritz Paris (for a view)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Paris",
+  "name": "Montmartre and the Sacré-Cœur Basilica",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Paris",
+  "name": "Seine River Promenade",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Paris",
+  "name": "Café de la Mairie (lunch)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Paris",
+  "name": "Champ de Mars (evening stroll)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Paris",
+  "name": "Angelina's",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Paris",
+  "name": "Café de la Rotonde",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Paris",
+  "name": "Café des Deux Magots",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Paris",
+  "name": "Breizet",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Paris",
+  "name": "Café des Négres",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Paris",
+  "name": "River Seine banks",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Paris",
+  "name": "Le Loir dans la peau",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Paris",
+  "name": "Le Food Market",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Paris",
+  "name": "Le Louvre des Antiquaires",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Paris",
+  "name": "Champs-de-Courses",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "London",
+  "name": "a local pub (e.g. The Lamb & Flag)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "London",
+  "name": "a nearby restaurant (e.g. The Goring)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "London",
+  "name": "a Covent Garden restaurant",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "London",
+  "name": "The Shard (viewing platform)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "London",
+  "name": "a restaurant near The Shard",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "London",
+  "name": "the South Bank of the Thames",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "London",
+  "name": "The Millennium Bridge",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "London",
+  "name": "View from Westminster Bridge",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "London",
+  "name": "The Serpentine Lake",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "London",
+  "name": "The Boadicea Statue",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "London",
+  "name": "Café at Primrose Hill",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "London",
+  "name": "The London Eye (viewpoint)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "London",
+  "name": "Primrose Hill Cafe",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "London",
+  "name": "Climb to the top of Primrose Hill",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "London",
+  "name": "The Broadwalk Cafe, Kensington Gardens",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "London",
+  "name": "Primrose Hill viewpoint",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "London",
+  "name": "The Mall and Buckingham Palace",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "London",
+  "name": "St. James's Square and St. James's Church",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "London",
+  "name": "a traditional English pub",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "London",
+  "name": "Somerset House and the South Bank",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "London",
+  "name": "Waterloo Bridge for city views",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "London",
+  "name": "Embankment and the River Thames",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "London",
+  "name": "The Ritz Hotel and Green Park",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "London",
+  "name": "a local restaurant in Primrose Hill",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "London",
+  "name": "The Serpentine Gallery",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "London",
+  "name": "The View from Primrose Hill",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "London",
+  "name": "Riverside Walk along the Thames",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "London",
+  "name": "Hampton Court Palace Gardens",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "London",
+  "name": "Paternoster Coffee House",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "London",
+  "name": "The Grossmiths (cafe)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "London",
+  "name": "Poppies Fish & Chips (lunch)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "London",
+  "name": "Simpson's-in-the-Strand (dinner)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "London",
+  "name": "The Euston Coffee Company",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "London",
+  "name": "Peggy's",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "London",
+  "name": "The Regency Café",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "London",
+  "name": "The Euston Tap",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "London",
+  "name": "The Shard for a drink",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "London",
+  "name": "Princess of Wales's Royal Regiment",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "London",
+  "name": "Burton's Tea Rooms",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "London",
+  "name": "Dyce Road Cafe",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "London",
+  "name": "The Orangery at Kew Gardens (lunch)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "London",
+  "name": "The Spaniards Inn (drinks)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "London",
+  "name": "Dishoom (dinner)",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Rome",
+  "name": "Piazza Venezia and Victor Emmanuel II Monument",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Rome",
+  "name": "National Roman Museum - Baths of Diocletian",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Rome",
+  "name": "Vatican City (stroll the grounds)",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Rome",
+  "name": "and evening stroll in the city center",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Rome",
+  "name": "National Roman Museum (Museo Nazionale Romano)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Rome",
+  "name": "End of day",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Rome",
+  "name": "Viewpoint at the Terrazza del Pincio",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Rome",
+  "name": "Giardino delle Pergole",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Rome",
+  "name": "Casa de' Cavalieri di Malta",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Rome",
+  "name": "Viewpoint from Aventine Hill",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Rome",
+  "name": "Casa delle Ottavi (Pantheon's view point)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Rome",
+  "name": "Campidoglio and Piazza Venezia",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Rome",
+  "name": "Aqua Paolo 6 (view point)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Rome",
+  "name": "Tiburtino Hill",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Rome",
+  "name": "Campidoglio (Capitoline Hill) and the Piazza Venezia viewpoint",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Rome",
+  "name": "Pincio Hill and the Villa Borghese gardens",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Rome",
+  "name": "Caffè Greco for a coffee break",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Rome",
+  "name": "Piazza del Popolo and the Trinità dei Monti viewpoint",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Rome",
+  "name": "Caffè SantAmbrogio",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Rome",
+  "name": "Caffè Fiorentino",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Rome",
+  "name": "Caffè Sant'Eustachio (second visit)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Rome",
+  "name": "Panella (Pasticceria)",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Rome",
+  "name": "Gelato at Fatamorgana",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Rome",
+  "name": "Garden of the Oranges (Giardino degli Aranci)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Rome",
+  "name": "Borghese Gallery (Galleria Borghese)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Rome",
+  "name": "Pantheon (Basilica di San Marco)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Rome",
+  "name": "Tibaldi Park",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Rome",
+  "name": "Trastevere neighborhood",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Rome",
+  "name": "Santa Maria in Trastevere church",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Rome",
+  "name": "Colle del Pincio",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Rome",
+  "name": "Galleria del Cembalo",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Rome",
+  "name": "Pizzeria Bonci",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Barcelona",
+  "name": "Plaça Catalunya and surrounding architecture",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Barcelona",
+  "name": "and stroll along La Rambla",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Barcelona",
+  "name": "Barceloneta Beach and Seafront",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Barcelona",
+  "name": "Casa Milà - La Pedrera",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Barcelona",
+  "name": "Museum of the History of Barcelona (MUHBA)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Barcelona",
+  "name": "Can Culleretes (near the cathedral)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Barcelona",
+  "name": "Plaza de la Seu",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Barcelona",
+  "name": "Barri Gòtic",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Barcelona",
+  "name": "Barcelona History Museum (Museu d'Història de Barcelona)",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Barcelona",
+  "name": "Montjuic viewpoints",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Barcelona",
+  "name": "Turia Avinguda",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Barcelona",
+  "name": "Turia Gardens",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Barcelona",
+  "name": "Casa Batlló's rooftop garden",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Barcelona",
+  "name": "Tibidabo Amusement Park viewpoint",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Barcelona",
+  "name": "Bunkers del Carmel",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Barcelona",
+  "name": "Turó de la Seu",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Barcelona",
+  "name": "a local restaurant near Park Güell",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Barcelona",
+  "name": "Jardins de Trastevere",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Barcelona",
+  "name": "Mirador de l'Oreneta",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Barcelona",
+  "name": "Montjuïc hill and the scenic views",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Barcelona",
+  "name": "a local restaurant in the Gothic Quarter",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Barcelona",
+  "name": "Plaza de la Estrella",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Barcelona",
+  "name": "Montjuïc viewpoint",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Barcelona",
+  "name": "Eixample district cafes",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Barcelona",
+  "name": "Cafè Santiago",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Barcelona",
+  "name": "Can Mas i Plaça",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Barcelona",
+  "name": "Laie bookstore",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Barcelona",
+  "name": "Bar El Quim de la Boqueria",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Barcelona",
+  "name": "Cafè Comerç",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Barcelona",
+  "name": "El Celler de Can Roca",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Barcelona",
+  "name": "Cafè Central",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Barcelona",
+  "name": "Cafè Granja Viennese",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Barcelona",
+  "name": "W Hotel Lounge",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Barcelona",
+  "name": "Casa Llorente",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Barcelona",
+  "name": "Catalunya Square",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Barcelona",
+  "name": "Casa Mono",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Barcelona",
+  "name": "Café Tachón",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Barcelona",
+  "name": "Poble Sec Market",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Barcelona",
+  "name": "Gothic Quarter (El Barri Gòtic)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Barcelona",
+  "name": "Can Culleretes (Carrer de Sant Pere Mes Alt, 16)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Barcelona",
+  "name": "El Born Centre de Cultura i Recerça",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Barcelona",
+  "name": "El Xampanyet (Carrer de Montcada, 7)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Barcelona",
+  "name": "Tickets Bar (Carrer d'Alemany, 6)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Barcelona",
+  "name": "End of the day at Plaça de Catalunya",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Barcelona",
+  "name": "Can Culleretes ( traditional Catalan restaurant)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Barcelona",
+  "name": "Passeig de Marítim and Barceloneta Beach",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Barcelona",
+  "name": "El Quim de la Boqueria (tapas and seafood)",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Barcelona",
+  "name": "Gothic Quarter",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Barcelona",
+  "name": "Gaudí's Park Güell",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Barcelona",
+  "name": "Bar El Xampanyet",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Barcelona",
+  "name": "La Plaça del Forum",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Berlin",
+  "name": "and evening stroll at Unter den Linden",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Berlin",
+  "name": "Berlin Dom (Berlin Cathedral)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Berlin",
+  "name": "Einstein's Garden",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Berlin",
+  "name": "a nearby café",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Berlin",
+  "name": "a nearby restaurant",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Berlin",
+  "name": "a traditional Berlin restaurant, e.g. Restaurant Vau",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Berlin",
+  "name": "a local eatery, e.g. Curry 36",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Berlin",
+  "name": "Gendarmenmarkt's restaurants",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Berlin",
+  "name": "Kreuzberg Park",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Berlin",
+  "name": "Gedächtnisfelder (Memorial Field)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Berlin",
+  "name": "Schleusenkrug, a restaurant in the Tiergarten",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Berlin",
+  "name": "Pfaueninsel (Peacock Island)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Berlin",
+  "name": "Museuminsel (Museum Island)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Berlin",
+  "name": "Friedrichshain - Park",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Berlin",
+  "name": "Friedrichshain's Volkspark",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Berlin",
+  "name": "Karl-Marx-Allee and Friedrichstraße",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Berlin",
+  "name": "Gedächtnis-Kirche (Memorial Church)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Berlin",
+  "name": "Savignyplatz (Café am Savignyplatz or similar)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Berlin",
+  "name": "Kreuzberg Garden (Schrebergarten)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Berlin",
+  "name": "Friedrichshain Garden (Friedrichshain Volkspark)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Berlin",
+  "name": "Friedrichstraße Viewpoint (Panoramablick)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Berlin",
+  "name": "Sprengel Museum",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Berlin",
+  "name": "Paradox Place",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Berlin",
+  "name": "Schwetzingersche Gärten",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Berlin",
+  "name": "Monbijou Bridge",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Berlin",
+  "name": "Friedrichshain's 'Park im Zoo'",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Berlin",
+  "name": "Konditorei Hartmann",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Berlin",
+  "name": "Café am Neuen Markt",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Berlin",
+  "name": "Brewery Schlepsdorf",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Berlin",
+  "name": "Currywurst am Kollwitzplatz",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Berlin",
+  "name": "Bäckerei Block",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Berlin",
+  "name": "Café Select",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Berlin",
+  "name": "Klaus's Kaffee",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Berlin",
+  "name": "Fermor & Eulitz",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Berlin",
+  "name": "Kreuzberg Sunday Market",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Berlin",
+  "name": "Museum Island (entrance: Alte Nationalgalerie)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Berlin",
+  "name": "Schleusenkränzchen",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Berlin",
+  "name": "Kreuzberg street art",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Berlin",
+  "name": "Kaufhaus des Westens (KaDeWe) food hall",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Berlin",
+  "name": "Kreuzberg Market (Markthalle Neun)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Berlin",
+  "name": "Schleusenstraße 34",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Berlin",
+  "name": "Kreuzberg's 2 Michelin-starred restaurant, Vau",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Berlin",
+  "name": "Sternbar",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Berlin",
+  "name": "Dessert at Kreuzberg Market",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Berlin",
+  "name": "Kaffeeberlin",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Berlin",
+  "name": "Markthalle Neustadt",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Berlin",
+  "name": "Kreuzberg Museum (Kulturforum Berlin)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Berlin",
+  "name": "Kasbah",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Berlin",
+  "name": "Restaurant FACIL",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Berlin",
+  "name": "Curry 36 (currywurst stand)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Berlin",
+  "name": "Lange Straße (shopping street with food options)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Berlin",
+  "name": "Kreuzberg Flea Market (optional, if it's still open)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Berlin",
+  "name": "Kreuzberg's Markthalle Neun",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Berlin",
+  "name": "Dining at Restaurant Vau",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Berlin",
+  "name": "Berlin Wall Memorial at Potsdamer Platz",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Berlin",
+  "name": "Kreuzberg's Sunday Market",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Berlin",
+  "name": "Lutterbergstraße",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Amsterdam",
+  "name": "Café 't Smalle",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Amsterdam",
+  "name": "Vleemingen Museum",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Amsterdam",
+  "name": "Oostervaarwerk",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Amsterdam",
+  "name": "De Eeter",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Amsterdam",
+  "name": "NEMI (Nederlands Economisch Museum)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Amsterdam",
+  "name": "NEMO Science and Technology Museum",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Amsterdam",
+  "name": "NEMO roof garden",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Amsterdam",
+  "name": "NEMO roof terrace",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Amsterdam",
+  "name": "Café Papeneiland (lunch)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Amsterdam",
+  "name": "Plantage Kerk",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Amsterdam",
+  "name": "Oosterdorp viewpoint",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Amsterdam",
+  "name": "Keukenhof Gardens (winter gardens)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Amsterdam",
+  "name": "Leidseplein viewpoint",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Amsterdam",
+  "name": "Plaswijckpark",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Amsterdam",
+  "name": "NEMO Rotterdam viewpoint ( Amsterdam's city view)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Amsterdam",
+  "name": "Scheepsklerk viewpoint",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Amsterdam",
+  "name": "De Pijp Lunch at Albert Cuyp Market",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Amsterdam",
+  "name": "Nieuwemarkt and the surrounding streets",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Amsterdam",
+  "name": "Bos en Lommerpark",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Amsterdam",
+  "name": "Plaswijk and the view on the city",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Amsterdam",
+  "name": "Stop at a local café or bar for a drink and a snack",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Amsterdam",
+  "name": "Oosterdorp and the Amstel river",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Amsterdam",
+  "name": "Plantage Kerkhof",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Amsterdam",
+  "name": "Amsterdam Tower (open until 20:30)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Amsterdam",
+  "name": "Plaswijk",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Amsterdam",
+  "name": "SkyLift Amsterdam",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Amsterdam",
+  "name": "Jordaan neighborhood walk",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Amsterdam",
+  "name": "Café de Kasjouw",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Amsterdam",
+  "name": "Annemarieke van der Schuur (local food market)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Amsterdam",
+  "name": "Lutteboom (café)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Amsterdam",
+  "name": "Canal boat tour",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Amsterdam",
+  "name": "Café Goudeau",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Amsterdam",
+  "name": "the Jordaan neighborhood",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Amsterdam",
+  "name": "Lot SixtyNine",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Amsterdam",
+  "name": "De Silveren Beek",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Amsterdam",
+  "name": "Bakery Cafe Papeneiland",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Amsterdam",
+  "name": "Cafe Hoppe",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Amsterdam",
+  "name": "Nine Streets neighborhood",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Amsterdam",
+  "name": "Nine Streets (Jordaan) neighborhood",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Amsterdam",
+  "name": "Café 't Smal",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Amsterdam",
+  "name": "Café Papeneiland (coffee break)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Amsterdam",
+  "name": "Café Sfeervolk",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Amsterdam",
+  "name": "Haesje Claerhout",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Amsterdam",
+  "name": "Vleminckx Frites",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Amsterdam",
+  "name": "Canal boat tour (optional)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Amsterdam",
+  "name": "De Pijp (Mercado)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Amsterdam",
+  "name": "Amsterdam Canal Ring (walk along the canals)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Amsterdam",
+  "name": "Tropenmuseum",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Amsterdam",
+  "name": "Jordaan neighborhood stroll",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Amsterdam",
+  "name": "Haarlemmerstraat for dinner",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "National Pantheon (Igreja de Santa Engrácia)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Lisbon History Centre (Centro de História de Lisboa)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Calouste Gulbenkian Museum (Museu Calouste Gulbenkian)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Lisbon City Museum (Museu da Cidade de Lisboa)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "D. Pedro IV Square (Praça D. Pedro IV)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Lisbon Fado Museum (Museu do Fado)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "National Ancient History Museum (Museu Nacional de Arqueologia)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Restauradores Square (Praça dos Restauradores)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Lisbon Pantheon (Panteão Nacional)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Largo do Carmo Square (Largo do Carmo)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Monastery of São Vicente de Fora (Mosteiro de São Vicente de Fora)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Carmo Convent Ruins (Ruíns do Convento do Carmo)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Lisbon Museum (Museu de Lisboa)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Castle of São Jorge (Castelo de São Jorge)",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Lisbon",
+  "name": "a traditional restaurant in Alfama",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Lisbon",
+  "name": "and stroll in the Chiado neighborhood",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Museum of Ancient Art (Museu Nacional de Arte Antiga)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Lisbon History Centre (Centro de História da Universidade de Lisboa)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Santa Casa do Exército",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Lisbon Military Museum",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Lisbon Museum (Museu da Cidade)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "National Museum of Ancient Art (Museu Nacional de Arte Antiga)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Santa Luzia viewpoint and the adjacent church of Santa Luzia",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "a local restaurant in the Bairro Alto neighborhood",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Lisbon Castle Museum (Museu da República)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Tram 28E ride from Martim Mondego to the top of the castle",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Rooftop bar at the top of the castle for sunset",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Lisbon",
+  "name": "a traditional Portuguese restaurant in Bairro Alto",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Lisbon",
+  "name": "a traditional restaurant in Bairro Alto",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Restaurante Adega da Cartuxa",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Lavra Park",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Café Imperador",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "End of the day",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Lisbon",
+  "name": "View of the Castle of São Jorge",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Lisbon",
+  "name": "the streets and viewpoints of Alfama",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Lisbon",
+  "name": "the viewpoints and streets of Alfama",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Restaurante Zé da Moura",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Largo do Carmo (evening stroll)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Prazeres Park",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "a local restaurant in Alfama",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Lisbon",
+  "name": "Se Cathedral",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Lisbon",
+  "name": "Cafe A Brasileira",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Café Uptown",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Fado Alcântara",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Pastelaria Manteigaria",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Café Américano",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Lisbon",
+  "name": "Pois Café",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Conserveira de Belém (lunch)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Fado in Alfama (optional)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Ribeira Market",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Casa da Lapa",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Café Monument",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Largo do Carmo Market",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Livraria Bertrand (Miradouro de Santa Luzia)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Café do Tejo",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Calçada Portuguesa",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Café Imperial",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Café do Carmo",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Commissão Vitória",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "O Paparico",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Walking through the Castle walls and gardens",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Monsanto Gardens (Jardins do Monsanto)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Adeus, Lisboa (restaurant)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Walking through the historic neighborhood of Alfama",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Casa Velha (restaurant)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Nighttime stroll through the Baixa neighborhood",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Cafe Comércio ( Pastéis de Nata)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Lisbon Botanical Garden (Jardim Botânico da Ajuda)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Lisbon",
+  "name": "Restaurante Veleiro (Seafood)",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Vienna",
+  "name": "and stroll around Graben and Kohlmarkt",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Vienna",
+  "name": "and stroll around Ringstrasse",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "Archaeological Museum (Historisches Museum der Stadt Wien)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "a nearby restaurant",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "Break for lunch at a nearby café",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "Break for a short rest",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "Museum of Fine Arts (Kunsthistorisches Museum)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "End of the day",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Vienna",
+  "name": "Ringstrasse",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "a traditional Viennese restaurant on Graben (e.g., Griechenbeisl)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "Kreuzviertel tram stop (to MuseumsQuartier)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "Museum of Modern Art (MUMOK)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "Le Loft (lunch)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "Bundesmuseum (Bundesmuseum Wien)",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Vienna",
+  "name": "a café in the city center",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Vienna",
+  "name": "View from the top of the Rathaus",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Vienna",
+  "name": "Danube Canal and view of the city",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "Prater Park (Riesenrad)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "Lindengasse Park",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "Kahlenberg Castle (Schloss Kahlenberg)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "Donauinsel (Danube Island)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "Reichsbrunnen Fountain",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "Schönbrunn Palace Panorama Viewpoint",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "Kahlenberg Viewpoint",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "Laxenhausen Park",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Vienna",
+  "name": "Belvedere Palace Gardens",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Vienna",
+  "name": "Danube Canal and views of the city",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Vienna",
+  "name": "Danube Canal and Schwedenplatz",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "Ungargasse and the Vienna Botanical Garden",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "Nussdorf Obelisk",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "Prater Park and the Riesenrad (Ferris wheel)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "Lipizzaner horse show (if available)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "A stroll through the Prater Park",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "Lieslstraße (Rathausplatz)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "Schönbrunn Palace and Gardens to Belvedere Gardens",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "Belvedere Gardens to Prater",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "Prater to Naschmarkt",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "Naschmarkt to Rathausplatz",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "Café Demel",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "Wiener Würstelstand (Naschmarkt)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "Lukrative's Café",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "Vienna City Market Hall (Naschmarkt)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "Lammachsschnitzel at Gasthaus Pölz",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "Mozart Concert at Musikverein",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Vienna",
+  "name": "Graben Street",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "Wiener Eisle",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "Gustav Klimt - The Kiss at the Belvedere Museum",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "Café am Hof",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "Schweizer Stuben",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "Michaelerhof",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "Laxenhausen Park (Schönbrunn's gardens)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "Naschmarkt market",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "20er Haus (Young People's Centre)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "Café Müller",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Vienna",
+  "name": "Schönbrunn Palace Christmas Market",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "Plachutta Wirtshaus",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "Naschmarkt Flea Market (check if it's open on Sundays)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "MuseumsQuartier (MQ) for dinner",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "Gasthaus Salmi",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Vienna",
+  "name": "the Wiener Zeitung building (optional)",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Prague",
+  "name": "Main Building of the National Gallery in Prague - Veletržní Palace",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Prague",
+  "name": "Main Post Office and Museum of Postal History",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Prague",
+  "name": "Convent of St Agnes of Bohemia",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Prague",
+  "name": "Dancing House (Tanzhaus) and the Vltava River",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Prague",
+  "name": "a rooftop restaurant with a view of the city",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Prague",
+  "name": "Asteria Gallery",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Prague",
+  "name": "St. Agnes Convent",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Prague",
+  "name": "National Gallery in the Convent of St. Agnes",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Prague",
+  "name": "Main Train Station and the nearby Powder Gate",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Prague",
+  "name": "Old Town Square and the Astronomical Clock",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Prague",
+  "name": "and evening stroll along the Vltava River",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Prague",
+  "name": "National Gallery in the Wallenstein Palace",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Prague",
+  "name": "Old Town Hall and Astronomical Clock",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Prague",
+  "name": "Old Town Square viewpoint at Town Hall",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Prague",
+  "name": "Hradčanská Street and St. Nicholas Church",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Prague",
+  "name": "Dvořák's Square and sunset",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Prague",
+  "name": "Charles Bridge for sunset viewpoint",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Prague",
+  "name": "Dancing House and Vltava River",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Prague",
+  "name": "Rooftop Bar at Mucha's Apartment Building",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Prague",
+  "name": "Stromovka Park",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Prague",
+  "name": "Věžnice Restaurant",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Prague",
+  "name": "Dlouhá Street",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Prague",
+  "name": "Take a walk to the top of Petřín Tower",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Prague",
+  "name": "Waldspeak - Prague",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Prague",
+  "name": "Take a walk to the top of the National Museum",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Prague",
+  "name": "Take a walk to the top of the Church of St. Nicholas",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Prague",
+  "name": "Dlouhá ulice",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Prague",
+  "name": "Petřín Hill (Observation Tower)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Prague",
+  "name": "Kavárna Mucha",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Prague",
+  "name": "Dlouhá Street Food Market (street food)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Prague",
+  "name": "Kavárna Salamander",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Prague",
+  "name": "Petrin Hill",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Prague",
+  "name": "Café Majda",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Prague",
+  "name": "Dlouha Street",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Prague",
+  "name": "Kavárna Pod Petrem",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Prague",
+  "name": "Kavárna Dlouhá",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Prague",
+  "name": "Café Majestic",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Prague",
+  "name": "Café Bar Mlýnec",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Prague",
+  "name": "Café Sladov",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Prague",
+  "name": "Powder Bridge (Mlýnská brána)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Prague",
+  "name": "Dlouhá Street (Na Poříčí)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Prague",
+  "name": "Park Šestka",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Prague",
+  "name": "Concert at Rudolfinum (if scheduled)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Prague",
+  "name": "Old Town Hall and Orloj",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Prague",
+  "name": "Powder Gate and Josefov",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Prague",
+  "name": "Eska ( Michelin-starred restaurant)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Prague",
+  "name": "Wenceslas Square and St. Wenceslas Monument",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Prague",
+  "name": "Café Imperial for dinner",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Prague",
+  "name": "Petřín Funicular",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Prague",
+  "name": "Wall of Charles Bridge",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Prague",
+  "name": "Petřín Tower and Observation Deck",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Prague",
+  "name": "Charles Bridge and statue of St. John Nepomuk",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Prague",
+  "name": "Waldorf Astoria Prague - Tea Lounge for coffee or snack",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Prague",
+  "name": "Old Town Hall and Orloj (Astronomical Clock)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Prague",
+  "name": "La Degustazione",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Prague",
+  "name": "Brewery Pivovarská",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "New York",
+  "name": "Ess-a-Bagel (Multiple locations, but 61st St location is within walking distance)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "New York",
+  "name": "New York Public Library (Stephen A. Schwarzman Building)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "New York",
+  "name": "The Guggenheim Museum",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "New York",
+  "name": "Sarabeth's ( Upper East Side location)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "New York",
+  "name": "a nearby restaurant (e.g. The Flatiron Room)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "New York",
+  "name": "a Midtown restaurant",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "New York",
+  "name": "The Loeb Boathouse (breakfast)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "New York",
+  "name": "a nearby restaurant",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "New York",
+  "name": "Carmine's (23rd St)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "New York",
+  "name": "Top of the Rock (Rockefeller Center)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "New York",
+  "name": "Lamppost Cafe (Rockefeller Center)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "New York",
+  "name": "Central Park - Bow Bridge",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "New York",
+  "name": "Cafe Grumpy (Greenwood Heights)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "New York",
+  "name": "The Top of the Rock Observation Deck",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "New York",
+  "name": "Cafe Regalatto",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "New York",
+  "name": "Ess-a-Bagel (again for dessert)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "New York",
+  "name": "Smorgasbord",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "New York",
+  "name": "Lillie's Q",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "New York",
+  "name": "L'Artusi",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "New York",
+  "name": "The NoMad",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "New York",
+  "name": "The Conservatory Garden in Central Park",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "New York",
+  "name": "Russ & Daughters Cafe (approx. 5 minutes walk)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "New York",
+  "name": "Carbone (approx. 10 minutes walk)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "New York",
+  "name": "Chelsea Market Food Hall",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "New York",
+  "name": "The New York Public Library (42nd Street Library)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "New York",
+  "name": "The Loeb Boathouse (Central Park)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "New York",
+  "name": "Washington Square Park (again for a sunset view)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "New York",
+  "name": "The Westlight",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Tokyo",
+  "name": "University of Tokyo - Akamon Gate",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Tokyo",
+  "name": "Asakusa - Senso-ji Temple",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Take a short walk to the nearby Kitanomaru Park",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "a nearby restaurant in the East Garden area",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Miraikan science museum",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Take a short walk to the nearby Tokyo Station",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Tokyo Station's Marunouchi Building and its historic clock tower",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Dine at a restaurant in the Marunouchi area",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Take a short walk to the nearby Hibiya Park",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "the nearby Tokyo Opera City",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Otemachi Tower",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Asakusa's Kiyomizu",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Shibuya Crossing and Hachiko Statue",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Shinjuku's Omoide Yokocho",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Tokyo",
+  "name": "Mitsukoshi Department Store",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Tokyo",
+  "name": "Asakusa and Senso-ji Temple",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Tokyo",
+  "name": "Asakusa district and Senso-ji Temple",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "The East Garden",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Tsukemen Gindayu",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Tokyo Station Building",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Sushi Saito",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "National Museum of Western Art",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Iidamachi",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Asakusa's Nakamise Shopping Street",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Asakusa Kannon Temple",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Tokyo Skytree's Solamachi",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Museum of Emerging Science and Innovation",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Tokyo",
+  "name": "View of Tokyo from the Sumida River walk",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Tokyo",
+  "name": "Tokyo Skytree Observation Deck",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Tokyo",
+  "name": "Observation Deck at Bunkyo Civic Center",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Sumida Park",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Tobu Tower",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Shiba Park to Tokyo Tower",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Tokyo Tower's Restaurant",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Mori Tower (Observation Deck)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Ueno Park's Shinobazuchou",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Ueno Park's Shinobazu Pond",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Sumida River Park",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Tokyo",
+  "name": "Observation Deck at Mori Tower in Roppongi Hills",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Tokyo",
+  "name": "Zojo-ji Temple and Shiba Park",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Tokyo",
+  "name": "Tokyo Tower viewpoint",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Tokyo",
+  "name": "Tokyo Metropolitan Government Building Observation Decks",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Tokyo",
+  "name": "Tokyo Skytree for sunset views",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Shimokitazawa",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Observation Deck of Tokyo Tower",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Koamachi Park",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Tsukishima",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Shibuya Crossing and Shibuya 109",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "a restaurant near the Imperial Palace East Garden",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Shakujidai viewpoint in Ueno Park",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Sunset at the Tokyo Skytree",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Tokyo",
+  "name": "Golden Gai",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Tsukiji Fish Market",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Shinbashi Crossing",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Izakaya Rokuhara",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Café de l'Effort",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Ichiran Shibuya",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Daimon Coffee",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Sugiki Coffee",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Han no Daidokoro Bettei",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Kissaku",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Café Kinsan",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Harajuku",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Sushi Dai (or similar sushi restaurant)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Tsukishima Shrine",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Kawai Honten (bakery and cafe)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Kawai Honten",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Cafe Kissa (or similar cafe)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Shinbashi Station (optional dinner)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Isshin Chayabu (coffee shop)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Café de l'O (cafe)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Uchi no Kasa (local food restaurant)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Café Kays (cafe)",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Tokyo",
+  "name": "Shibuya Stream",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Tokyo",
+  "name": "Shibuya Ichiban Tei",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Tokyo",
+  "name": "Ginza Dinner: Sushi Saito",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Tsukemen Gyoza no Ohsho",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Tsukiji Fish Market (outer market)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Hamadashita, Shimokitazawa",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Nonbei Yama",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Kiyosumi Garden",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Nihonbashi Bridge",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Tokyo",
+  "name": "Harajuku Takeshita-dori",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Tokyo",
+  "name": "Ginza Dinner and Walk",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Asakusa",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Kamisan Ramen",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Tsukiji Fish Market's Sushi Dai",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Asakusa Shrine",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Senso-ji Temple",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Izakaya Narisawa (lunch)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Hamamatsucho One-Chome Park",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Tokyo",
+  "name": "Sushi Dai (dinner)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Mumbai",
+  "name": "Prince of Wales Museum",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Mumbai",
+  "name": "Siddhi Vinayaka Temple",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Mumbai",
+  "name": "Basilica of Our Lady of the Mount",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Mumbai",
+  "name": "Leopold Cafe (near Gateway of India)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Mumbai",
+  "name": "Chhatrapati Shivaji Lighthouse",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Mumbai",
+  "name": "Haji Ali Mosque",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Mumbai",
+  "name": "a local eatery on Colaba Causeway",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Mumbai",
+  "name": "End the day at Dhobi Ghat",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Mumbai",
+  "name": "Sagar Restaurant",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Mumbai",
+  "name": "Worli Sea Link Viewpoint",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Mumbai",
+  "name": "Hiranandani Gardens",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Mumbai",
+  "name": "Malabar Point Viewpoint",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Mumbai",
+  "name": "Byculla Zoo (vegetable garden)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Mumbai",
+  "name": "Taraporewala Aquatic Museum",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Mumbai",
+  "name": "Viewpoint at Marine Drive",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Mumbai",
+  "name": "Olive Bar & Kitchen",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Mumbai",
+  "name": "Dinshq",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Mumbai",
+  "name": "Britannia & Co. Bakery",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Mumbai",
+  "name": "Bastion Point Cafe",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Mumbai",
+  "name": "Cusine House",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Mumbai",
+  "name": "Café Sadhana",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Mumbai",
+  "name": "Horn OK Pleasure",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Mumbai",
+  "name": "Café 24",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Mumbai",
+  "name": "Bade Miya",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Mumbai",
+  "name": "Gajalee",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Mumbai",
+  "name": "Haji Ali Juice Centre",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Mumbai",
+  "name": "Café 24/7",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Mumbai",
+  "name": "Gharamat",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Mumbai",
+  "name": "Bhel Puri at Chowpatty",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Mumbai",
+  "name": "Taste of India",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Mumbai",
+  "name": "Vada Pav at Dadar Market",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Mumbai",
+  "name": "Street Food at Chowpatty Beach",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Mumbai",
+  "name": "a street food stall near Bhuleshwar Market",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Mumbai",
+  "name": "Sanjay Gandhi National Park (entrance)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Mumbai",
+  "name": "Walk in Sanjay Gandhi National Park",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Mumbai",
+  "name": "a restaurant on Colaba Causeway",
+  "count": 1
+ },
+ {
+  "system": "llm-70b",
+  "city": "Mumbai",
+  "name": "Babulnath Temple",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Mumbai",
+  "name": "India Guest House",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Mumbai",
+  "name": "Nariman Point Sea Link",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Mumbai",
+  "name": "a local restaurant (e.g. Kailash Parbat)",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Mumbai",
+  "name": "Worli Beach",
+  "count": 1
+ },
+ {
+  "system": "llm-8b",
+  "city": "Mumbai",
+  "name": "Vetal Mandir, Fort",
+  "count": 1
+ }
+]

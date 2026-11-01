@@ -54,4 +54,19 @@ ungrounded (mitigated by a manual spot-check of unmatched names against live OSM
 
 ## Amendments
 
-(none yet)
+All amendments were made before the final 96-scenario evaluation run. Amendments 1 to 3 were prompted by a preliminary run on the first
+6 cities (the harness's own output and a look at the plans), so they were not blind to early results; they are listed so a reader can judge that.
+
+1. **Grounding has two tiers.** The first run showed most "not found" LLM stops were real venues missing from the 3.5 km snapshot
+   (Arc de Triomphe, Cafe de Flore, Somerset House). Stops not in the snapshot are now checked once against Nominatim (similar name within 12 km of the city centre).
+   Such a stop counts as *grounded* but with unknown hours, and is left out of the profile-match ratio. Stops with no hit remain *not found*.
+   The README reports snapshot, geocoder-confirmed and not-found shares separately. Cache: `data/geocode-cache.json`.
+2. **Walking-time factor is calibrated, not fixed at 1.3.** A 40-pair check against OSRM foot routing showed straight-line x 1.3 at 4.8 km/h underestimates routed time
+   (median ours/routed 0.77). The factor is re-set from a seeded 300-pair calibration over all 12 cities before the final run (`results/walk-calibration.json`), and an
+   independent re-verification of planner transfers with routed durations is reported (`results/osrm-check.json`).
+3. **Holiday clauses.** opening_hours.js rejects tags mentioning public or school holidays when it has no calendar for the country and state, which would have
+   discarded a large share of tags. Fallback: drop the holiday clauses and keep the weekday rules (flagged `approx`). The two test dates fall on no public holiday in the
+   12 countries, to my knowledge (not verified for every region).
+4. **Planner weights.** After inspecting Paris and London plans in the UI (not evaluation scores) the importance of statues and memorials was lowered and the insertion gain
+   was changed to importance per extra walking minute (visit length removed). Prompt text for the LLM baseline lives in `eval/llm.ts`; it states the opening-hours and walking-time requirements so the baseline is not a strawman.
+5. **Profile categories.** `ALLOWED` sets in `src/core/catalog.ts` define "on profile" (food counts for every profile).

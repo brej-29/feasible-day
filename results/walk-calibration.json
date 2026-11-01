@@ -1,0 +1,13 @@
+{
+  "engine": "OSRM foot profile, routing.openstreetmap.de",
+  "pairs": 300,
+  "ratioOursOverRouted": {
+    "p10": 0.7893050129109859,
+    "median": 0.9471844946236343,
+    "p90": 1.068426383168075
+  },
+  "meanAbsPctError": 0.10283337898952315,
+  "shareWhereOursUnderestimatesBy20pct": 0.12,
+  "currentDetourFactor": 1.3,
+  "detourFactorThatMakesMedianRatioOne": 1.3724886834391834
+}

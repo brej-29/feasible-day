@@ -5,5 +5,7 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   base: "./",
   plugins: [react()],
+  // maplibre-gl 6 starts its worker from import.meta.url; pre-bundling breaks that path
+  optimizeDeps: { exclude: ["maplibre-gl"] },
   test: { include: ["tests/**/*.test.ts"] },
 });

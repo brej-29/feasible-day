@@ -1,6 +1,6 @@
 const R_KM = 6371.0088;
-/** Straight-line distance understates street distance; calibrated against a routing engine in results/. */
-export const DETOUR_FACTOR = 1.3;
+/** Straight-line distance understates street distance. 1.37 = 1.3 divided by the median ours/routed ratio (0.947) over 300 seeded pairs against OSRM foot routing, see results/walk-calibration.json. */
+export const DETOUR_FACTOR = 1.37;
 export const WALK_KMH = 4.8;
 
 type LL = { lat: number; lon: number };

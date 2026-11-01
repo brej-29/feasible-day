@@ -17,7 +17,7 @@ export function wilson(k: number, n: number, z = 1.96): [number, number] {
   const d = 1 + (z * z) / n;
   const c = p + (z * z) / (2 * n);
   const w = z * Math.sqrt((p * (1 - p)) / n + (z * z) / (4 * n * n));
-  return [(c - w) / d, (c + w) / d];
+  return [Math.max(0, (c - w) / d), Math.min(1, (c + w) / d)];
 }
 
 export const mean = (xs: number[]) => (xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : NaN);
