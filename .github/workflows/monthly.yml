@@ -26,6 +26,8 @@ concurrency: monthly
 
 jobs:
   update:
+    # a manual start from any other branch would run that branch's code on the owner's PC
+    if: github.ref == 'refs/heads/main'
     runs-on: ${{ inputs.runner || 'self-hosted' }}
     timeout-minutes: 120
     defaults:
@@ -37,7 +39,7 @@ jobs:
         with:
           node-version: 22
           cache: npm
-      - run: npm ci
+      - run: npm ci --ignore-scripts
       - name: Run monthly job
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
