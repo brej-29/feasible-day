@@ -1,36 +1,8 @@
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
-
-# Test cache
-.pytest_cache/
-
-# Virtual environments
-.env
-.venv
-venv/
-env/
-
-# Distribution / packaging
-build/
+node_modules/
 dist/
-*.egg-info/
-
-# IDE / editor settings
-.vscode/
-.idea/
-*.swp
-
-# macOS files
-.DS_Store
-
-# Streamlit
-.streamlit/secrets.toml
-
-# Logs
-logs/
+.env
+.env.*
 *.log
-
-# Cache
-.cache/
+.DS_Store
+.claude/
+eval/cache/
