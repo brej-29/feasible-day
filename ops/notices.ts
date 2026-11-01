@@ -1,7 +1,7 @@
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { CITIES } from "../src/core/cities";
 import { cleanNotice, type Notice, type NoticeFile } from "../src/core/notices";
-import { BudgetError, complete } from "./llm";
+import { BudgetError, complete, ping } from "./llm";
 
 /**
  * Monthly "current events" check. GDELT (free, keyless) supplies recent headlines per city; the LLM only picks which
@@ -62,6 +62,7 @@ export function pick(raw: string, arts: Article[]): Notice[] {
 }
 
 export async function runNotices(): Promise<string> {
+  await ping();
   const prev: NoticeFile | null = existsSync(OUT) ? (JSON.parse(readFileSync(OUT, "utf8")) as NoticeFile) : null;
   const oldest = new Date(Date.now() - MAX_AGE_DAYS * 864e5).toISOString().slice(0, 10);
   // carry forward last month's notices only while they are still recent

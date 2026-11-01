@@ -28,17 +28,26 @@ npm run monthly            # both steps; `npm run monthly -- notices` or `-- req
 
 `.env` (gitignored): `LLM_ENDPOINT`, `LLM_API_KEY`, `LLM_MODEL`, optional `LLM_MODEL_FALL_1`, `LLM_MODEL_FALL_2`, `LLM_PRICE_IN_PER_M`, `LLM_PRICE_OUT_PER_M`, `MONTHLY_BUDGET_USD` (default 1.5). Without LLM variables the notices step is skipped. The requests step needs `GITHUB_TOKEN` while the repository is private (`GITHUB_TOKEN=$(gh auth token) npm run monthly -- requests`).
 
-## Run it on GitHub
+## Run it on GitHub (self-hosted runner on your PC)
 
-GitHub's servers cannot reach an OmniRoute on `localhost`. Set these repository secrets (Settings, Secrets and variables, Actions) and point the endpoint at OpenRouter directly; the client strips the `openrouter/` prefix from model names when the endpoint host is `openrouter.ai`:
+GitHub's servers cannot reach an OmniRoute on `localhost`, and OpenRouter is not an option here. So the workflow runs on a **self-hosted runner**: a small program on your PC that takes jobs from GitHub. The job then calls `http://localhost:20128` itself.
 
-| Secret | Value |
+| Situation | What happens |
 |---|---|
-| `LLM_ENDPOINT` | `https://openrouter.ai/api/v1/chat/completions` |
-| `LLM_API_KEY` | an OpenRouter key, ideally one with a spending limit set in the OpenRouter dashboard |
-| `LLM_MODEL`, `LLM_MODEL_FALL_1`, `LLM_MODEL_FALL_2`, `LLM_PRICE_IN_PER_M`, `LLM_PRICE_OUT_PER_M`, `MONTHLY_BUDGET_USD` | as in `.env` |
+| PC on, runner started, OmniRoute running on the 1st | The job runs and opens a pull request. |
+| PC off or runner stopped | The job waits in the queue (GitHub drops it after 24 hours). Start the runner and OmniRoute, open the run in the Actions tab, press "Re-run all jobs". |
+| Runner on but OmniRoute stopped | The notices step fails at once with "start OmniRoute, then run again" (the requests digest still runs). Start OmniRoute and re-run. |
+| Want a run without your PC | Actions, Monthly update, Run workflow, runner `ubuntu-latest`: requests digest only, no LLM. |
 
-Also enable Settings, Actions, General, "Allow GitHub Actions to create and approve pull requests". Pull requests opened by the workflow do not trigger the CI workflow (a GitHub rule for the built-in token); the changes are data files only. Merging to `main` redeploys the Space when `HF_TOKEN` is set.
+One-time setup (these need you, not the repo):
+
+1. **Register the runner.** Repository Settings, Actions, Runners, New self-hosted runner, Windows. Follow the download and `config.cmd` steps it shows, then run `run.cmd` when you want jobs to start (or install it as a service). Git for Windows must be installed (the workflow uses `bash`).
+2. **Secret.** `gh secret set LLM_API_KEY` (paste the key when asked) or Settings, Secrets and variables, Actions, New repository secret.
+3. **Variables.** `LLM_ENDPOINT`, `LLM_MODEL`, `LLM_MODEL_FALL_1`, `LLM_MODEL_FALL_2`, `LLM_PRICE_IN_PER_M`, `LLM_PRICE_OUT_PER_M`, `MONTHLY_BUDGET_USD` are repository variables (not secret), already set from `.env`.
+4. **Pull requests.** Settings, Actions, General, Workflow permissions: tick "Allow GitHub Actions to create and approve pull requests".
+5. **Protect the runner (important, the repo is public).** Settings, Actions, General, Fork pull request workflows: choose "Require approval for all external contributors". Never approve a pull request from a stranger that edits anything under `.github/workflows`. `monthly.yml` itself only runs on the schedule or a manual start, never on pull requests, but a hostile pull request could try to point another workflow at your runner; that approval setting is what stops it.
+
+Pull requests opened by the workflow do not trigger the CI workflow (a GitHub rule for the built-in token); the changes are data files only. Merging to `main` redeploys the Space when `HF_TOKEN` is set.
 
 ## Adding a requested city
 

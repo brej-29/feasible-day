@@ -94,3 +94,12 @@ export async function complete(system: string, user: string): Promise<Completion
 }
 
 export class BudgetError extends Error {}
+
+/** Fail fast, with a message a person can act on, when the router is not running. Any HTTP answer counts as up. */
+export async function ping(): Promise<void> {
+  try {
+    await fetch(new URL(env("LLM_ENDPOINT")).origin, { signal: AbortSignal.timeout(8000) });
+  } catch {
+    throw new Error(`LLM endpoint ${new URL(env("LLM_ENDPOINT")).origin} is unreachable: start OmniRoute, then run again`);
+  }
+}

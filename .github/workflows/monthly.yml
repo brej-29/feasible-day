@@ -1,11 +1,21 @@
 name: Monthly update
 
 # Refreshes news notices and compiles city requests, then opens a pull request for a human to review and merge.
-# LLM secrets are optional: without LLM_API_KEY the notices step is skipped and the requests digest still runs.
+# Notices call an OpenAI-compatible router on localhost (OmniRoute), so this job runs on a SELF-HOSTED runner on the
+# owner's PC, which must be on with OmniRoute running. If the PC is off the job waits in the queue (GitHub drops it after
+# 24 hours); start the PC and OmniRoute, then use "Re-run all jobs". To run on GitHub's servers instead (requests digest
+# only, no LLM), start the workflow by hand and pick ubuntu-latest.
+# Safety: this workflow only runs on a schedule or a manual start by someone with write access, never on pull requests.
 on:
   schedule:
     - cron: "0 3 1 * *"
   workflow_dispatch:
+    inputs:
+      runner:
+        description: "self-hosted = my PC with OmniRoute running; ubuntu-latest = GitHub servers, requests digest only"
+        type: choice
+        options: [self-hosted, ubuntu-latest]
+        default: self-hosted
 
 permissions:
   contents: write
@@ -16,8 +26,11 @@ concurrency: monthly
 
 jobs:
   update:
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
+    runs-on: ${{ inputs.runner || 'self-hosted' }}
+    timeout-minutes: 120
+    defaults:
+      run:
+        shell: bash
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -28,16 +41,18 @@ jobs:
       - name: Run monthly job
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          LLM_ENDPOINT: ${{ secrets.LLM_ENDPOINT }}
+          LLM_ENDPOINT: ${{ vars.LLM_ENDPOINT }}
           LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
-          LLM_MODEL: ${{ secrets.LLM_MODEL }}
-          LLM_MODEL_FALL_1: ${{ secrets.LLM_MODEL_FALL_1 }}
-          LLM_MODEL_FALL_2: ${{ secrets.LLM_MODEL_FALL_2 }}
-          LLM_PRICE_IN_PER_M: ${{ secrets.LLM_PRICE_IN_PER_M }}
-          LLM_PRICE_OUT_PER_M: ${{ secrets.LLM_PRICE_OUT_PER_M }}
-          MONTHLY_BUDGET_USD: ${{ secrets.MONTHLY_BUDGET_USD }}
-        run: npm run monthly
+          LLM_MODEL: ${{ vars.LLM_MODEL }}
+          LLM_MODEL_FALL_1: ${{ vars.LLM_MODEL_FALL_1 }}
+          LLM_MODEL_FALL_2: ${{ vars.LLM_MODEL_FALL_2 }}
+          LLM_PRICE_IN_PER_M: ${{ vars.LLM_PRICE_IN_PER_M }}
+          LLM_PRICE_OUT_PER_M: ${{ vars.LLM_PRICE_OUT_PER_M }}
+          MONTHLY_BUDGET_USD: ${{ vars.MONTHLY_BUDGET_USD }}
+        run: npm run monthly -- ${{ inputs.runner == 'ubuntu-latest' && 'requests' || '' }}
       - name: Open pull request
+        # also runs when a step above failed, so a partial result is not lost; the job still shows red
+        if: ${{ !cancelled() }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -45,10 +60,11 @@ jobs:
           month=$(date -u +%Y-%m)
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git switch -c "monthly/$month"
+          git switch -C "monthly/$month"
           git add public/notices.json docs/REQUESTS.md data/ledger.json
           git commit -m "Monthly update $month: notices and city requests"
-          git push --force-with-lease origin "monthly/$month"
+          git push --force origin "monthly/$month"
           gh pr create --base main --head "monthly/$month" \
             --title "Monthly update $month" \
-            --body "Automated notices (news headlines, not verified) and the city-request digest in docs/REQUESTS.md. Review both before merging. Merging to main redeploys the Space when the HF_TOKEN secret is set."
+            --body "Automated notices (news headlines, not verified) and the city-request digest in docs/REQUESTS.md. Review both before merging. Merging to main redeploys the Space when the HF_TOKEN secret is set." \
+            || echo "A pull request for monthly/$month already exists; its branch was updated."

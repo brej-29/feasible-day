@@ -78,7 +78,7 @@ The interface is built around the thing a walker already trusts: trail signposts
 
 - **News notices.** Once a month a job fetches recent headlines per city from GDELT and an LLM (through an OpenAI-compatible endpoint, with fallbacks and a hard monthly budget of $1.50, stopping at 80%) picks the few that matter to a walker: closures, strikes, festivals, severe weather. They appear as an "In the news" box with the source link, labelled *not verified*. They never change a plan. The URL and date are copied from the article by code, so the model cannot invent a source. The news feed throttles hard, so some cities are skipped in a run; each city shows its own check date and the stalest cities go first next time.
 - **City requests.** The Request tab opens a prefilled GitHub issue (no backend, no stored personal data beyond the issue itself). The same job compiles open requests into [`docs/REQUESTS.md`](docs/REQUESTS.md): demand, geocoded point, number of sights within 3.5 km, and a ready line for `src/core/cities.ts`. Nothing is added automatically; a person reviews it.
-- Runs on a schedule in `.github/workflows/monthly.yml` and opens a pull request. Details, secrets and costs: [`docs/OPERATIONS.md`](docs/OPERATIONS.md).
+- Runs on the 1st of each month from `.github/workflows/monthly.yml` on a self-hosted runner (the LLM router lives on the owner's PC; if it is off, start it and re-run the job) and opens a pull request. Details, secrets and costs: [`docs/OPERATIONS.md`](docs/OPERATIONS.md).
 
 ## Run it
 
