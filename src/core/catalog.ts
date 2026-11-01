@@ -9,8 +9,8 @@ const DURATION: Record<string, number> = {
 export const durationOf = (p: Poi) => DURATION[p.kind] ?? 40;
 
 const BASE: Record<string, number> = {
-  museum: 3, gallery: 0.8, attraction: 2.5, viewpoint: 2, zoo: 2.5, castle: 2.5, monument: 2,
-  memorial: 1.2, archaeological_site: 2.2, ruins: 1.5, fort: 1.8, city_gate: 1.5,
+  museum: 3, gallery: 0.8, attraction: 2.5, viewpoint: 2, zoo: 2.5, castle: 2.5, monument: 1.2,
+  memorial: 0.8, archaeological_site: 2.2, ruins: 1.5, fort: 1.8, city_gate: 1.5,
   place_of_worship: 1.0, park: 1.8, garden: 1.8, restaurant: 1, cafe: 0.8,
 };
 
@@ -44,5 +44,5 @@ export const DINNER: [number, number] = [18 * 60 + 15, 19 * 60 + 45];
 
 /** At most this many of a kind per day. */
 export const KIND_CAP: Record<string, number> = {
-  place_of_worship: 2, monument: 2, memorial: 1, city_gate: 1, gallery: 2, ruins: 1, fort: 1,
+  place_of_worship: 2, monument: 1, memorial: 1, city_gate: 1, gallery: 2, ruins: 1, fort: 1,
 };

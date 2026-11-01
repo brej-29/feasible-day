@@ -11,11 +11,16 @@ export interface ExtStop {
   endMin: number;
   /** when the source already knows the OSM feature (our planner), else matched by name */
   id?: string;
+  /** coordinates from an external geocoder for names not found in the snapshot (hours stay unknown) */
+  lat?: number;
+  lon?: number;
 }
 
 export interface StopReport {
   name: string;
   poi: Poi | null;
+  /** grounded by the geocoder, not the snapshot: place exists but hours and category are unknown */
+  external: boolean;
   hours: HoursStatus;
   insideDay: boolean;
 }
@@ -33,6 +38,7 @@ export interface Report {
   stops: StopReport[];
   transfers: Transfer[];
   grounded: number;
+  groundedExternal: number;
   closedAtVisit: number;
   knownHours: number;
   unknownHours: number;
@@ -58,9 +64,11 @@ export function verifyDay(
   const dayEnd = opts.dayEnd ?? 21 * 60;
   const byId = new Map(snap.pois.map((p) => [p.id, p]));
   const reps: StopReport[] = stops.map((s) => {
-    const poi = (s.id && byId.get(s.id)) || matchPoi(s.name, snap.pois)?.poi || null;
+    const inSnap = (s.id && byId.get(s.id)) || matchPoi(s.name, snap.pois)?.poi || null;
+    const external = !inSnap && s.lat !== undefined && s.lon !== undefined;
+    const poi: Poi | null = inSnap ?? (external ? { id: `ext:${s.name}`, name: s.name, lat: s.lat!, lon: s.lon!, cat: "landmark", kind: "poi", wd: 0 } : null);
     const hours: HoursStatus = poi ? statusFor(dayHours(poi, date, snap.city.slug), s.startMin, s.endMin) : "unknown";
-    return { name: s.name, poi, hours, insideDay: s.startMin >= dayStart && s.endMin <= dayEnd && s.endMin > s.startMin };
+    return { name: s.name, poi, external, hours, insideDay: s.startMin >= dayStart && s.endMin <= dayEnd && s.endMin > s.startMin };
   });
 
   const g = stops.map((s, i) => ({ s, r: reps[i] })).filter((x) => x.r.poi);
@@ -83,7 +91,9 @@ export function verifyDay(
   const walked = pathKm(pts);
   const shortest = pts.length >= 3 ? shortestPathKm(pts) : null;
   const allowed = ALLOWED[profile];
-  const onProfile = reps.filter((r) => r.poi && allowed.has(r.poi.cat)).length;
+  // external stops have no category: they are left out of the profile-match ratio, not counted against the source
+  const classified = reps.filter((r) => r.poi && !r.external);
+  const onProfile = classified.filter((r) => allowed.has(r.poi!.cat)).length;
 
   const scheduleFeasible = closed === 0 && badTransfers === 0 && outsideDay === 0 && duplicates === 0;
   return {
@@ -91,6 +101,7 @@ export function verifyDay(
     stops: reps,
     transfers,
     grounded,
+    groundedExternal: reps.filter((r) => r.external).length,
     closedAtVisit: closed,
     knownHours: known,
     unknownHours: grounded - known,
@@ -101,6 +112,6 @@ export function verifyDay(
     feasible: stops.length >= MIN_STOPS && grounded === stops.length && scheduleFeasible,
     detourRatio: shortest && shortest > 0 ? walked / shortest : null,
     walkKm: walked,
-    profileMatch: stops.length ? onProfile / stops.length : 0,
+    profileMatch: classified.length ? onProfile / classified.length : 0,
   };
 }

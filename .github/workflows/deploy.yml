@@ -1,0 +1,25 @@
+name: deploy
+# Publishes the static build to a free Hugging Face Space when a write token is configured as the repository secret HF_TOKEN.
+# Without the secret the job does nothing, so forks and pull requests stay green.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  space:
+    runs-on: ubuntu-latest
+    env:
+      HF_TOKEN: ${{ secrets.HF_TOKEN }}
+      SPACE: BrejBala/feasible-day
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - uses: astral-sh/setup-uv@v5
+      - name: Upload to the Space
+        if: env.HF_TOKEN != ''
+        run: uvx --from huggingface_hub python scripts/deploy_hf.py "$SPACE"
