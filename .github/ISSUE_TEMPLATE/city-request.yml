@@ -1,0 +1,21 @@
+name: City request
+description: Ask for a city, area or small country to be added to Feasible Day
+title: "City request: "
+labels: ["city-request"]
+body:
+  - type: input
+    id: city
+    attributes:
+      label: City or area
+    validations:
+      required: true
+  - type: input
+    id: country
+    attributes:
+      label: Country
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why, or what to see (optional)

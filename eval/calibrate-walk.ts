@@ -35,7 +35,8 @@ async function osrmSeconds(a: { lat: number; lon: number }, b: { lat: number; lo
 }
 
 const pairs: { city: string; ours: number; osrm: number; straightKm: number }[] = [];
-for (const c of CITIES) {
+// the 12 pre-registered cities only: the 300-pair calibration must not change when cities are added
+for (const c of CITIES.filter((x) => !x.ext)) {
   try { readFileSync(`data/snapshots/${c.slug}.json`); } catch { continue; }
   const pois = loadSnapshot(c.slug).pois.filter((p) => p.cat !== "food");
   const rnd = mulberry32(2026);

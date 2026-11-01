@@ -250,3 +250,22 @@ td { position: relative; min-width: 110px; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+/* ---------- notices and city request ---------- */
+.notices { border: 2px solid var(--ink); border-left-width: 8px; border-radius: 3px; background: var(--paper); margin: 8px 0 12px; padding: 8px 12px; }
+.notices summary { cursor: pointer; list-style: none; }
+.notices summary::-webkit-details-marker { display: none; }
+.notices summary h2::before { content: "▾  "; }
+.notices:not([open]) summary h2::before { content: "▸  "; }
+.notices h2 { display: inline; font-size: 18px; text-transform: uppercase; letter-spacing: 0.04em; }
+.notices h2 .muted { font: 400 12px var(--font); text-transform: none; letter-spacing: 0; }
+.notices ul { list-style: none; margin: 6px 0 0; padding: 0; }
+.notices li { padding: 4px 0; border-top: 1px solid var(--rule); font-size: 14px; }
+.notices li:first-child { border-top: 0; }
+.notices a { color: var(--ink-2); }
+.kind { font: 700 11px var(--cond); text-transform: uppercase; letter-spacing: 0.05em; background: var(--plate); padding: 1px 6px; border-radius: 2px; }
+.reqform { display: grid; gap: 12px; max-width: 520px; margin-top: 12px; }
+.reqform label { display: grid; gap: 4px; font-weight: 600; }
+.reqform input, .reqform textarea { border: 2px solid var(--ink); border-radius: 3px; padding: 8px 10px; background: var(--paper); font-weight: 400; }
+.btn { justify-self: start; background: var(--plate); color: var(--ink); border: 2px solid var(--ink); border-radius: 3px; padding: 9px 16px; font: 700 16px var(--cond); text-transform: uppercase; letter-spacing: 0.05em; text-decoration: none; }
+.btn.off { background: var(--rule); color: var(--ink-2); border-color: var(--ink-2); pointer-events: none; }

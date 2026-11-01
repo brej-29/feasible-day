@@ -346,5 +346,410 @@
         "holidayClausesDropped": 0
       }
     }
+  },
+  {
+    "city": "Chennai",
+    "nonFood": {
+      "culture": {
+        "pois": 15,
+        "withHours": 3,
+        "knownOnTestDays": 3,
+        "holidayClausesDropped": 0
+      },
+      "landmark": {
+        "pois": 10,
+        "withHours": 1,
+        "knownOnTestDays": 1,
+        "holidayClausesDropped": 0
+      },
+      "history": {
+        "pois": 18,
+        "withHours": 2,
+        "knownOnTestDays": 2,
+        "holidayClausesDropped": 0
+      },
+      "nature": {
+        "pois": 2,
+        "withHours": 0,
+        "knownOnTestDays": 0,
+        "holidayClausesDropped": 0
+      }
+    }
+  },
+  {
+    "city": "Madurai",
+    "nonFood": {
+      "culture": {
+        "pois": 5,
+        "withHours": 1,
+        "knownOnTestDays": 1,
+        "holidayClausesDropped": 0
+      },
+      "landmark": {
+        "pois": 3,
+        "withHours": 0,
+        "knownOnTestDays": 0,
+        "holidayClausesDropped": 0
+      },
+      "history": {
+        "pois": 2,
+        "withHours": 1,
+        "knownOnTestDays": 1,
+        "holidayClausesDropped": 0
+      }
+    }
+  },
+  {
+    "city": "Ernakulam (Kochi)",
+    "nonFood": {
+      "culture": {
+        "pois": 9,
+        "withHours": 1,
+        "knownOnTestDays": 1,
+        "holidayClausesDropped": 0
+      },
+      "landmark": {
+        "pois": 15,
+        "withHours": 2,
+        "knownOnTestDays": 2,
+        "holidayClausesDropped": 0
+      },
+      "history": {
+        "pois": 4,
+        "withHours": 0,
+        "knownOnTestDays": 0,
+        "holidayClausesDropped": 0
+      }
+    }
+  },
+  {
+    "city": "Fort Kochi",
+    "nonFood": {
+      "culture": {
+        "pois": 10,
+        "withHours": 3,
+        "knownOnTestDays": 3,
+        "holidayClausesDropped": 0
+      },
+      "landmark": {
+        "pois": 18,
+        "withHours": 2,
+        "knownOnTestDays": 2,
+        "holidayClausesDropped": 0
+      },
+      "history": {
+        "pois": 7,
+        "withHours": 0,
+        "knownOnTestDays": 0,
+        "holidayClausesDropped": 0
+      }
+    }
+  },
+  {
+    "city": "Thiruvananthapuram",
+    "nonFood": {
+      "culture": {
+        "pois": 14,
+        "withHours": 6,
+        "knownOnTestDays": 6,
+        "holidayClausesDropped": 0
+      },
+      "landmark": {
+        "pois": 6,
+        "withHours": 1,
+        "knownOnTestDays": 1,
+        "holidayClausesDropped": 0
+      },
+      "history": {
+        "pois": 8,
+        "withHours": 1,
+        "knownOnTestDays": 1,
+        "holidayClausesDropped": 0
+      }
+    }
+  },
+  {
+    "city": "Bengaluru",
+    "nonFood": {
+      "culture": {
+        "pois": 26,
+        "withHours": 9,
+        "knownOnTestDays": 9,
+        "holidayClausesDropped": 0
+      },
+      "landmark": {
+        "pois": 28,
+        "withHours": 1,
+        "knownOnTestDays": 1,
+        "holidayClausesDropped": 0
+      },
+      "history": {
+        "pois": 15,
+        "withHours": 0,
+        "knownOnTestDays": 0,
+        "holidayClausesDropped": 0
+      },
+      "nature": {
+        "pois": 3,
+        "withHours": 0,
+        "knownOnTestDays": 0,
+        "holidayClausesDropped": 0
+      }
+    }
+  },
+  {
+    "city": "Hyderabad",
+    "nonFood": {
+      "culture": {
+        "pois": 2,
+        "withHours": 1,
+        "knownOnTestDays": 1,
+        "holidayClausesDropped": 0
+      },
+      "landmark": {
+        "pois": 8,
+        "withHours": 2,
+        "knownOnTestDays": 2,
+        "holidayClausesDropped": 1
+      },
+      "history": {
+        "pois": 5,
+        "withHours": 0,
+        "knownOnTestDays": 0,
+        "holidayClausesDropped": 0
+      }
+    }
+  },
+  {
+    "city": "Pune",
+    "nonFood": {
+      "culture": {
+        "pois": 6,
+        "withHours": 0,
+        "knownOnTestDays": 0,
+        "holidayClausesDropped": 0
+      },
+      "landmark": {
+        "pois": 6,
+        "withHours": 1,
+        "knownOnTestDays": 1,
+        "holidayClausesDropped": 0
+      },
+      "history": {
+        "pois": 8,
+        "withHours": 0,
+        "knownOnTestDays": 0,
+        "holidayClausesDropped": 0
+      },
+      "nature": {
+        "pois": 1,
+        "withHours": 1,
+        "knownOnTestDays": 1,
+        "holidayClausesDropped": 0
+      }
+    }
+  },
+  {
+    "city": "Kyoto",
+    "nonFood": {
+      "culture": {
+        "pois": 90,
+        "withHours": 16,
+        "knownOnTestDays": 16,
+        "holidayClausesDropped": 0
+      },
+      "landmark": {
+        "pois": 81,
+        "withHours": 10,
+        "knownOnTestDays": 9,
+        "holidayClausesDropped": 0
+      },
+      "history": {
+        "pois": 171,
+        "withHours": 30,
+        "knownOnTestDays": 30,
+        "holidayClausesDropped": 0
+      },
+      "nature": {
+        "pois": 9,
+        "withHours": 5,
+        "knownOnTestDays": 5,
+        "holidayClausesDropped": 0
+      }
+    }
+  },
+  {
+    "city": "Osaka",
+    "nonFood": {
+      "culture": {
+        "pois": 58,
+        "withHours": 12,
+        "knownOnTestDays": 12,
+        "holidayClausesDropped": 0
+      },
+      "landmark": {
+        "pois": 93,
+        "withHours": 2,
+        "knownOnTestDays": 2,
+        "holidayClausesDropped": 0
+      },
+      "history": {
+        "pois": 91,
+        "withHours": 3,
+        "knownOnTestDays": 3,
+        "holidayClausesDropped": 0
+      },
+      "nature": {
+        "pois": 13,
+        "withHours": 4,
+        "knownOnTestDays": 4,
+        "holidayClausesDropped": 0
+      }
+    }
+  },
+  {
+    "city": "Seoul",
+    "nonFood": {
+      "culture": {
+        "pois": 257,
+        "withHours": 32,
+        "knownOnTestDays": 32,
+        "holidayClausesDropped": 0
+      },
+      "landmark": {
+        "pois": 112,
+        "withHours": 5,
+        "knownOnTestDays": 5,
+        "holidayClausesDropped": 0
+      },
+      "history": {
+        "pois": 25,
+        "withHours": 1,
+        "knownOnTestDays": 1,
+        "holidayClausesDropped": 0
+      },
+      "nature": {
+        "pois": 10,
+        "withHours": 0,
+        "knownOnTestDays": 0,
+        "holidayClausesDropped": 0
+      }
+    }
+  },
+  {
+    "city": "Busan",
+    "nonFood": {
+      "culture": {
+        "pois": 16,
+        "withHours": 1,
+        "knownOnTestDays": 1,
+        "holidayClausesDropped": 0
+      },
+      "landmark": {
+        "pois": 24,
+        "withHours": 0,
+        "knownOnTestDays": 0,
+        "holidayClausesDropped": 0
+      },
+      "history": {
+        "pois": 1,
+        "withHours": 0,
+        "knownOnTestDays": 0,
+        "holidayClausesDropped": 0
+      },
+      "nature": {
+        "pois": 3,
+        "withHours": 0,
+        "knownOnTestDays": 0,
+        "holidayClausesDropped": 0
+      }
+    }
+  },
+  {
+    "city": "Beijing",
+    "nonFood": {
+      "culture": {
+        "pois": 38,
+        "withHours": 8,
+        "knownOnTestDays": 8,
+        "holidayClausesDropped": 0
+      },
+      "landmark": {
+        "pois": 72,
+        "withHours": 10,
+        "knownOnTestDays": 10,
+        "holidayClausesDropped": 0
+      },
+      "history": {
+        "pois": 26,
+        "withHours": 2,
+        "knownOnTestDays": 2,
+        "holidayClausesDropped": 0
+      },
+      "nature": {
+        "pois": 6,
+        "withHours": 1,
+        "knownOnTestDays": 1,
+        "holidayClausesDropped": 0
+      }
+    }
+  },
+  {
+    "city": "Shanghai",
+    "nonFood": {
+      "culture": {
+        "pois": 49,
+        "withHours": 15,
+        "knownOnTestDays": 15,
+        "holidayClausesDropped": 0
+      },
+      "landmark": {
+        "pois": 95,
+        "withHours": 3,
+        "knownOnTestDays": 3,
+        "holidayClausesDropped": 0
+      },
+      "history": {
+        "pois": 12,
+        "withHours": 0,
+        "knownOnTestDays": 0,
+        "holidayClausesDropped": 0
+      },
+      "nature": {
+        "pois": 9,
+        "withHours": 0,
+        "knownOnTestDays": 0,
+        "holidayClausesDropped": 0
+      }
+    }
+  },
+  {
+    "city": "Xi'an",
+    "nonFood": {
+      "culture": {
+        "pois": 16,
+        "withHours": 2,
+        "knownOnTestDays": 2,
+        "holidayClausesDropped": 0
+      },
+      "landmark": {
+        "pois": 16,
+        "withHours": 3,
+        "knownOnTestDays": 3,
+        "holidayClausesDropped": 0
+      },
+      "history": {
+        "pois": 16,
+        "withHours": 0,
+        "knownOnTestDays": 0,
+        "holidayClausesDropped": 0
+      },
+      "nature": {
+        "pois": 2,
+        "withHours": 1,
+        "knownOnTestDays": 1,
+        "holidayClausesDropped": 0
+      }
+    }
   }
 ]

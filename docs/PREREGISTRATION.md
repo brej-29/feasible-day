@@ -70,3 +70,8 @@ All amendments were made before the final 96-scenario evaluation run. Amendments
 4. **Planner weights.** After inspecting Paris and London plans in the UI (not evaluation scores) the importance of statues and memorials was lowered and the insertion gain
    was changed to importance per extra walking minute (visit length removed). Prompt text for the LLM baseline lives in `eval/llm.ts`; it states the opening-hours and walking-time requirements so the baseline is not a strawman.
 5. **Profile categories.** `ALLOWED` sets in `src/core/catalog.ts` define "on profile" (food counts for every profile).
+6. **Added cities are a separate, later cohort (2026-11-01).** 15 places were added after the final 96-scenario run: Chennai, Madurai, Ernakulam (Kochi), Fort Kochi,
+   Thiruvananthapuram, Bengaluru, Hyderabad, Pune, Kyoto, Osaka, Seoul, Busan, Beijing, Shanghai, Xi'an (15 x 4 profiles x 2 days = 120 days). They are marked `ext` in
+   `src/core/cities.ts`, excluded from the 96-day headline, and reported on their own (`results/extension.json`, `results/osrm-check-extension.json`). The planner, weights,
+   walking factor and verifier were not changed after seeing them. No LLM baselines were run for them (cost), so H1 is not re-tested there. No threshold is attached to this
+   cohort; it is reported as an out-of-sample check of H2 and of how thin the opening-hours data is outside Europe.

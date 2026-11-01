@@ -43,28 +43,49 @@ Pre-registered thresholds: H1 (LLM-only mostly infeasible) met, also when unmatc
 
 ## What did not hold up, and the limits
 
-- **"Not found" is not "hallucinated".** About a third of the LLM stops could not be matched to OpenStreetMap, but a read of a seeded sample (labelled by the assistant that built this repo, one reader, no live lookups) of 45 ([`results/not-found-spot-check.md`](results/not-found-spot-check.md)) found about 27 real venues my matcher missed, about 16 generic activities ("a traditional English pub", "Seine River Walk") and none confirmed invented. So no hallucination rate is claimed. That is why the table has a second column. Early in the project the first version of this metric said 95% of LLM plans had an ungrounded stop; that was a snapshot-coverage artefact, and the metric was changed (amendment 1).
+- **"Not found" is not "hallucinated".** About a third of the LLM stops could not be matched to OpenStreetMap, but a read of a seeded sample (one reader, no live lookups) of 45 ([`results/not-found-spot-check.md`](results/not-found-spot-check.md)) found about 27 real venues my matcher missed, about 16 generic activities ("a traditional English pub", "Seine River Walk") and none confirmed invented. So no hallucination rate is claimed. That is why the table has a second column. Early in the project the first version of this metric said 95% of LLM plans had an ungrounded stop; that was a snapshot-coverage artefact, and the metric was changed (amendment 1).
 - **The planner passes its own rulebook by construction.** The independent check re-times every planner transfer with routed foot durations from OSRM ([`results/osrm-check.json`](results/osrm-check.json)): 664 of 672 transfers fit (98.8%) and **91 of 96 plans (94.8%) have every transfer fitting**, just under the 95% threshold. The misses are Paris plans where a river or barrier makes the real walk up to 11 minutes longer than estimated. The walking model itself is within 10% mean absolute error of routing on 300 random pairs (median ratio 0.95, 12% of pairs underestimated by more than 20%), after the detour factor was raised from 1.3 to 1.37 ([`results/walk-calibration.json`](results/walk-calibration.json)).
 - **Opening-hours data is thin.** Only 14% to 34% of sights, museums, parks and monuments in the snapshots carry a parseable `opening_hours` tag (restaurants excluded: they were selected for having one). About 41% of planner stops are therefore shown as *hours unverified*. Per city: [`results/hours-coverage.json`](results/hours-coverage.json). Mumbai is a deliberate stress case with only 29 sights; the app says when it cannot build a day.
 - **Holiday rules are approximate.** opening_hours.js rejects public-holiday and school-holiday clauses without a calendar for the country and state. Those clauses are dropped (`approx`), so a visit on an actual public holiday can be wrong. The two test dates were chosen to avoid holidays, not verified for every region.
 - **Importance is a proxy.** OpenStreetMap has no ratings. Importance is a hand-set category score plus a Wikidata-link bonus, and restaurants are chosen by position and tagged hours, not by taste. Weights were adjusted after looking at Paris and London plans, not tuned on evaluation scores.
 - **Single rater, two models, one prompt.** The LLM baseline is two open models and one prompt. Other models or prompting (for example tool calls to a maps API) may do better; that is not tested here.
 
+## Added cities: an out-of-sample check, and where it is weaker
+
+After the thresholds were fixed and the 96-day run was done, 15 places were added: Tamil Nadu (Chennai, Madurai), Kerala (Ernakulam, Fort Kochi, Thiruvananthapuram), Bengaluru, Hyderabad, Pune, Kyoto, Osaka, Seoul, Busan, Beijing, Shanghai and Xi'an (pre-registration amendment 6). They are scored separately (120 test days) and nothing in the planner was changed after seeing them. No LLM baselines were run there, so H1 is not re-tested.
+
+| 120 days in the 15 added cities | Days passing every rule | 95% interval | Mean stops | Stops with unverified hours |
+| --- | --- | --- | --- | --- |
+| Original app logic | 0 of 120 | 0 to 3.1% | 5.9 | 64% |
+| Planner, hours ignored | 49 of 120 | 32.5 to 49.8% | 8.0 | 59% |
+| Planner, no routing | 106 of 120 | 81.4 to 92.9% | 7.8 | 50% |
+| **Feasible Day planner** | **120 of 120** | **96.9 to 100%** | 8.0 | 59% |
+
+That pass rate is against the planner's own rulebook. The independent routing check ([`results/osrm-check-extension.json`](results/osrm-check-extension.json)) is much weaker than in the first 12 cities: **71 of 120 plans (59%)** have every transfer fitting routed walking time (766 of 834 transfers, 92%), against 94.8% of plans before. It is not uniform: Kyoto, Osaka, Seoul, Bengaluru and Fort Kochi pass every transfer; Hyderabad passes 32 of 56 transfers, with some walks 47 minutes longer than estimated; Chennai, Ernakulam, Pune, Beijing and Xi'an each pass 50 or 48 of 56. Likely causes (not tested): rivers, rail lines and ring roads that a straight-line model cannot see, and sparse sight data forcing longer hops (Madurai has 10 sights in the snapshot, Hyderabad 15, Pune 21). Opening hours are thinner too: 2% to 29% of sights carry a parseable tag, 59% of planner stops are unverified, and Busan has 2%.
+
+The walking factor (1.37) was calibrated on the original 12 cities and is deliberately left alone. A per-city calibration is the obvious next step, but it would need its own held-out check. The app labels these cities as added and says so on the plan page.
+
 ## How it works
 
-1. A snapshot of notable places from OpenStreetMap (Overpass API) for 12 city centres, committed in `data/snapshots/` (ODbL).
+1. A snapshot of notable places from OpenStreetMap (Overpass API) for 27 city centres (the 12 pre-registered ones plus 15 added later), committed in `data/snapshots/` (ODbL).
 2. A planner anchors the day on the densest cluster of important places, fixes lunch (and dinner on food days) in meal windows, then inserts stops one at a time by importance per extra walking minute, simulating the whole day (opening hours for the date, walking time, 21:00 limit) for every insertion.
 3. A verifier ([`src/core/verify.ts`](src/core/verify.ts)) is the single definition of feasibility, used by the planner tests, the evaluation, and the in-app Rulebook panel.
 4. The app is static React: everything runs in the browser, there is no server and no key. Architecture notes: [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md). Design system: [`DESIGN.md`](DESIGN.md).
 
 The interface is built around the thing a walker already trusts: trail signposts. Each transfer is a yellow signpost arm with the destination and walking minutes; hours that were checked are solid, hours that were not are hatched. The Evidence tab puts the numbers above in the product, with a side-by-side of the same day from the model and from the planner.
 
+## Monthly update and city requests
+
+- **News notices.** Once a month a job fetches recent headlines per city from GDELT and an LLM (through an OpenAI-compatible endpoint, with fallbacks and a hard monthly budget of $1.50, stopping at 80%) picks the few that matter to a walker: closures, strikes, festivals, severe weather. They appear as an "In the news" box with the source link, labelled *not verified*. They never change a plan. The URL and date are copied from the article by code, so the model cannot invent a source. The news feed throttles hard, so some cities are skipped in a run; each city shows its own check date and the stalest cities go first next time.
+- **City requests.** The Request tab opens a prefilled GitHub issue (no backend, no stored personal data beyond the issue itself). The same job compiles open requests into [`docs/REQUESTS.md`](docs/REQUESTS.md): demand, geocoded point, number of sights within 3.5 km, and a ready line for `src/core/cities.ts`. Nothing is added automatically; a person reviews it.
+- Runs on the 1st of each month from `.github/workflows/monthly.yml` on a self-hosted runner (the LLM router lives on the owner's PC; if it is off, start it and re-run the job) and opens a pull request. Details, secrets and costs: [`docs/OPERATIONS.md`](docs/OPERATIONS.md).
+
 ## Run it
 
 ```bash
 npm ci
 npm run dev            # app at http://localhost:5173
-npm test               # 15 tests
+npm test               # 19 tests
 npm run build
 ```
 
@@ -81,9 +102,11 @@ npm run data           # city snapshots
 npm run eval -- --llm --reps 3     # LLM baselines, needs HF_TOKEN or `hf auth login`
 npm run calibrate      # walking-time model vs OSRM
 npm run osrm-check     # independent re-timing of planner transfers
+npm run ops:smoke      # one tiny LLM call through the monthly job's client (needs .env)
+npm run monthly        # notices + city-request digest
 ```
 
-Configuration: `LLM_70B`, `LLM_8B` (model ids), `LLM_ENDPOINT`, `VITE_MAP_STYLE` (basemap style URL). Free catalogs change, so none of these are hard-coded into logic.
+Configuration: `LLM_70B`, `LLM_8B` (baseline model ids), `LLM_ENDPOINT`, `VITE_MAP_STYLE` (basemap style URL). Free catalogs change, so none of these are hard-coded into logic. The monthly job has its own variables, see [`docs/OPERATIONS.md`](docs/OPERATIONS.md).
 
 ## Live app and free-tier limits
 

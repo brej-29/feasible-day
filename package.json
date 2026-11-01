@@ -11,7 +11,9 @@
     "data": "tsx eval/build-snapshots.ts",
     "eval": "tsx eval/run.ts",
     "calibrate": "tsx eval/calibrate-walk.ts",
-    "osrm-check": "tsx eval/osrm-check.ts"
+    "osrm-check": "tsx eval/osrm-check.ts",
+    "monthly": "tsx --env-file-if-exists=.env ops/monthly.ts",
+    "ops:smoke": "tsx --env-file-if-exists=.env ops/smoke.ts"
   },
   "type": "module",
   "dependencies": {

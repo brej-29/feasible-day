@@ -1,0 +1,164 @@
+{
+ "generatedAt": "2026-11-01T11:48:53.394Z",
+ "cities": {
+  "barcelona": [
+   {
+    "kind": "safety",
+    "text": "Violent disturbances in Barcelona over a youth protest inspired by European mobilisations have left about a hundred people detained.",
+    "url": "https://www.elperiodico.cat/barcelona/20261024/tensio-barcelona-protesta-juvenil-mobilitzacions-europees-135721173",
+    "source": "elperiodico.cat",
+    "date": "2026-10-25"
+   },
+   {
+    "kind": "safety",
+    "text": "Night of clashes in Barcelona: 100 arrests, looting and dozens of fires reported.",
+    "url": "https://it.euronews.com/2026/10/25/notte-di-scontri-a-barcellona-100-arresti-saccheggi-e-decine-di-incendi",
+    "source": "it.euronews.com",
+    "date": "2026-10-25"
+   },
+   {
+    "kind": "safety",
+    "text": "Violence and looting in Barcelona: 128 arrests, including 73 minors.",
+    "url": "https://www.notiziegeopolitiche.net/spagna-violenze-e-saccheggi-a-barcellona-128-arresti-tra-cui-73-minorenni/",
+    "source": "notiziegeopolitiche.net",
+    "date": "2026-10-25"
+   },
+   {
+    "kind": "safety",
+    "text": "The Catalan government and Barcelona city council were overwhelmed by a violent protest in the city.",
+    "url": "https://www.elcorreo.com/politica/generalitat-cataluna-ayuntamiento-superados-violenta-protesta-barcelona-20261025115723-ntrc.html",
+    "source": "elcorreo.com",
+    "date": "2026-10-25"
+   }
+  ],
+  "fort-kochi": [
+   {
+    "kind": "festival",
+    "text": "The Muziris Biennale in Kochi is described as aiming to become a true people's festival. The headline gives no dates or venue closures.",
+    "url": "https://economictimes.indiatimes.com/magazines/panache/rehearsing-utopia-kochi-muziris-biennale-aims-to-become-a-true-peoples-festival/articleshow/135186009.cms",
+    "source": "economictimes.indiatimes.com",
+    "date": "2026-10-25"
+   }
+  ],
+  "thiruvananthapuram": [
+   {
+    "kind": "closure",
+    "text": "IMD issues red alert in 3 Kerala districts for October 25; schools and tourist spots shut in those districts.",
+    "url": "https://www.freepressjournal.in/india/kerala-heavy-rains-october-25-imd-issues-red-alert-in-3-districts-schools-tourist-spots-shut",
+    "source": "freepressjournal.in",
+    "date": "2026-10-25"
+   },
+   {
+    "kind": "weather",
+    "text": "Red alert issued in three Keralam districts on October 25 as Cyclone Arnab takes shape.",
+    "url": "https://www.newindianexpress.com/states/kerala/2026/Oct/25/cyclone-arnab-effect-red-alert-issued-in-three-keralam-districts-on-oct-25",
+    "source": "newindianexpress.com",
+    "date": "2026-10-25"
+   },
+   {
+    "kind": "transport",
+    "text": "Landslide near Parassala derailed an express locomotive in Keralam, and six passenger trains were cancelled.",
+    "url": "https://www.freepressjournal.in/india/landslide-in-kerala-disrupts-railway-services-after-express-train-locomotive-derails-6-passenger-trains-cancelled",
+    "source": "freepressjournal.in",
+    "date": "2026-10-22"
+   },
+   {
+    "kind": "weather",
+    "text": "Three districts are on red alert and seven on orange warning for Sunday.",
+    "url": "https://timesofindia.indiatimes.com/city/kochi/3-districts-on-red-alert-7-on-orange-warning-on-sunday/articleshow/135176533.cms",
+    "source": "timesofindia.indiatimes.com",
+    "date": "2026-10-24"
+   }
+  ],
+  "bengaluru": [
+   {
+    "kind": "weather",
+    "text": "IMD has issued a rain alert for Bengaluru, along with Dakshina Kannada, Udupi and Chikkamagaluru.",
+    "url": "https://economictimes.indiatimes.com/news/new-updates/karnataka-weather-today-imd-rain-alert-for-bengaluru-dakshina-kannada-udupi-and-chikkamagaluru/articleshow/135159733.cms",
+    "source": "economictimes.indiatimes.com",
+    "date": "2026-10-24"
+   },
+   {
+    "kind": "transport",
+    "text": "Farmers are blocking a national highway, demanding withdrawal of the Warabandhi system. Travel on that route may be disrupted.",
+    "url": "https://www.thehindu.com/news/national/karnataka/farmers-block-national-highway-demanding-withdrawal-of-warabandhi-system/article71620276.ece",
+    "source": "thehindu.com",
+    "date": "2026-10-24"
+   }
+  ],
+  "seoul": [
+   {
+    "kind": "festival",
+    "text": "A taekwondo festival with participants from 40 countries is to be held in Gangnam.",
+    "url": "https://www.koreaherald.com/article/10916222",
+    "source": "koreaherald.com",
+    "date": "2026-10-27"
+   }
+  ],
+  "lisbon": [
+   {
+    "kind": "safety",
+    "text": "Police charged protesters in Lisbon and Porto, with several people injured in Portugal.",
+    "url": "https://it.euronews.com/2026/10/25/proteste-in-portogallo-polizia-carica-i-manifestanti-a-lisbona-e-porto-diversi-feriti",
+    "source": "it.euronews.com",
+    "date": "2026-10-25"
+   },
+   {
+    "kind": "safety",
+    "text": "A police operation to remove protest tents in Portugal left 11 injured and 31 people detained.",
+    "url": "https://sol.iol.pt/sociedade/noticias/intervencao-policial-para-retirar-tendas-de-protesto-faz-11-feridos-e-31-detidos/20261025/6addbfc50cf2e5e7f37cadcc",
+    "source": "sol.iol.pt",
+    "date": "2026-10-25"
+   }
+  ],
+  "vienna": [
+   {
+    "kind": "festival",
+    "text": "Vienna tips feature free excursions offered today for Austria's national holiday (Nationalfeiertag).",
+    "url": "https://www.heute.at/s/nationalfeiertag-diese-ausfluege-sind-heute-gratis-120271336",
+    "source": "heute.at",
+    "date": "2026-10-26"
+   }
+  ],
+  "prague": [
+   {
+    "kind": "other",
+    "text": "Thousands protested in Prague as the government advanced an overhaul of public media funding.",
+    "url": "https://abcnews.com/International/wireStory/thousands-protest-prague-government-advances-public-media-funding-137556493",
+    "source": "abcnews.com",
+    "date": "2026-10-25"
+   },
+   {
+    "kind": "safety",
+    "text": "Protesters in Prague tried to storm parliament overnight; police repelled the attempt.",
+    "url": "https://uainfo.org/blognews/1792842452-u-prazi-protestuvalniki-namagalis-vzyati-parlament-.html",
+    "source": "uainfo.org",
+    "date": "2026-10-24"
+   },
+   {
+    "kind": "strike",
+    "text": "The Czech parliament is advancing a bill changing public media funding; staff are preparing for a strike.",
+    "url": "https://www.lsm.lv/raksts/zinas/arzemes/24.10.2026-cehijas-parlaments-virza-ieceri-par-sabiedrisko-mediju-finansesanas-modela-mainu-darbinieki-gatavojas-streikam.a668924/",
+    "source": "lsm.lv",
+    "date": "2026-10-24"
+   }
+  ],
+  "new-york": [],
+  "kyoto": [
+   {
+    "kind": "weather",
+    "text": "Typhoon No. 30 and an approaching warm low may bring warning-level heavy rain to the Kinki region, including Kyoto, from the 25th, with two rain peaks.",
+    "url": "https://www.kyoto-np.co.jp/articles/-/1814472",
+    "source": "kyoto-np.co.jp",
+    "date": "2026-10-25"
+   },
+   {
+    "kind": "festival",
+    "text": "The autumn Jidai Matsuri procession, a moving historical parade, is taking place in Kyoto.",
+    "url": "http://www.shikoku-np.co.jp/national/life_topic/article.aspx?id=20261022000279",
+    "source": "shikoku-np.co.jp",
+    "date": "2026-10-22"
+   }
+  ]
+ }
+}
