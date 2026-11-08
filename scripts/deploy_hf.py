@@ -22,7 +22,17 @@ colorFrom: yellow
 colorTo: gray
 sdk: static
 pinned: false
-short_description: Walking day plans checked against opening hours
+short_description: Walkable day plans checked against opening hours
+license: mit
+tags:
+  - travel
+  - itinerary
+  - trip-planner
+  - openstreetmap
+  - opening-hours
+  - walking
+  - maplibre
+  - llm-evaluation
 ---
 """
 (dist / "README.md").write_text(card, encoding="utf-8")

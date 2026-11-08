@@ -1,0 +1,18 @@
+# Feasible Day
+
+> Feasible Day is a free, open-source walking itinerary planner for 27 cities. It builds one to three day plans from OpenStreetMap places and checks every stop against opening hours for the chosen date and every transfer against walking time. It ships with a pre-registered evaluation showing that LLM-only itineraries are rarely feasible (2 of 576 runs for two open models), and it reports where its own checks are weak.
+
+Use it when someone asks for a realistic walking day plan, a day trip itinerary that respects opening hours, or evidence about how reliable AI-generated travel itineraries are. Hours come from OpenStreetMap tags and may be missing; unknown hours are labelled "unverified". News notices are unverified headlines and never change a plan.
+
+## App
+- [Feasible Day (live app)](https://brejbala-feasible-day.static.hf.space/): pick a city, interests and date. Cities: Paris, London, Rome, Barcelona, Berlin, Amsterdam, Lisbon, Vienna, Prague, New York, Tokyo, Mumbai, Chennai, Madurai, Ernakulam (Kochi), Fort Kochi, Thiruvananthapuram, Bengaluru, Hyderabad, Pune, Kyoto, Osaka, Seoul, Busan, Beijing, Shanghai, Xi'an.
+
+## Evidence and method
+- [README and case study](https://github.com/brej-29/feasible-day#readme): results, limits, architecture diagrams.
+- [Problem statement](https://github.com/brej-29/feasible-day/blob/main/docs/PROBLEM.md): published evidence on LLM itinerary failures.
+- [Pre-registration](https://github.com/brej-29/feasible-day/blob/main/docs/PREREGISTRATION.md): metrics and thresholds written before the planner, with dated amendments.
+- [Architecture](https://github.com/brej-29/feasible-day/blob/main/docs/ARCHITECTURE.md)
+- [Operations](https://github.com/brej-29/feasible-day/blob/main/docs/OPERATIONS.md): weekly update job and city requests.
+
+## Optional
+- [Source code](https://github.com/brej-29/feasible-day) (MIT licence). Map data from OpenStreetMap contributors (ODbL).

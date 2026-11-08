@@ -169,6 +169,18 @@ sequenceDiagram
   Me->>GH: review and merge, Space redeploys
 ```
 
+## FAQ
+
+**Can ChatGPT or another AI plan a realistic one day itinerary?** It can write a readable one, but in this repo's test of 96 days across 12 cities, Llama 3.3 70B and Llama 3.1 8B produced a fully feasible day (open venues, walkable gaps, real places) in 2 of 576 runs, even with the rules stated in the prompt. Two models and one prompt, so it is not a verdict on every AI.
+
+**How does Feasible Day check opening hours?** It reads the `opening_hours` tag from OpenStreetMap and evaluates it for the date you pick. Places without a usable tag are shown as "hours unverified" and ranked lower; hours are never guessed.
+
+**Which cities are covered?** 27: Paris, London, Rome, Barcelona, Berlin, Amsterdam, Lisbon, Vienna, Prague, New York, Tokyo, Mumbai, Chennai, Madurai, Ernakulam (Kochi), Fort Kochi, Thiruvananthapuram, Bengaluru, Hyderabad, Pune, Kyoto, Osaka, Seoul, Busan, Beijing, Shanghai and Xi'an. Ask for another in the app's Request a city tab.
+
+**Is it free, and does it need an account or API key?** Free, no account, no key. It runs entirely in your browser.
+
+**How accurate are the walking times?** Within about 10% of routed walking time on 300 random pairs in the first 12 cities, and 94.8% of plans pass an independent routing check there. In the 15 later cities only 59% do, so treat times there as estimates.
+
 ## Run it
 
 ```bash
