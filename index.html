@@ -3,12 +3,85 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Feasible Day</title>
+    <title>Feasible Day | Walkable day plans checked against opening hours</title>
+    <meta name="description" content="Free walking itinerary planner for 27 cities. Every stop is a real OpenStreetMap place checked against opening hours and walking time, with an open evaluation against ChatGPT-style plans." />
+    <link rel="canonical" href="https://brejbala-feasible-day.static.hf.space/" />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-    <meta name="description" content="Walking day plans checked against opening hours and walking time, built from OpenStreetMap." />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="theme-color" content="#14181c" />
+    <meta name="author" content="Brejesh Balakrishnan" />
+    <meta name="keywords" content="walking itinerary planner, one day city itinerary, day trip planner, opening hours check, OpenStreetMap trip planner, AI itinerary accuracy, LLM travel planning evaluation" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Feasible Day" />
+    <meta property="og:title" content="Feasible Day: day plans you can actually walk" />
+    <meta property="og:description" content="Walking itineraries for 27 cities, checked against opening hours and walking time. Two open LLMs produced a feasible day in 2 of 576 test runs; this planner passes its own rules on all 96." />
+    <meta property="og:url" content="https://brejbala-feasible-day.static.hf.space/" />
+    <meta property="og:image" content="https://brejbala-feasible-day.static.hf.space/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Feasible Day plan view: a Paris day with timeline, walking times and map" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Feasible Day: day plans you can actually walk" />
+    <meta name="twitter:description" content="Walking itineraries checked against opening hours and walking time, with the evidence shown in the app." />
+    <meta name="twitter:image" content="https://brejbala-feasible-day.static.hf.space/og-image.png" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Feasible Day",
+        "url": "https://brejbala-feasible-day.static.hf.space/",
+        "description": "A free web app that builds walkable one to three day city itineraries from OpenStreetMap and checks every stop against opening hours and every transfer against walking time.",
+        "applicationCategory": "TravelApplication",
+        "operatingSystem": "Any (web browser)",
+        "browserRequirements": "Requires JavaScript",
+        "isAccessibleForFree": true,
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "license": "https://opensource.org/licenses/MIT",
+        "codeRepository": "https://github.com/brej-29/feasible-day",
+        "author": { "@type": "Person", "name": "Brejesh Balakrishnan", "url": "https://github.com/brej-29" },
+        "inLanguage": "en",
+        "featureList": [
+          "One to three day walking itineraries for 27 cities",
+          "Opening hours checked for the chosen date",
+          "Walking time checked between every pair of stops",
+          "Places with unknown opening hours are labelled, never guessed",
+          "Published evaluation against LLM-generated itineraries"
+        ],
+        "about": ["Itinerary planning", "OpenStreetMap", "Opening hours", "Evaluation of large language models"]
+      }
+    </script>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Crawler and no-JavaScript content. React replaces it as soon as the app loads. Keep the city list in sync with src/core/cities.ts. -->
+      <main style="font-family: system-ui, sans-serif; max-width: 46rem; margin: 2rem auto; padding: 0 1rem; line-height: 1.5">
+        <h1>Feasible Day: walkable day plans checked against opening hours</h1>
+        <p>
+          Feasible Day is a free walking itinerary planner. Pick a city, your interests and a date, and it builds a one to three day plan
+          from real OpenStreetMap places. Every stop is checked against its opening hours on that date, every transfer is checked against
+          walking time, and places whose hours are unknown are labelled instead of guessed.
+        </p>
+        <h2>Why it exists</h2>
+        <p>
+          AI chatbots write itineraries that read well but often send you to closed venues or to walks that do not fit the gap. In a
+          published test of 96 days across 12 cities, Llama 3.3 70B and Llama 3.1 8B produced a fully feasible day in 2 of 576 runs.
+          This planner passes every one of the 96 days on its own rules, and 94.8% of plans when every walk is re-timed by an independent
+          routing engine. Method and limits are public.
+        </p>
+        <h2>Cities</h2>
+        <p>
+          Paris, London, Rome, Barcelona, Berlin, Amsterdam, Lisbon, Vienna, Prague, New York, Tokyo, Mumbai, Chennai, Madurai, Ernakulam (Kochi),
+          Fort Kochi, Thiruvananthapuram, Bengaluru, Hyderabad, Pune, Kyoto, Osaka, Seoul, Busan, Beijing, Shanghai and Xi'an.
+        </p>
+        <p>
+          <a href="https://github.com/brej-29/feasible-day">Source code, evaluation and case study on GitHub</a> ·
+          <a href="https://huggingface.co/spaces/BrejBala/feasible-day">Hugging Face Space</a>
+        </p>
+        <noscript><p>This app needs JavaScript to draw the plan and the map.</p></noscript>
+      </main>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

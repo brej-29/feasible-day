@@ -1,0 +1,61 @@
+name: Weekly update
+
+# Once a week: refresh news notices (router search + LLM, hard monthly budget) and compile city requests, then open a
+# pull request for a human to review and merge. Runs on GitHub's own servers: the router is reachable over HTTPS.
+# Secret: LLM_API_KEY. Variables: LLM_ENDPOINT, LLM_MODEL, LLM_MODEL_FALL_1, LLM_MODEL_FALL_2, LLM_PRICE_IN_PER_M,
+# LLM_PRICE_OUT_PER_M, MONTHLY_BUDGET_USD (optional: SEARCH_PROVIDERS). Without the key the notices step is skipped.
+on:
+  schedule:
+    - cron: "0 3 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: read
+
+concurrency: weekly
+
+jobs:
+  update:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - name: Run weekly job
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          LLM_ENDPOINT: ${{ vars.LLM_ENDPOINT }}
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+          LLM_MODEL: ${{ vars.LLM_MODEL }}
+          LLM_MODEL_FALL_1: ${{ vars.LLM_MODEL_FALL_1 }}
+          LLM_MODEL_FALL_2: ${{ vars.LLM_MODEL_FALL_2 }}
+          LLM_PRICE_IN_PER_M: ${{ vars.LLM_PRICE_IN_PER_M }}
+          LLM_PRICE_OUT_PER_M: ${{ vars.LLM_PRICE_OUT_PER_M }}
+          MONTHLY_BUDGET_USD: ${{ vars.MONTHLY_BUDGET_USD }}
+          SEARCH_PROVIDERS: ${{ vars.SEARCH_PROVIDERS }}
+        run: npm run update
+      - name: Open pull request
+        # also runs when a step above failed, so a partial result is not lost; the job still shows red
+        if: ${{ !cancelled() }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then echo "Nothing changed"; exit 0; fi
+          week=$(date -u +%G-W%V)
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -C "weekly/$week"
+          git add public/notices.json docs/REQUESTS.md data/ledger.json
+          git commit -m "Weekly update $week: notices and city requests"
+          git push --force origin "weekly/$week"
+          gh pr create --base main --head "weekly/$week" \
+            --title "Weekly update $week" \
+            --body "Automated notices (news headlines, not verified) and the city-request digest in docs/REQUESTS.md. Review both before merging. Merging to main redeploys the Space when the HF_TOKEN secret is set." \
+            || echo "A pull request for weekly/$week already exists; its branch was updated."

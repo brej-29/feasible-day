@@ -2,7 +2,7 @@ import { useState } from "react";
 import { CITIES } from "../core/cities";
 import { REQUEST_REPO } from "../core/notices";
 
-/** No backend: the request becomes a prefilled GitHub issue. The monthly job reads those issues. */
+/** No backend: the request becomes a prefilled GitHub issue. The weekly job reads those issues. */
 export function RequestView() {
   const [city, setCity] = useState("");
   const [country, setCountry] = useState("");
@@ -15,7 +15,7 @@ export function RequestView() {
     <div className="evidence method">
       <section className="block">
         <h2>Request a city or a small country</h2>
-        <p>Cities are added by hand once a month, after the data is checked. There are {CITIES.length} today. Your request is a public GitHub issue (a free GitHub account is needed), so nothing is stored anywhere else.</p>
+        <p>Requests are reviewed weekly and cities are added by hand after the data is checked. There are {CITIES.length} today. Your request is a public GitHub issue (a free GitHub account is needed), so nothing is stored anywhere else.</p>
         <form className="reqform" onSubmit={(e) => e.preventDefault()}>
           <label>City or area
             <input value={city} onChange={(e) => setCity(e.target.value)} maxLength={80} placeholder="e.g. Coimbatore" autoComplete="off" />

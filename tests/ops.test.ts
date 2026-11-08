@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { cleanNotice } from "../src/core/notices";
 import { pick } from "../ops/notices";
 import { field } from "../ops/requests";
+import { toArticles } from "../ops/search";
 
 const arts = [
   { url: "https://news.example.com/a", title: "Bus strike on Monday", date: "2026-10-30" },
@@ -42,5 +43,18 @@ describe("city requests", () => {
     const city = field(body, "City or area");
     expect(city).not.toMatch(/["`|;\/<>[\]]/);
     expect(field(body, "Country")).not.toMatch(/[[\]/:]/);
+  });
+});
+
+describe("router search parsing", () => {
+  it("accepts the common result shapes and drops entries without a link or title", () => {
+    const tavily = { results: [{ title: " Bus strike ", url: "https://a.example/x", content: "Buses stop Monday", published_date: "2026-11-05" }, { title: "no link" }] };
+    const serper = { organic: [{ title: "Museum closed", link: "https://b.example/y", snippet: "Repairs" }] };
+    expect(toArticles(tavily)).toEqual([{ url: "https://a.example/x", title: "Bus strike", date: "2026-11-05", snippet: "Buses stop Monday" }]);
+    const s = toArticles(serper);
+    expect(s).toHaveLength(1);
+    expect(s[0].date).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+    expect(toArticles(null)).toEqual([]);
+    expect(toArticles({ results: [{ title: "x", url: "javascript:alert(1)" }] })).toEqual([]);
   });
 });

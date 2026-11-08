@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 372" width="1200" height="372" role="img" aria-label="Animated day timeline: stops appear one by one with walking times between them">
+<style>
+  .t { font-family: "Barlow Condensed", "Arial Narrow", "Roboto Condensed", Impact, sans-serif; font-weight: 700; }
+  .s { font-family: "Barlow", "Segoe UI", Arial, sans-serif; }
+  .bar { transform-box: fill-box; transform-origin: left center; animation: build 10s ease-out infinite both; }
+  .arm { transform-box: fill-box; transform-origin: left center; animation: build 10s ease-out infinite both; }
+  .lab { animation: fade 10s ease-out infinite both; }
+  @keyframes build { 0% { transform: scaleX(0); opacity: 1; } 7% { transform: scaleX(1); } 86% { transform: scaleX(1); opacity: 1; } 96%, 100% { transform: scaleX(1); opacity: 0; } }
+  @keyframes fade { 0% { opacity: 0; } 7% { opacity: 1; } 86% { opacity: 1; } 96%, 100% { opacity: 0; } }
+  .ping { animation: ping 10s ease-out infinite both; transform-box: fill-box; transform-origin: center; }
+  @keyframes ping { 0%, 5% { transform: scale(0); opacity: 0; } 9% { transform: scale(1.25); opacity: 1; } 12%, 86% { transform: scale(1); opacity: 1; } 96%, 100% { opacity: 0; } }
+  @media (prefers-reduced-motion: reduce) { .bar, .arm, .lab, .ping { animation: none; } }
+</style>
+<defs><pattern id="h" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="7" height="7" fill="#ffffff"/><rect width="1.6" height="7" fill="#14181c" fill-opacity="0.55"/></pattern></defs>
+<rect width="1200" height="372" fill="#14181c"/>
+<rect x="0" y="0" width="1200" height="6" fill="#ffd21f"/>
+<g transform="translate(90,70)"><polygon points="22,0 44,22 22,44 0,22" fill="#ffd21f"/><path d="M12 22 l7 7 l13 -14" fill="none" stroke="#14181c" stroke-width="5" stroke-linecap="square"/></g>
+<text x="152" y="104" class="t" font-size="58" fill="#ffffff" letter-spacing="3">FEASIBLE DAY</text>
+<text x="92" y="136" class="s" font-size="19" fill="#c9d1d6">Day plans you can actually walk. Every stop checked against opening hours, every transfer against the clock.</text>
+<line x1="90" y1="266" x2="1110" y2="266" stroke="#ffffff" stroke-opacity="0.55" stroke-width="2"/>
+<line x1="90.0" y1="266" x2="90.0" y2="275" stroke="#ffffff" stroke-opacity="0.55" stroke-width="2"/>
+<text x="90.0" y="294" text-anchor="middle" class="t" font-size="16" fill="#9aa5ad">09:00</text>
+<line x1="345.0" y1="266" x2="345.0" y2="275" stroke="#ffffff" stroke-opacity="0.55" stroke-width="2"/>
+<text x="345.0" y="294" text-anchor="middle" class="t" font-size="16" fill="#9aa5ad">12:00</text>
+<line x1="600.0" y1="266" x2="600.0" y2="275" stroke="#ffffff" stroke-opacity="0.55" stroke-width="2"/>
+<text x="600.0" y="294" text-anchor="middle" class="t" font-size="16" fill="#9aa5ad">15:00</text>
+<line x1="855.0" y1="266" x2="855.0" y2="275" stroke="#ffffff" stroke-opacity="0.55" stroke-width="2"/>
+<text x="855.0" y="294" text-anchor="middle" class="t" font-size="16" fill="#9aa5ad">18:00</text>
+<line x1="1110.0" y1="266" x2="1110.0" y2="275" stroke="#ffffff" stroke-opacity="0.55" stroke-width="2"/>
+<text x="1110.0" y="294" text-anchor="middle" class="t" font-size="16" fill="#9aa5ad">21:00</text>
+<rect class="bar" style="animation-delay:0.30s" x="90.0" y="184" width="113.3" height="34" fill="#ffd21f" stroke="#ffffff" stroke-width="2"/>
+<g class="ping" style="animation-delay:0.55s"><circle cx="146.7" cy="170" r="9" fill="#14783a"/><path d="M142.2 170 l3.2 3.4 l5.6 -6.4" fill="none" stroke="#fff" stroke-width="2.2"/></g>
+<rect class="bar" style="animation-delay:0.65s" x="214.7" y="184" width="73.7" height="34" fill="url(#h)" stroke="#ffffff" stroke-width="2"/>
+<g class="ping" style="animation-delay:0.90s"><circle cx="251.5" cy="170" r="9" fill="#8a7a3a"/><text x="251.5" y="174" text-anchor="middle" class="t" font-size="13" fill="#fff">?</text></g>
+<rect class="bar" style="animation-delay:1.00s" x="302.5" y="184" width="77.9" height="34" fill="#ffd21f" stroke="#ffffff" stroke-width="2"/>
+<g class="ping" style="animation-delay:1.25s"><circle cx="341.5" cy="170" r="9" fill="#14783a"/><path d="M337.0 170 l3.2 3.4 l5.6 -6.4" fill="none" stroke="#fff" stroke-width="2.2"/></g>
+<rect class="bar" style="animation-delay:1.35s" x="390.3" y="184" width="70.8" height="34" fill="#ffd21f" stroke="#ffffff" stroke-width="2"/>
+<g class="ping" style="animation-delay:1.60s"><circle cx="425.8" cy="170" r="9" fill="#14783a"/><path d="M421.2 170 l3.2 3.4 l5.6 -6.4" fill="none" stroke="#fff" stroke-width="2.2"/></g>
+<rect class="bar" style="animation-delay:1.70s" x="472.5" y="184" width="106.2" height="34" fill="#ffd21f" stroke="#ffffff" stroke-width="2"/>
+<g class="ping" style="animation-delay:1.95s"><circle cx="525.6" cy="170" r="9" fill="#14783a"/><path d="M521.1 170 l3.2 3.4 l5.6 -6.4" fill="none" stroke="#fff" stroke-width="2.2"/></g>
+<rect class="bar" style="animation-delay:2.05s" x="592.9" y="184" width="63.7" height="34" fill="url(#h)" stroke="#ffffff" stroke-width="2"/>
+<g class="ping" style="animation-delay:2.30s"><circle cx="624.8" cy="170" r="9" fill="#8a7a3a"/><text x="624.8" y="174" text-anchor="middle" class="t" font-size="13" fill="#fff">?</text></g>
+<rect class="bar" style="animation-delay:2.40s" x="673.7" y="184" width="93.5" height="34" fill="#ffd21f" stroke="#ffffff" stroke-width="2"/>
+<g class="ping" style="animation-delay:2.65s"><circle cx="720.4" cy="170" r="9" fill="#14783a"/><path d="M715.9 170 l3.2 3.4 l5.6 -6.4" fill="none" stroke="#fff" stroke-width="2.2"/></g>
+<rect class="bar" style="animation-delay:2.75s" x="781.3" y="184" width="73.7" height="34" fill="#ffd21f" stroke="#ffffff" stroke-width="2"/>
+<g class="ping" style="animation-delay:3.00s"><circle cx="818.2" cy="170" r="9" fill="#14783a"/><path d="M813.7 170 l3.2 3.4 l5.6 -6.4" fill="none" stroke="#fff" stroke-width="2.2"/></g>
+<g class="arm" style="animation-delay:0.55s"><polygon points="177.0,226 233.0,226 241.0,237.0 233.0,248 177.0,248" fill="#ffd21f"/><text x="205.0" y="242" text-anchor="middle" class="t" font-size="14" fill="#14181c">8 MIN</text></g>
+<g class="arm" style="animation-delay:0.90s"><polygon points="263.4,226 319.4,226 327.4,237.0 319.4,248 263.4,248" fill="#ffd21f"/><text x="291.4" y="242" text-anchor="middle" class="t" font-size="14" fill="#14181c">8 MIN</text></g>
+<g class="arm" style="animation-delay:1.25s"><polygon points="353.4,226 409.4,226 417.4,237.0 409.4,248 353.4,248" fill="#ffd21f"/><text x="381.4" y="242" text-anchor="middle" class="t" font-size="14" fill="#14181c">7 MIN</text></g>
+<g class="arm" style="animation-delay:1.60s"><polygon points="434.8,226 490.8,226 498.8,237.0 490.8,248 434.8,248" fill="#ffd21f"/><text x="462.8" y="242" text-anchor="middle" class="t" font-size="14" fill="#14181c">8 MIN</text></g>
+<g class="arm" style="animation-delay:1.95s"><polygon points="553.8,226 609.8,226 617.8,237.0 609.8,248 553.8,248" fill="#ffd21f"/><text x="581.8" y="242" text-anchor="middle" class="t" font-size="14" fill="#14181c">10 MIN</text></g>
+<g class="arm" style="animation-delay:2.30s"><polygon points="633.2,226 689.2,226 697.2,237.0 689.2,248 633.2,248" fill="#ffd21f"/><text x="661.2" y="242" text-anchor="middle" class="t" font-size="14" fill="#14181c">12 MIN</text></g>
+<g class="arm" style="animation-delay:2.65s"><polygon points="742.2,226 798.2,226 806.2,237.0 798.2,248 742.2,248" fill="#ffd21f"/><text x="770.2" y="242" text-anchor="middle" class="t" font-size="14" fill="#14181c">10 MIN</text></g>
+<rect x="90" y="336" width="22" height="14" fill="#ffd21f" stroke="#fff" stroke-width="1.5"/><text x="120" y="348" class="s" font-size="15" fill="#c9d1d6">hours checked</text>
+<rect x="260" y="336" width="22" height="14" fill="url(#h)" stroke="#fff" stroke-width="1.5"/><text x="290" y="348" class="s" font-size="15" fill="#c9d1d6">hours unverified (never guessed)</text>
+<polygon points="560,336 578,336 584,343 578,350 560,350" fill="#ffd21f"/><text x="594" y="348" class="s" font-size="15" fill="#c9d1d6">walking transfer checked against the clock</text>
+<text x="1110" y="348" text-anchor="end" class="s" font-size="13" fill="#6f7b84">illustration</text>
+</svg>
