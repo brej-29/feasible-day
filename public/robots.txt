@@ -1,4 +1,4 @@
-# Everything is public and meant to be found, including by AI search and answer engines.
+# Everything is public and meant to be found, including by AI search and answer engines (the wildcard rule allows all other crawlers).
 User-agent: *
 Allow: /
 
@@ -7,8 +7,6 @@ Allow: /
 User-agent: OAI-SearchBot
 Allow: /
 User-agent: ChatGPT-User
-Allow: /
-User-agent: ClaudeBot
 Allow: /
 User-agent: PerplexityBot
 Allow: /
