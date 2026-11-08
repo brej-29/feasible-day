@@ -18,7 +18,7 @@ export async function loadEvidence(): Promise<Evidence> {
   return res.json();
 }
 
-/** Optional: absent until the first monthly run, and a bad file must never break the app. */
+/** Optional: absent until the first weekly run, and a bad file must never break the app. */
 export async function loadNotices(): Promise<NoticeFile | null> {
   try {
     const res = await fetch(`${import.meta.env.BASE_URL}notices.json`);

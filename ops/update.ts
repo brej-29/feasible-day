@@ -3,7 +3,7 @@ import { runNotices } from "./notices";
 import { runRequests } from "./requests";
 
 /**
- * npm run monthly [-- notices|requests]   (local: npx tsx --env-file=.env ops/monthly.ts)
+ * npm run update [-- notices|requests]   (local: reads .env; in CI: .github/workflows/weekly.yml)
  * Each step is independent: one failing or being skipped never blocks the other.
  * Map snapshots are deliberately NOT refreshed here: the evaluation numbers are pinned to the committed snapshots.
  */

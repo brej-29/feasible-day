@@ -12,8 +12,8 @@
     "eval": "tsx eval/run.ts",
     "calibrate": "tsx eval/calibrate-walk.ts",
     "osrm-check": "tsx eval/osrm-check.ts",
-    "monthly": "tsx --env-file-if-exists=.env ops/monthly.ts",
-    "ops:smoke": "tsx --env-file-if-exists=.env ops/smoke.ts"
+    "ops:smoke": "tsx --env-file-if-exists=.env ops/smoke.ts",
+    "update": "tsx --env-file-if-exists=.env ops/update.ts"
   },
   "type": "module",
   "dependencies": {

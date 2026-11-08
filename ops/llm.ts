@@ -2,7 +2,7 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname } from "node:path";
 
 /**
- * Budgeted LLM client for the monthly job. Any OpenAI-compatible endpoint works (OmniRoute locally, OpenRouter in CI).
+ * Budgeted LLM client for the weekly job. Any OpenAI-compatible endpoint works (the OmniRoute router, OpenRouter, ...).
  *   LLM_ENDPOINT, LLM_API_KEY, LLM_MODEL            required
  *   LLM_MODEL_FALL_1, LLM_MODEL_FALL_2              tried in order if the previous one fails
  *   LLM_PRICE_IN_PER_M, LLM_PRICE_OUT_PER_M         USD per 1M tokens of the primary model

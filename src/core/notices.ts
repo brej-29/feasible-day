@@ -1,4 +1,4 @@
-/** Monthly advisories per city. Written by ops/notices.ts, read by the app. Text is data: always rendered as text. */
+/** Weekly advisories per city. Written by ops/notices.ts, read by the app. Text is data: always rendered as text. */
 export const NOTICE_KINDS = ["closure", "strike", "festival", "weather", "safety", "transport", "other"] as const;
 export type NoticeKind = (typeof NOTICE_KINDS)[number];
 
